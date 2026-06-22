@@ -473,6 +473,11 @@
     "imageTitle": "Copiar como Imagen (PNG)",
     "imageText": "El botón \"Copiar como PNG\" copia el lienzo de la tirada como imagen. Puedes pegarla en un chat, guardarla o compartirla.",
     "privacyTitle": "Tus Datos y Privacidad",
-    "privacyText": "Todos tus datos — lecturas, notas y configuración — se guardan localmente en tu navegador. Nada se envía a ningún servidor. Tu información permanece en tu dispositivo a menos que copies activamente un prompt y lo pegues en un asistente de IA."
+    "privacyText": "Todos tus datos — lecturas, notas y configuración — se guardan localmente en tu navegador. Nada se envía a ningún servidor. Tu información permanece en tu dispositivo a menos que copies activamente un prompt y lo pegues en un asistente de IA.",
+    "installTitle": "Instalar en tu Dispositivo",
+    "installText": "Arké Tarot se puede instalar en tu teléfono, tableta o escritorio y usarse sin conexión. Una vez instalada, la aplicación funciona sin internet — tus lecturas, cartas y configuración siempre están disponibles. Cuando tienes conexión, la app carga automáticamente la versión más reciente.",
+    "installDesktop": "En navegadores de escritorio (Chrome, Edge): busca el ícono de instalación en la barra de direcciones o abre el menú del navegador y elige \"Instalar Arké Tarot\".",
+    "installMobile": "En Android: toca el menú del navegador y elige \"Agregar a pantalla de inicio\". En iPhone / iPad: toca el botón Compartir en Safari y luego \"Agregar a pantalla de inicio\".",
+    "installNote": "Las interpretaciones de IA ocurren fuera de la aplicación — copia el prompt y pégalo en el asistente de IA que prefieras, lo cual requiere conexión a internet. Todo lo demás — sacar cartas, explorar la biblioteca, consultar tu registro — funciona completamente sin conexión."
   }
 }

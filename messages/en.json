@@ -583,6 +583,11 @@
     "imageTitle": "Copy as Image (PNG)",
     "imageText": "The \"Copy as PNG\" button copies the spread canvas as an image. Paste it into a chat, save it, or share it.",
     "privacyTitle": "Your Data & Privacy",
-    "privacyText": "All your data — readings, notes, and settings — is stored locally in your browser. Nothing is sent to any server. Your information stays on your device unless you actively copy a prompt and paste it into an AI assistant yourself."
+    "privacyText": "All your data — readings, notes, and settings — is stored locally in your browser. Nothing is sent to any server. Your information stays on your device unless you actively copy a prompt and paste it into an AI assistant yourself.",
+    "installTitle": "Install on Your Device",
+    "installText": "Arké Tarot can be installed on your phone, tablet, or desktop and used offline. Once installed it works without an internet connection — your readings, cards, and settings are always available. When you are online the app automatically loads the latest version.",
+    "installDesktop": "On desktop browsers (Chrome, Edge): look for the install icon in the address bar, or open the browser menu and choose \"Install Arké Tarot\".",
+    "installMobile": "On Android: tap the browser menu and choose \"Add to Home Screen\". On iPhone / iPad: tap the Share button in Safari then \"Add to Home Screen\".",
+    "installNote": "AI interpretations happen outside the app — copy the prompt and paste it into any AI assistant of your choice, which requires an internet connection. Everything else — drawing cards, browsing the library, reading your log — works fully offline."
   }
 }

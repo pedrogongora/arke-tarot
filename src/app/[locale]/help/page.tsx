@@ -42,6 +42,22 @@ export default async function HelpPage() {
         <h2 className="text-lg font-semibold text-foreground">{t('privacyTitle')}</h2>
         <p className="text-muted leading-relaxed">{t('privacyText')}</p>
       </section>
+
+      <section className="flex flex-col gap-4 p-5 rounded-xl bg-surface border border-border">
+        <h2 className="text-lg font-semibold text-foreground">{t('installTitle')}</h2>
+        <p className="text-muted leading-relaxed">{t('installText')}</p>
+        <ul className="flex flex-col gap-2">
+          <li className="flex items-start gap-2 text-muted text-sm">
+            <span className="flex-shrink-0 text-accent mt-0.5">✦</span>
+            <span>{t('installDesktop')}</span>
+          </li>
+          <li className="flex items-start gap-2 text-muted text-sm">
+            <span className="flex-shrink-0 text-accent mt-0.5">✦</span>
+            <span>{t('installMobile')}</span>
+          </li>
+        </ul>
+        <p className="text-muted text-sm leading-relaxed border-t border-border pt-3">{t('installNote')}</p>
+      </section>
     </div>
   );
 }
