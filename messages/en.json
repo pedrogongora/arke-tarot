@@ -236,10 +236,17 @@
       "promptLabel": "Generated Prompt"
     },
     "constellation": {
-      "instructions": "Click on the canvas to place a card. Drag cards to reposition them.",
+      "instructions": "Click \"Add Card\" to draw and label each card, then drag to position it.",
       "addCard": "Add Card",
       "editLabel": "Edit Label",
-      "removeCard": "Remove Card"
+      "removeCard": "Remove Card",
+      "labelDialog": {
+        "title": "Name This Card",
+        "prompt": "What role does this card play in your reading?",
+        "placeholder": "e.g. What I need to release",
+        "confirm": "Draw Card",
+        "cancel": "Cancel"
+      }
     }
   },
   "log": {

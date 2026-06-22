@@ -40,8 +40,12 @@ export function CopyPromptModal({ spread, drawnCards, notes, locale, onClose }: 
   const resolvedCards: ResolvedCard[] = useMemo(
     () =>
       drawnCards.map((dc) => ({
-        positionLabel: tAll(dc.position.labelKey as Parameters<typeof tAll>[0]),
-        positionDesc: tAll(dc.position.descriptionKey as Parameters<typeof tAll>[0]),
+        positionLabel: dc.userLabel ?? (
+          dc.position.labelKey ? tAll(dc.position.labelKey as Parameters<typeof tAll>[0]) : ''
+        ),
+        positionDesc: dc.position.descriptionKey
+          ? tAll(dc.position.descriptionKey as Parameters<typeof tAll>[0])
+          : '',
         cardName: tAll(dc.card.nameKey as Parameters<typeof tAll>[0]),
         orientation: dc.isReversed ? 'reversed' : 'upright',
         meaning: tAll(

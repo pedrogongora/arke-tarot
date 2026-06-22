@@ -10,6 +10,8 @@ export interface ReadingSlice {
 
   initReading: (spread: SpreadDefinition) => void;
   addDrawnCard: (drawnCard: DrawnCard) => void;
+  updateCardPosition: (cardId: string, normalizedX: number, normalizedY: number) => void;
+  removeDrawnCard: (cardId: string) => void;
   setNotes: (notes: string) => void;
   setPhase: (phase: ReadingPhase) => void;
   setAIStatus: (status: AIStatus) => void;
@@ -56,6 +58,34 @@ export function createReadingSlice(
           activeReading: {
             ...s.activeReading,
             drawnCards: [...s.activeReading.drawnCards, drawnCard],
+          },
+        };
+      });
+    },
+
+    updateCardPosition: (cardId, normalizedX, normalizedY) => {
+      set((s) => {
+        if (!s.activeReading) return {};
+        return {
+          activeReading: {
+            ...s.activeReading,
+            drawnCards: s.activeReading.drawnCards.map((dc) =>
+              dc.card.id === cardId
+                ? { ...dc, canvasX: normalizedX, canvasY: normalizedY }
+                : dc
+            ),
+          },
+        };
+      });
+    },
+
+    removeDrawnCard: (cardId) => {
+      set((s) => {
+        if (!s.activeReading) return {};
+        return {
+          activeReading: {
+            ...s.activeReading,
+            drawnCards: s.activeReading.drawnCards.filter((dc) => dc.card.id !== cardId),
           },
         };
       });

@@ -1,8 +1,7 @@
 'use client';
 
 import { use, useEffect, useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { getSpread } from '@/data/spreads';
 import { SpreadCanvas } from '@/components/canvas/SpreadCanvas';
@@ -11,8 +10,9 @@ import { ReadingNotes } from '@/components/reading/ReadingNotes';
 import { ReadingActions } from '@/components/reading/ReadingActions';
 import { InterpretationBlock } from '@/components/reading/InterpretationBlock';
 import { Button } from '@/components/ui/Button';
+import { Modal } from '@/components/ui/Modal';
 import { useReadingStore, useSettings } from '@/store';
-import { drawForSpread } from '@/lib/utils/deck';
+import { drawForSpread, drawSingleCard } from '@/lib/utils/deck';
 
 interface ReadingPageProps {
   params: Promise<{ spreadId: string; locale: string }>;
@@ -29,12 +29,16 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
   const settings = useSettings();
   const initReading = useReadingStore((s) => s.initReading);
   const addDrawnCard = useReadingStore((s) => s.addDrawnCard);
+  const updateCardPosition = useReadingStore((s) => s.updateCardPosition);
   const activeReading = useReadingStore((s) => s.activeReading);
-  const phase = useReadingStore((s) => s.phase);
 
   const [selectedCardId, setSelectedCardId] = useState<string | null>(null);
   const [pendingCards, setPendingCards] = useState<ReturnType<typeof drawForSpread> | null>(null);
   const [drawnCount, setDrawnCount] = useState(0);
+
+  // Constellation: label dialog state
+  const [showAddCardDialog, setShowAddCardDialog] = useState(false);
+  const [pendingLabel, setPendingLabel] = useState('');
 
   // Initialize the reading when the spread page loads
   useEffect(() => {
@@ -66,8 +70,24 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
     setDrawnCount(spread.positions.length);
   };
 
-  const allDrawn = drawnCount >= (spread?.positions.length ?? 0);
+  const handleAddConstellationCard = () => {
+    if (!spread?.isConstellation) return;
+    const label = pendingLabel.trim() || t('constellation.addCard');
+    const newCard = drawSingleCard(drawnCards, settings.reversalEnabled, settings.reversalChance);
+    addDrawnCard({ ...newCard, userLabel: label });
+    setPendingLabel('');
+    setShowAddCardDialog(false);
+  };
+
+  const handleCardDrop = (cardId: string, normalizedX: number, normalizedY: number) => {
+    updateCardPosition(cardId, normalizedX, normalizedY);
+  };
+
   const drawnCards = activeReading?.drawnCards ?? [];
+
+  const allDrawn = spread.isConstellation
+    ? drawnCards.length >= (spread.maxCards ?? 22)
+    : drawnCount >= (spread?.positions.length ?? 0);
 
   return (
     <div className="flex flex-col h-[calc(100vh-3.5rem)] lg:flex-row">
@@ -79,6 +99,8 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
           <h1 className="text-sm font-semibold text-foreground">
             {tAll(spread.nameKey as Parameters<typeof tAll>[0])}
           </h1>
+
+          {/* Non-constellation draw buttons */}
           {!allDrawn && !spread.isConstellation && (
             <div className="flex items-center gap-2">
               {drawnCount > 0 && (
@@ -94,7 +116,32 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
               </Button>
             </div>
           )}
+
+          {/* Constellation controls */}
+          {spread.isConstellation && (
+            <div className="flex items-center gap-2">
+              {drawnCards.length > 0 && (
+                <span className="text-xs text-muted tabular-nums">
+                  {drawnCards.length} / {spread.maxCards ?? 22}
+                </span>
+              )}
+              <Button
+                onClick={() => setShowAddCardDialog(true)}
+                disabled={allDrawn}
+                size="sm"
+              >
+                {t('constellation.addCard')}
+              </Button>
+            </div>
+          )}
         </div>
+
+        {/* Constellation empty-state hint */}
+        {spread.isConstellation && drawnCards.length === 0 && (
+          <p className="flex-shrink-0 px-4 py-2 text-xs text-muted text-center border-b border-border">
+            {t('constellation.instructions')}
+          </p>
+        )}
 
         {/* Canvas */}
         <div className="flex-1 min-h-0 p-3 lg:p-4">
@@ -102,6 +149,7 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
             spread={spread}
             drawnCards={drawnCards}
             onCardSelect={setSelectedCardId}
+            onCardDrop={handleCardDrop}
             className="rounded-xl border border-border bg-surface/30"
           />
         </div>
@@ -127,6 +175,39 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
           <ReadingActions />
         </div>
       </div>
+
+      {/* Add Card dialog (constellation only) */}
+      <Modal
+        open={showAddCardDialog}
+        onClose={() => { setShowAddCardDialog(false); setPendingLabel(''); }}
+        title={t('constellation.labelDialog.title')}
+      >
+        <div className="flex flex-col gap-4">
+          <p className="text-sm text-muted">{t('constellation.labelDialog.prompt')}</p>
+          <input
+            autoFocus
+            type="text"
+            value={pendingLabel}
+            onChange={(e) => setPendingLabel(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') handleAddConstellationCard(); }}
+            placeholder={t('constellation.labelDialog.placeholder')}
+            className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-surface text-foreground placeholder:text-muted focus:outline-none focus:border-primary"
+            maxLength={60}
+          />
+          <div className="flex justify-end gap-2">
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => { setShowAddCardDialog(false); setPendingLabel(''); }}
+            >
+              {t('constellation.labelDialog.cancel')}
+            </Button>
+            <Button size="sm" onClick={handleAddConstellationCard}>
+              {t('constellation.labelDialog.confirm')}
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

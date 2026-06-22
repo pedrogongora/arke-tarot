@@ -5,16 +5,19 @@ import type { SpreadDefinition, DrawnCard } from '@/types';
 import { useCanvasRenderer } from './useCanvasRenderer';
 import { useCanvasInteraction } from './useCanvasInteraction';
 import { cn } from '@/lib/utils/cn';
+import type { DragState } from './useCanvasRenderer';
 
 interface SpreadCanvasProps {
   spread: SpreadDefinition;
   drawnCards: DrawnCard[];
   onCardSelect?: (cardId: string | null) => void;
+  onCardDrop?: (cardId: string, normalizedX: number, normalizedY: number) => void;
   className?: string;
 }
 
-export function SpreadCanvas({ spread, drawnCards, onCardSelect, className }: SpreadCanvasProps) {
+export function SpreadCanvas({ spread, drawnCards, onCardSelect, onCardDrop, className }: SpreadCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const dragRef = useRef<DragState | null>(null);
   const [selectedCardId, setSelectedCardId] = useState<string | null>(null);
 
   const handleSelect = (id: string | null) => {
@@ -33,8 +36,8 @@ export function SpreadCanvas({ spread, drawnCards, onCardSelect, className }: Sp
     return () => observer.disconnect();
   }, []);
 
-  useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId });
-  useCanvasInteraction({ canvasRef, spread, drawnCards, onCardSelect: handleSelect });
+  useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId, dragRef });
+  useCanvasInteraction({ canvasRef, spread, drawnCards, onCardSelect: handleSelect, onCardDrop, dragRef });
 
   return (
     <canvas

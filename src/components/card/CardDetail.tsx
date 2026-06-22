@@ -18,8 +18,12 @@ export function CardDetail({ drawnCard, compact = false }: CardDetailProps) {
 
   const [tab, setTab] = useState<'meaning' | 'description'>('meaning');
 
-  const positionLabel = drawnCard.userLabel ?? t(position.labelKey as Parameters<typeof t>[0]);
-  const positionDesc = t(position.descriptionKey as Parameters<typeof t>[0]);
+  const positionLabel = drawnCard.userLabel ?? (
+    position.labelKey ? t(position.labelKey as Parameters<typeof t>[0]) : ''
+  );
+  const positionDesc = position.descriptionKey
+    ? t(position.descriptionKey as Parameters<typeof t>[0])
+    : '';
 
   if (compact) {
     return (

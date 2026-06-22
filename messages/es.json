@@ -236,10 +236,17 @@
       "promptLabel": "Prompt Generado"
     },
     "constellation": {
-      "instructions": "Haz clic en el lienzo para colocar una carta. Arrastra las cartas para reposicionarlas.",
+      "instructions": "Haz clic en \"Agregar Carta\" para sacar y etiquetar cada carta, luego arrástrala para posicionarla.",
       "addCard": "Agregar Carta",
       "editLabel": "Editar Etiqueta",
-      "removeCard": "Eliminar Carta"
+      "removeCard": "Eliminar Carta",
+      "labelDialog": {
+        "title": "Nombra Esta Carta",
+        "prompt": "¿Qué rol juega esta carta en tu lectura?",
+        "placeholder": "Ej.: Lo que necesito soltar",
+        "confirm": "Sacar Carta",
+        "cancel": "Cancelar"
+      }
     }
   },
   "log": {

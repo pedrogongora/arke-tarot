@@ -26,14 +26,21 @@ function clamp(v: number, lo: number, hi: number) {
   return v < lo ? lo : v > hi ? hi : v;
 }
 
+export interface DragState {
+  cardId: string;
+  x: number; // canvas pixels
+  y: number;
+}
+
 interface UseCanvasRendererOptions {
   canvasRef: RefObject<HTMLCanvasElement | null>;
   spread: SpreadDefinition | null;
   drawnCards: DrawnCard[];
   selectedCardId?: string | null;
+  dragRef?: RefObject<DragState | null>;
 }
 
-export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId }: UseCanvasRendererOptions) {
+export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId, dragRef }: UseCanvasRendererOptions) {
   const animFrameRef = useRef<number>(0);
   // cardId → scheduled start timestamp (may be in the future for staggered cards)
   const animStartTimesRef = useRef<Map<string, number>>(new Map());
@@ -81,7 +88,7 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
 
       ctx.clearRect(0, 0, W, H);
 
-      // Draw position placeholders
+      // Draw position placeholders (non-constellation spreads only)
       spread.positions.forEach((pos) => {
         const r = spreadPositionToRect(pos, W, H, cardH);
         ctx.save();
@@ -106,8 +113,25 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
         const progress = clamp(elapsed / ANIM_DURATION_MS, 0, 1);
         if (progress < 1) allSettled = false;
 
-        const pos = drawnCard.position;
-        const r = spreadPositionToRect(pos, W, H, cardH);
+        // Determine center position and rotation
+        let cx: number, cy: number, rotation: number;
+        if (spread.isConstellation && drawnCard.canvasX != null && drawnCard.canvasY != null) {
+          const drag = dragRef?.current;
+          if (drag && drag.cardId === drawnCard.card.id) {
+            cx = drag.x;
+            cy = drag.y;
+          } else {
+            cx = drawnCard.canvasX * W;
+            cy = drawnCard.canvasY * H;
+          }
+          rotation = 0;
+        } else {
+          const r = spreadPositionToRect(drawnCard.position, W, H, cardH);
+          cx = r.x;
+          cy = r.y;
+          rotation = r.rotation;
+        }
+
         const imgSrc = CARD_IMAGE_MAP[drawnCard.card.id];
         if (!imgSrc) continue;
 
@@ -116,8 +140,8 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
           if (cancelled) return;
 
           ctx.save();
-          ctx.translate(r.x, r.y);
-          ctx.rotate((r.rotation * Math.PI) / 180);
+          ctx.translate(cx, cy);
+          ctx.rotate((rotation * Math.PI) / 180);
 
           if (drawnCard.isReversed) ctx.rotate(Math.PI);
 
@@ -137,7 +161,7 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
           ctx.restore();
         } catch {
           ctx.save();
-          ctx.translate(r.x, r.y);
+          ctx.translate(cx, cy);
           ctx.globalAlpha = progress;
           ctx.fillStyle = '#1a1730';
           ctx.fillRect(-cardW / 2, -cardH / 2, cardW, cardH);
@@ -146,7 +170,8 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
         }
       }
 
-      if (!allSettled && !cancelled) {
+      // Keep looping in constellation mode (for smooth drag) or while animating
+      if ((!allSettled || spread.isConstellation) && !cancelled) {
         animFrameRef.current = requestAnimationFrame(renderFrame);
       }
     }
