@@ -49,17 +49,20 @@ export function ReadingPanel({ spread, drawnCards, selectedCardId, onCardSelect,
       {drawnCards.map((dc) => {
         const isSelected = selectedCardId === dc.card.id;
         return (
-          <button
+          <div
             key={dc.card.id}
             id={`panel-card-${dc.card.id}`}
+            role="button"
+            tabIndex={0}
             onClick={() => onCardSelect?.(isSelected ? null : dc.card.id)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onCardSelect?.(isSelected ? null : dc.card.id); }}
             className={cn(
-              'text-left w-full transition-colors',
+              'text-left w-full transition-colors cursor-pointer',
               isSelected ? 'bg-primary/10 ring-1 ring-inset ring-primary/30' : 'hover:bg-surface/50'
             )}
           >
             <CardDetail drawnCard={dc} compact={!isSelected} />
-          </button>
+          </div>
         );
       })}
     </div>
