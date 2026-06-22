@@ -33,27 +33,40 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
   const phase = useReadingStore((s) => s.phase);
 
   const [selectedCardId, setSelectedCardId] = useState<string | null>(null);
-  const [drawn, setDrawn] = useState(false);
+  const [pendingCards, setPendingCards] = useState<ReturnType<typeof drawForSpread> | null>(null);
+  const [drawnCount, setDrawnCount] = useState(0);
 
   // Initialize the reading when the spread page loads
   useEffect(() => {
     if (!activeReading || activeReading.spreadId !== spreadId) {
       initReading(spread!);
-      setDrawn(false);
+      setPendingCards(null);
+      setDrawnCount(0);
     }
   }, [spreadId]);
 
-  const handleDrawAll = () => {
-    if (!spread || drawn) return;
-    const drawnCards = drawForSpread(
-      spread.positions,
-      settings.reversalEnabled,
-      settings.reversalChance
-    );
-    drawnCards.forEach((dc) => addDrawnCard(dc));
-    setDrawn(true);
+  const getOrCreatePendingCards = () => {
+    if (pendingCards) return pendingCards;
+    const cards = drawForSpread(spread!.positions, settings.reversalEnabled, settings.reversalChance);
+    setPendingCards(cards);
+    return cards;
   };
 
+  const handleDrawNext = () => {
+    if (!spread || drawnCount >= spread.positions.length) return;
+    const cards = getOrCreatePendingCards();
+    addDrawnCard(cards[drawnCount]);
+    setDrawnCount((n) => n + 1);
+  };
+
+  const handleDrawAll = () => {
+    if (!spread || drawnCount >= spread.positions.length) return;
+    const cards = getOrCreatePendingCards();
+    cards.slice(drawnCount).forEach((dc) => addDrawnCard(dc));
+    setDrawnCount(spread.positions.length);
+  };
+
+  const allDrawn = drawnCount >= (spread?.positions.length ?? 0);
   const drawnCards = activeReading?.drawnCards ?? [];
 
   return (
@@ -65,10 +78,20 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
           <h1 className="text-sm font-semibold text-foreground">
               {tAll(spread.nameKey as Parameters<typeof tAll>[0])}
           </h1>
-          {!drawn && !spread.isConstellation && (
-            <Button onClick={handleDrawAll} size="sm">
-              {t('drawAll')}
-            </Button>
+          {!allDrawn && !spread.isConstellation && (
+            <div className="flex items-center gap-2">
+              {drawnCount > 0 && (
+                <span className="text-xs text-muted-foreground tabular-nums">
+                  {drawnCount} / {spread.positions.length}
+                </span>
+              )}
+              <Button onClick={handleDrawNext} size="sm" variant="secondary">
+                {t('draw')}
+              </Button>
+              <Button onClick={handleDrawAll} size="sm">
+                {t('drawAll')}
+              </Button>
+            </div>
           )}
         </div>
 
