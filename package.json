@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Tarot card reader app",
   "private": true,
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

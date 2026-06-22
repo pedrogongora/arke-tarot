@@ -11,7 +11,7 @@ import { ArkeLogo } from './ArkeLogo';
 
 interface NavLink {
   href: string;
-  labelKey: 'home' | 'reading' | 'log' | 'settings';
+  labelKey: 'home' | 'reading' | 'log' | 'settings' | 'help' | 'about';
 }
 
 const NAV_LINKS: NavLink[] = [
@@ -19,6 +19,8 @@ const NAV_LINKS: NavLink[] = [
   { href: '/reading', labelKey: 'reading' },
   { href: '/log', labelKey: 'log' },
   { href: '/settings', labelKey: 'settings' },
+  { href: '/help', labelKey: 'help' },
+  { href: '/about', labelKey: 'about' },
 ];
 
 export function Navbar() {
