@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ── Tailwind theme: maps utility classes to CSS custom properties ── */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface:    var(--surface);
+  --color-primary:    var(--primary);
+  --color-accent:     var(--accent);
+  --color-foreground: var(--foreground);
+  --color-muted:      var(--muted);
+  --color-border:     var(--border);
+  --color-card-back:  var(--card-back);
+
+  --font-sans: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
+  --font-mono: var(--font-geist-mono, ui-monospace, monospace);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MIDNIGHT PALETTE
+══════════════════════════════════════════════════════════════════ */
+:root[data-theme="light"][data-palette="midnight"] {
+  --background: #f8f6f0;
+  --surface:    #ffffff;
+  --primary:    #2a1f5e;
+  --accent:     #c9a84c;
+  --foreground: #1a1a2e;
+  --muted:      #6b6b8a;
+  --border:     #d4d0e0;
+  --card-back:  #2a1f5e;
+}
+
+:root[data-theme="dark"][data-palette="midnight"] {
+  --background: #0d0b1a;
+  --surface:    #1a1730;
+  --primary:    #9b8fe8;
+  --accent:     #c9a84c;
+  --foreground: #e8e6f5;
+  --muted:      #8a87aa;
+  --border:     #2d2a48;
+  --card-back:  #1a1730;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FOREST PALETTE
+══════════════════════════════════════════════════════════════════ */
+:root[data-theme="light"][data-palette="forest"] {
+  --background: #f4f7f2;
+  --surface:    #ffffff;
+  --primary:    #1e4d2b;
+  --accent:     #9c6a3a;
+  --foreground: #1a2e1e;
+  --muted:      #6b8a72;
+  --border:     #c8d8c6;
+  --card-back:  #1e4d2b;
+}
+
+:root[data-theme="dark"][data-palette="forest"] {
+  --background: #0a1a0d;
+  --surface:    #122018;
+  --primary:    #5fa874;
+  --accent:     #c4874e;
+  --foreground: #e0f0e4;
+  --muted:      #7a9e83;
+  --border:     #1e3824;
+  --card-back:  #122018;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CRIMSON PALETTE
+══════════════════════════════════════════════════════════════════ */
+:root[data-theme="light"][data-palette="crimson"] {
+  --background: #fdf5f5;
+  --surface:    #ffffff;
+  --primary:    #7a1a1a;
+  --accent:     #c4884e;
+  --foreground: #2e1010;
+  --muted:      #8a6a6a;
+  --border:     #e0c8c8;
+  --card-back:  #7a1a1a;
+}
+
+:root[data-theme="dark"][data-palette="crimson"] {
+  --background: #1a0808;
+  --surface:    #2a1010;
+  --primary:    #e05858;
+  --accent:     #d4a060;
+  --foreground: #f5e0e0;
+  --muted:      #aa7a7a;
+  --border:     #3e1818;
+  --card-back:  #2a1010;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CELESTIAL PALETTE
+══════════════════════════════════════════════════════════════════ */
+:root[data-theme="light"][data-palette="celestial"] {
+  --background: #f0f2f8;
+  --surface:    #ffffff;
+  --primary:    #1a2a6e;
+  --accent:     #8888cc;
+  --foreground: #0e1535;
+  --muted:      #6a78a0;
+  --border:     #c8cce8;
+  --card-back:  #1a2a6e;
+}
+
+:root[data-theme="dark"][data-palette="celestial"] {
+  --background: #080c1e;
+  --surface:    #101830;
+  --primary:    #6688dd;
+  --accent:     #9999ee;
+  --foreground: #d8e0f8;
+  --muted:      #8890b8;
+  --border:     #1a2248;
+  --card-back:  #101830;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CUSTOM PALETTE (values set via JS inline styles on :root)
+══════════════════════════════════════════════════════════════════ */
+:root[data-palette="custom"] {
+  --background: #0d0b1a;
+  --surface:    #1a1730;
+  --foreground: #e8e6f5;
+  --muted:      #8a87aa;
+  --border:     #2d2a48;
+  --card-back:  #1a1730;
+  /* --primary, --accent, --surface can be overridden via inline style */
+}
+
+/* ── Base styles ───────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#__next,
+main {
+  min-height: 100%;
+}
+
+/* Scrollbar styling for WebKit */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,519 @@
+{
+  "nav": {
+    "home": "Home",
+    "reading": "New Reading",
+    "log": "Reading Log",
+    "settings": "Settings",
+    "cards": "Card Library",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "home": {
+    "title": "Tarot Reader",
+    "subtitle": "Draw cards. Listen to what arises.",
+    "startReading": "Start a Reading",
+    "viewLog": "View Reading Log",
+    "browseCards": "Browse Cards"
+  },
+  "spreads": {
+    "oneCard": {
+      "name": "One Card Pull",
+      "description": "A single card for daily guidance, a yes/no question, or a simple focus.",
+      "positions": {
+        "card": "The Card",
+        "cardDesc": "Your guidance, focus, or answer for today"
+      }
+    },
+    "twoCard": {
+      "name": "Two Card",
+      "description": "Two options, or cause and effect. Use when weighing a choice or exploring a dynamic.",
+      "positions": {
+        "optionA": "Option A / Cause",
+        "optionADesc": "The first path, option, or contributing cause",
+        "optionB": "Option B / Effect",
+        "optionBDesc": "The second path, option, or resulting effect"
+      }
+    },
+    "threeCardPPF": {
+      "name": "Three Card — Past / Present / Future",
+      "description": "Reveals the timeline of a situation: what shaped it, where it stands, and where it is heading.",
+      "positions": {
+        "past": "Past",
+        "pastDesc": "What has led to the current situation",
+        "present": "Present",
+        "presentDesc": "The current state or energy",
+        "future": "Future",
+        "futureDesc": "The direction things are heading"
+      }
+    },
+    "threeCardMBS": {
+      "name": "Three Card — Mind / Body / Spirit",
+      "description": "A holistic snapshot of your wellbeing across mental, physical, and spiritual dimensions.",
+      "positions": {
+        "mind": "Mind",
+        "mindDesc": "Your thoughts, beliefs, and mental state",
+        "body": "Body",
+        "bodyDesc": "Physical health, energy, and material reality",
+        "spirit": "Spirit",
+        "spiritDesc": "Your spiritual state, intuition, and higher self"
+      }
+    },
+    "threeCardSAO": {
+      "name": "Three Card — Situation / Action / Outcome",
+      "description": "Diagnoses a situation, suggests an action, and shows a likely outcome.",
+      "positions": {
+        "situation": "Situation",
+        "situationDesc": "The current circumstances or challenge",
+        "action": "Action",
+        "actionDesc": "The recommended action or approach",
+        "outcome": "Outcome",
+        "outcomeDesc": "The likely result if you follow this path"
+      }
+    },
+    "triad": {
+      "name": "The Triad",
+      "description": "A dialectical spread: thesis, antithesis, synthesis. Ideal for resolving tensions.",
+      "positions": {
+        "thesis": "Thesis",
+        "thesisDesc": "The initial position, assertion, or force",
+        "antithesis": "Antithesis",
+        "antithesisDesc": "The opposing force, counter-position, or challenge",
+        "synthesis": "Synthesis",
+        "synthesisDesc": "The resolution, integration, or higher truth"
+      }
+    },
+    "celticCross": {
+      "name": "Celtic Cross",
+      "description": "The classic 10-card spread offering a comprehensive view of a situation: its roots, influences, and potential outcomes.",
+      "positions": {
+        "present": "Present",
+        "presentDesc": "The heart of the matter; the current situation",
+        "challenge": "Challenge",
+        "challengeDesc": "What crosses or challenges the present energy",
+        "past": "Past",
+        "pastDesc": "Recent past influences leading to now",
+        "future": "Future",
+        "futureDesc": "The near future; where things are moving",
+        "above": "Above",
+        "aboveDesc": "Conscious goal or best possible outcome",
+        "below": "Below",
+        "belowDesc": "Unconscious influences or foundation",
+        "attitude": "Self",
+        "attitudeDesc": "Your attitude, fears, or self-perception",
+        "external": "External",
+        "externalDesc": "Environmental influences and others' perceptions",
+        "hopes": "Hopes & Fears",
+        "hopesDesc": "Your hopes or fears about the outcome",
+        "outcome": "Outcome",
+        "outcomeDesc": "The final outcome if the current path continues"
+      }
+    },
+    "zodiac": {
+      "name": "Astrological / Zodiac Spread",
+      "description": "Twelve cards, one for each house of the zodiac, offering insight across all life areas.",
+      "positions": {
+        "house1": "1st House — Self",
+        "house1Desc": "Identity, appearance, new beginnings",
+        "house2": "2nd House — Resources",
+        "house2Desc": "Money, possessions, values",
+        "house3": "3rd House — Communication",
+        "house3Desc": "Siblings, short travel, learning",
+        "house4": "4th House — Home",
+        "house4Desc": "Family, roots, private life",
+        "house5": "5th House — Creativity",
+        "house5Desc": "Romance, children, pleasure",
+        "house6": "6th House — Health",
+        "house6Desc": "Work, health, daily routine",
+        "house7": "7th House — Partnerships",
+        "house7Desc": "Relationships, marriage, open enemies",
+        "house8": "8th House — Transformation",
+        "house8Desc": "Death, rebirth, shared resources, the occult",
+        "house9": "9th House — Philosophy",
+        "house9Desc": "Higher learning, travel, beliefs",
+        "house10": "10th House — Career",
+        "house10Desc": "Public status, vocation, ambition",
+        "house11": "11th House — Community",
+        "house11Desc": "Friends, groups, goals, social causes",
+        "house12": "12th House — Hidden",
+        "house12Desc": "Secrets, karma, spirituality, self-undoing"
+      }
+    },
+    "yearlyCalendar": {
+      "name": "Yearly Calendar Spread",
+      "description": "Thirteen cards: one for each month of the year plus a central theme card for the year as a whole.",
+      "positions": {
+        "month1": "January",
+        "month1Desc": "Energy and theme for January",
+        "month2": "February",
+        "month2Desc": "Energy and theme for February",
+        "month3": "March",
+        "month3Desc": "Energy and theme for March",
+        "month4": "April",
+        "month4Desc": "Energy and theme for April",
+        "month5": "May",
+        "month5Desc": "Energy and theme for May",
+        "month6": "June",
+        "month6Desc": "Energy and theme for June",
+        "month7": "July",
+        "month7Desc": "Energy and theme for July",
+        "month8": "August",
+        "month8Desc": "Energy and theme for August",
+        "month9": "September",
+        "month9Desc": "Energy and theme for September",
+        "month10": "October",
+        "month10Desc": "Energy and theme for October",
+        "month11": "November",
+        "month11Desc": "Energy and theme for November",
+        "month12": "December",
+        "month12Desc": "Energy and theme for December",
+        "theme": "Year Theme",
+        "themeDesc": "The overarching energy and lesson of the entire year"
+      }
+    },
+    "birthdaySolar": {
+      "name": "Birthday / Solar Return Spread",
+      "description": "An annual personal forecast for the year ahead, drawn on or near your birthday.",
+      "positions": {
+        "yearTheme": "Year Theme",
+        "yearThemeDesc": "The overall energy and lesson of your new year",
+        "innerSelf": "Inner Self",
+        "innerSelfDesc": "Your internal world, feelings, and subconscious",
+        "focus": "Focus",
+        "focusDesc": "What to direct your attention and energy toward",
+        "outerWorld": "Outer World",
+        "outerWorldDesc": "How you appear to others and the external environment",
+        "challenge": "Challenge",
+        "challengeDesc": "The main challenge or obstacle you will face",
+        "opportunity": "Opportunity",
+        "opportunityDesc": "The main opportunity or gift available to you",
+        "support": "Support",
+        "supportDesc": "What or who will support you through the year",
+        "lesson": "Lesson",
+        "lessonDesc": "The key spiritual or personal lesson of this year",
+        "gift": "Gift",
+        "giftDesc": "The gift you are being given or will develop"
+      }
+    },
+    "constellation": {
+      "name": "Constellation Spread",
+      "description": "A free-form spread where you place cards intuitively on an open surface. Assign roles and positions as feels right, then interpret based on where each card lands.",
+      "positions": {}
+    }
+  },
+  "reading": {
+    "selectSpread": "Choose a Spread",
+    "shuffle": "Shuffle the Deck",
+    "draw": "Draw a Card",
+    "drawAll": "Draw All Cards",
+    "reversed": "Reversed",
+    "upright": "Upright",
+    "position": "Position",
+    "notes": {
+      "label": "Your Reflections",
+      "placeholder": "Write your thoughts, feelings, and reflections on this reading..."
+    },
+    "actions": {
+      "save": "Save Reading",
+      "interpret": "AI Interpretation",
+      "interpreting": "Consulting...",
+      "new": "New Reading",
+      "saving": "Saving...",
+      "saved": "Saved"
+    },
+    "ai": {
+      "loading": "Consulting the oracle...",
+      "error": "The connection failed. Please try again.",
+      "configure": "Configure an AI provider in Settings to get detailed interpretations."
+    },
+    "constellation": {
+      "instructions": "Click on the canvas to place a card. Drag cards to reposition them.",
+      "addCard": "Add Card",
+      "editLabel": "Edit Label",
+      "removeCard": "Remove Card"
+    }
+  },
+  "log": {
+    "title": "Reading Log",
+    "empty": "No readings saved yet.",
+    "emptyHint": "Complete a reading and save it to see it here.",
+    "cards": "cards",
+    "card": "card",
+    "startReading": "Start a Reading",
+    "date": "Date",
+    "spread": "Spread",
+    "aiInterpretation": "AI Interpretation",
+    "deleteReading": "Delete Reading",
+    "confirmDelete": "Are you sure you want to delete this reading? This cannot be undone.",
+    "delete": "Delete",
+    "cancel": "Cancel"
+  },
+  "card": {
+    "upright": "Upright",
+    "reversed": "Reversed",
+    "description": "Description",
+    "keywords": "Keywords",
+    "element": "Element",
+    "elements": {
+      "fire": "Fire",
+      "water": "Water",
+      "air": "Air",
+      "earth": "Earth",
+      "spirit": "Spirit"
+    },
+    "suits": {
+      "major": "Major Arcana",
+      "cups": "Cups",
+      "pentacles": "Pentacles",
+      "swords": "Swords",
+      "wands": "Wands"
+    },
+    "library": "Card Library",
+    "previous": "Previous",
+    "next": "Next",
+    "backToLibrary": "Card Library",
+    "of": "of"
+  },
+  "settings": {
+    "title": "Settings",
+    "saved": "Settings saved",
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "es": "Español"
+    },
+    "theme": {
+      "label": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "palette": {
+      "label": "Color Palette",
+      "midnight": "Midnight",
+      "forest": "Forest",
+      "crimson": "Crimson",
+      "celestial": "Celestial",
+      "custom": "Custom"
+    },
+    "customPalette": {
+      "label": "Custom Colors",
+      "primary": "Primary",
+      "surface": "Surface",
+      "accent": "Accent"
+    },
+    "reversal": {
+      "label": "Allow Reversed Cards",
+      "chanceLabel": "Reversal Probability",
+      "chanceHint": "Probability that a drawn card is reversed (0 = never, 1 = always)"
+    },
+    "ai": {
+      "label": "AI Interpretation",
+      "provider": "Provider",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Enter your API key",
+      "apiKeyHint": "Your key is stored locally and never sent to our servers.",
+      "model": "Model",
+      "none": "None (disabled)",
+      "claude": "Claude (Anthropic)",
+      "openai": "ChatGPT (OpenAI)",
+      "deepseek": "DeepSeek"
+    }
+  },
+  "common": {
+    "close": "Close",
+    "back": "Back",
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "retry": "Try again"
+  },
+  "cards": {
+    "ar00": {
+      "name": "The Fool",
+      "upright": "New beginnings, innocence, spontaneity, free spirit, adventure",
+      "reversed": "Recklessness, risk-taking, naivety, foolishness, negligence",
+      "description": "The Fool stands at the edge of a cliff, pack in hand, about to step into the unknown. He represents pure potential — the soul at the start of its journey, unencumbered by expectation or fear. The Fool embodies the courage to begin without knowing how things will unfold."
+    },
+    "ar01": {
+      "name": "The Magician",
+      "upright": "Willpower, skill, manifestation, resourcefulness, concentration",
+      "reversed": "Manipulation, poor planning, untapped talent, deception",
+      "description": "The Magician stands before a table bearing all four suits — wand, cup, sword, and pentacle. Above his head hangs the lemniscate (infinity symbol). He has all the tools at his disposal and the will to use them. The Magician represents the conscious mind directing energy into manifestation."
+    },
+    "ar02": {
+      "name": "The High Priestess",
+      "upright": "Intuition, mystery, the subconscious, inner knowledge, divine feminine",
+      "reversed": "Secrets, withdrawal, repressed intuition, hidden agendas",
+      "description": "The High Priestess sits between two pillars — B (Boaz) and J (Jachin) — at the threshold of a temple. A crescent moon rests at her feet; a pomegranate veil behind her hides the mysteries. She is the keeper of hidden knowledge and asks us to look inward rather than outward for answers."
+    },
+    "ar03": {
+      "name": "The Empress",
+      "upright": "Abundance, nurturing, fertility, nature, creativity, feminine power",
+      "reversed": "Dependence, smothering, emptiness, creative block, neglect",
+      "description": "The Empress sits on a lush throne surrounded by wheat, forest, and flowing water. She wears a crown of twelve stars and holds a scepter. She represents the generative power of nature, the nurturing archetype, and the creative life force that sustains all living things."
+    },
+    "ar04": {
+      "name": "The Emperor",
+      "upright": "Authority, structure, stability, leadership, discipline, fatherhood",
+      "reversed": "Domination, rigidity, inflexibility, loss of control, excessive control",
+      "description": "The Emperor sits on a solid stone throne adorned with rams' heads, symbolizing Aries. He rules through reason, will, and the establishment of order. Where the Empress is abundance and flow, the Emperor is structure and boundary — the archetype of worldly authority and paternal stability."
+    },
+    "ar05": {
+      "name": "The Hierophant",
+      "upright": "Tradition, conformity, institutions, spiritual guidance, shared beliefs",
+      "reversed": "Rebellion, subversiveness, challenging the status quo, personal belief",
+      "description": "The Hierophant sits between two pillars and holds a triple scepter, making a blessing gesture. Two acolytes kneel before him. He represents established institutions, organized religion, and the transmission of cultural wisdom from generation to generation."
+    },
+    "ar06": {
+      "name": "The Lovers",
+      "upright": "Love, union, alignment, relationships, choices, values",
+      "reversed": "Disharmony, imbalance, misalignment of values, difficult choices",
+      "description": "A man and woman stand beneath an angel (Raphael, angel of air). Behind the man is the tree of knowledge bearing serpent and fruit; behind the woman is a tree of flames. The Lovers represent not only romantic love but the deeper union of opposites and the necessity of conscious choice."
+    },
+    "ar07": {
+      "name": "The Chariot",
+      "upright": "Determination, willpower, victory, control, direction, triumph",
+      "reversed": "Aggression, lack of control, directionless, scattered energy",
+      "description": "A warrior rides a chariot pulled by two sphinxes — one black, one white — symbolizing opposing forces held in check by will. He wears armor decorated with crescent moons and holds no reins, directing the sphinxes through focused intention. The Chariot represents disciplined ambition driving toward a clear goal."
+    },
+    "ar08": {
+      "name": "Strength",
+      "upright": "Inner strength, courage, patience, compassion, self-control",
+      "reversed": "Weakness, insecurity, self-doubt, raw emotion, lack of confidence",
+      "description": "A woman gently holds open the jaws of a lion. Above her head floats the infinity symbol. She tames the beast not through force but through calm, loving strength. This card speaks to the power of patience, compassion, and gentle mastery over our primal instincts."
+    },
+    "ar09": {
+      "name": "The Hermit",
+      "upright": "Soul-searching, solitude, inner guidance, introspection, wisdom",
+      "reversed": "Isolation, loneliness, withdrawal, reclusion, lost path",
+      "description": "An old man stands alone on a mountain peak, holding a lantern that contains a six-pointed star. He has withdrawn from the world to seek truth within. The Hermit represents the wisdom found in solitude, the inner guide who shines a light through darkness for those willing to look inward."
+    },
+    "ar10": {
+      "name": "Wheel of Fortune",
+      "upright": "Luck, karma, life cycles, destiny, turning point, fate",
+      "reversed": "Bad luck, resistance to change, breaking cycles, feeling stuck",
+      "description": "A great wheel turns in the sky, inscribed with alchemical symbols. At its corners sit the four fixed signs of the zodiac: Taurus, Leo, Scorpio, Aquarius. The wheel symbolizes the eternal cycle of change — what rises must fall, and what falls will rise again."
+    },
+    "ar11": {
+      "name": "Justice",
+      "upright": "Fairness, truth, cause and effect, law, clarity, accountability",
+      "reversed": "Dishonesty, unfairness, avoidance of responsibility, injustice",
+      "description": "A crowned figure sits between two pillars, holding scales in one hand and a sword in the other. Justice represents cosmic balance — the law of cause and effect operating without sentiment. She asks us to act with integrity, knowing that our actions carry consequences."
+    },
+    "ar12": {
+      "name": "The Hanged Man",
+      "upright": "Surrender, letting go, suspension, new perspective, sacrifice",
+      "reversed": "Stalling, martyrdom, indecision, resistance to necessary sacrifice",
+      "description": "A man hangs upside-down from a living tree, his expression serene. One leg is bent, crossing the other to form a cross shape; his head glows with a halo. The Hanged Man has chosen to pause — to surrender control and see the world from a different angle. This stillness brings illumination."
+    },
+    "ar13": {
+      "name": "Death",
+      "upright": "Transformation, endings, change, transition, letting go of the past",
+      "reversed": "Resistance to change, inability to move on, stagnation, fear of the unknown",
+      "description": "Death rides a white horse, bearing a black banner with a white rose. Kings and commoners alike lie in his path. He does not bring annihilation but transformation — the clearing away of what has served its purpose so that new life can emerge. Death marks irreversible change."
+    },
+    "ar14": {
+      "name": "Temperance",
+      "upright": "Balance, moderation, patience, purpose, finding the middle path",
+      "reversed": "Imbalance, excess, lack of long-term vision, missing the middle path",
+      "description": "An angel with one foot on land and one in water pours liquid between two cups, blending them. Behind the figure, a path leads toward a golden crown in the distance. Temperance speaks to the art of balance — bringing together opposing forces to create something harmonious and sustainable."
+    },
+    "ar15": {
+      "name": "The Devil",
+      "upright": "Shadow self, addiction, materialism, bondage, unhealthy patterns",
+      "reversed": "Release, breaking free, detachment, reclaiming power",
+      "description": "A horned figure sits atop a pedestal to which two humans are chained — yet the chains are loose enough to remove. The Devil represents the unconscious patterns, addictions, and illusions that bind us. He is a mirror of our shadow: only by facing him can we free ourselves."
+    },
+    "ar16": {
+      "name": "The Tower",
+      "upright": "Upheaval, chaos, sudden change, revelation, unexpected disruption",
+      "reversed": "Avoiding disaster, fear of change, delaying the inevitable",
+      "description": "Lightning strikes a tall tower; two figures fall from its burning crown. The tower was built on a false foundation and must come down. The Tower represents sudden, unavoidable disruption — the kind that shatters illusions and forces a reckoning. Though devastating, it clears the way for truth."
+    },
+    "ar17": {
+      "name": "The Star",
+      "upright": "Hope, renewal, faith, serenity, inspiration, healing",
+      "reversed": "Despair, hopelessness, loss of faith, disconnection",
+      "description": "A nude woman kneels at the edge of a pool, pouring water onto the land and into the water simultaneously. Above her shine eight stars — one large, seven small. The Star follows the Tower as the calm after the storm, offering hope, renewal, and the assurance that healing is possible."
+    },
+    "ar18": {
+      "name": "The Moon",
+      "upright": "Illusion, fear, the unconscious, confusion, imagination, the unknown",
+      "reversed": "Release of fear, clarity, repressed emotions surfacing, anxiety dissipating",
+      "description": "A crayfish emerges from a pool beneath a full moon, which has both a bright and shadow face. A wolf and dog howl beneath it; a winding path disappears into the distance. The Moon represents the realm of the unconscious — where fears, dreams, and illusions intertwine and the familiar becomes strange."
+    },
+    "ar19": {
+      "name": "The Sun",
+      "upright": "Joy, success, vitality, confidence, clarity, positivity, abundance",
+      "reversed": "Blocked happiness, overconfidence, inner child wounds, dimmed light",
+      "description": "A child rides a white horse beneath a radiant sun, arms outstretched. Sunflowers bloom behind a garden wall. The Sun represents pure consciousness, joy, and the life force at its most exuberant. After the Moon's uncertainty, the Sun brings clear light, warmth, and the celebration of being alive."
+    },
+    "ar20": {
+      "name": "Judgement",
+      "upright": "Reflection, reckoning, awakening, absolution, heeding the call",
+      "reversed": "Ignoring the call, self-doubt, refusing to learn from the past",
+      "description": "An angel blows a trumpet above rising figures emerging from coffins. The figures raise their arms in answer to the call. Judgement represents a final reckoning — a moment of honest self-evaluation and awakening. It calls us to hear our higher calling and rise to meet it."
+    },
+    "ar21": {
+      "name": "The World",
+      "upright": "Completion, integration, achievement, wholeness, the journey's end",
+      "reversed": "Incompleteness, stagnation, delayed success, lack of closure",
+      "description": "A dancer wrapped in a purple sash moves within a laurel wreath. At the corners float the four fixed signs of the zodiac. The World represents the successful completion of a great cycle — full integration of experience, the merging of inner and outer, and the threshold of a new beginning."
+    },
+    "cups01": { "name": "Ace of Cups", "upright": "New love, intuition, creativity, emotional new beginning", "reversed": "Blocked emotions, unfulfilled feelings, emotional withdrawal", "description": "A great cup overflows with five streams of water, a dove descends bearing a sacred wafer. The Ace of Cups is the purest potential of the emotional realm — an offer of love, creative inspiration, and spiritual connection." },
+    "cups02": { "name": "Two of Cups", "upright": "Partnership, unity, mutual attraction, soul connection", "reversed": "Broken communication, imbalance, tension in relationships", "description": "Two figures exchange cups beneath the caduceus of Hermes and a winged lion's head. The Two of Cups speaks to mutual recognition and the formation of a significant bond." },
+    "cups03": { "name": "Three of Cups", "upright": "Celebration, friendship, community, joy, reunion", "reversed": "Overindulgence, gossip, isolation from community", "description": "Three women raise their cups in joyful celebration, surrounded by flowers and fruit. The Three of Cups honors the bonds of friendship and the power of shared joy." },
+    "cups04": { "name": "Four of Cups", "upright": "Contemplation, apathy, discontent, reevaluation", "reversed": "New openings, awakening from apathy, accepting an offer", "description": "A young man sits beneath a tree, arms crossed, while three cups stand before him and a mysterious hand offers a fourth. The Four of Cups invites reflection on what we may be overlooking." },
+    "cups05": { "name": "Five of Cups", "upright": "Loss, grief, disappointment, focusing on what was lost", "reversed": "Moving forward, acceptance, finding what remains", "description": "A cloaked figure bows before three spilled cups, while two still stand behind. The Five of Cups confronts us with loss but reminds us that not everything is gone." },
+    "cups06": { "name": "Six of Cups", "upright": "Nostalgia, childhood, innocence, generosity, happy memories", "reversed": "Stuck in the past, leaving home, naivety", "description": "A child offers a cup filled with flowers to a smaller figure. The Six of Cups carries the sweetness of memory and the grace of innocence." },
+    "cups07": { "name": "Seven of Cups", "upright": "Choices, illusion, fantasy, wishful thinking, temptation", "reversed": "Clarity after confusion, choosing reality, alignment", "description": "Seven cups float in clouds, each holding a different vision. The Seven of Cups warns of the allure of fantasy and the challenge of too many options." },
+    "cups08": { "name": "Eight of Cups", "upright": "Withdrawal, walking away, seeking something deeper, disillusionment", "reversed": "Fear of moving on, drifting, staying in an unfulfilling situation", "description": "A figure walks away from eight standing cups toward a mountain range under an eclipse. The Eight of Cups marks the moment we must leave behind what no longer fulfills us." },
+    "cups09": { "name": "Nine of Cups", "upright": "Contentment, satisfaction, wish granted, emotional fulfillment", "reversed": "Greed, smugness, dissatisfaction beneath the surface", "description": "A man sits contentedly before nine cups arranged on a bench. Known as the 'wish card,' the Nine of Cups represents emotional satisfaction and getting what you desired." },
+    "cups10": { "name": "Ten of Cups", "upright": "Harmony, happiness, family, fulfillment, divine love", "reversed": "Broken family, disharmony, failed dreams", "description": "A couple embraces as their children play before a rainbow of ten cups. The Ten of Cups is the fulfillment of the emotional journey — a life of love and harmony." },
+    "cups11": { "name": "Page of Cups", "upright": "Creativity, intuition, new emotional messages, imaginative", "reversed": "Immaturity, emotional volatility, creative blocks", "description": "A young figure holds a cup from which a fish peeks out. The Page of Cups brings messages of emotional opportunity and creative inspiration." },
+    "cups12": { "name": "Knight of Cups", "upright": "Romance, charm, following the heart, idealism, offers", "reversed": "Unrealistic, moodiness, making promises you can't keep", "description": "A knight rides calmly on a white horse, holding a cup before him like a gift. The Knight of Cups follows his heart and brings romantic or creative offers." },
+    "cups13": { "name": "Queen of Cups", "upright": "Compassion, nurturing, empathy, emotional security, intuition", "reversed": "Emotional insecurity, codependency, repression", "description": "A queen sits on a throne at the water's edge, holding an ornate cup. She is deeply intuitive, compassionate, and attuned to the emotional needs of those around her." },
+    "cups14": { "name": "King of Cups", "upright": "Emotional balance, wisdom, calm, diplomatic, compassionate leadership", "reversed": "Manipulation, moodiness, emotional volatility beneath a calm exterior", "description": "A king sits on a throne floating amid turbulent seas, calm and composed. The King of Cups has mastered his emotional realm and leads with wisdom and heart." },
+    "pents01": { "name": "Ace of Pentacles", "upright": "New financial opportunity, manifestation, abundance, new venture", "reversed": "Missed opportunity, poor financial planning, lack of foundation", "description": "A great hand emerges from a cloud holding a pentacle above a lush garden arch. The Ace of Pentacles offers a seed of material potential — a new beginning in the realm of work, health, or finance." },
+    "pents02": { "name": "Two of Pentacles", "upright": "Balance, adaptability, time management, juggling priorities", "reversed": "Imbalance, disorganization, overwhelmed, lost focus", "description": "A figure juggles two pentacles within an infinity loop while ships toss in waves behind. The Two of Pentacles speaks to the art of managing life's competing demands." },
+    "pents03": { "name": "Three of Pentacles", "upright": "Teamwork, collaboration, skill, learning, craftsmanship", "reversed": "Disharmony, lack of teamwork, poor planning", "description": "An artisan works on cathedral carvings as two planners consult a blueprint. The Three of Pentacles celebrates mastery developed through collaboration and dedication." },
+    "pents04": { "name": "Four of Pentacles", "upright": "Security, conservation, control, frugality, possessiveness", "reversed": "Greed, materialism, fear of loss, hoarding", "description": "A figure clutches four pentacles to his body in a city behind him. The Four of Pentacles speaks to the drive for security, but warns of the price of holding too tightly." },
+    "pents05": { "name": "Five of Pentacles", "upright": "Financial hardship, poverty, isolation, worry, difficult times", "reversed": "Recovery, spiritual poverty ending, acceptance of help", "description": "Two ragged figures trudge through snow past a stained-glass window glowing with light. The Five of Pentacles represents material hardship and spiritual isolation." },
+    "pents06": { "name": "Six of Pentacles", "upright": "Generosity, charity, sharing wealth, giving and receiving", "reversed": "Debt, power imbalance, gifts with strings attached", "description": "A merchant holds scales in one hand and drops coins to kneeling beggars. The Six of Pentacles balances the energy of giving and receiving." },
+    "pents07": { "name": "Seven of Pentacles", "upright": "Patience, long-term vision, investment, sustainable effort", "reversed": "Impatience, poor planning, limited reward for effort", "description": "A farmer leans on his hoe, surveying a vine laden with pentacles. The Seven of Pentacles invites a pause to assess the harvest of your efforts." },
+    "pents08": { "name": "Eight of Pentacles", "upright": "Diligence, skill development, mastery, commitment, craftsmanship", "reversed": "Perfectionism, repetition without purpose, lack of ambition", "description": "An artisan carefully carves pentacles, row by row. The Eight of Pentacles is the card of the dedicated apprentice — skill built through patient, repetitive practice." },
+    "pents09": { "name": "Nine of Pentacles", "upright": "Luxury, abundance, self-sufficiency, elegance, independence", "reversed": "Financial setback, dependence, living beyond means", "description": "A woman strolls through a lush vineyard, a trained falcon on her gloved hand. The Nine of Pentacles celebrates hard-won material independence and the enjoyment of life's finer things." },
+    "pents10": { "name": "Ten of Pentacles", "upright": "Legacy, family wealth, establishment, long-term security, permanence", "reversed": "Financial failure, instability, loss of legacy", "description": "An elder sits with dogs at his feet as family members gather around a grand archway. The Ten of Pentacles represents the culmination of material achievement — wealth, family, and lasting legacy." },
+    "pents11": { "name": "Page of Pentacles", "upright": "Ambition, new skills, diligence, student, manifestation beginner", "reversed": "Laziness, lack of direction, procrastination", "description": "A young figure holds a pentacle before them, studying it carefully. The Page of Pentacles is the earnest student, beginning the journey of skill-building and material manifestation." },
+    "pents12": { "name": "Knight of Pentacles", "upright": "Methodical, reliable, hardworking, conservative, persistent", "reversed": "Stubbornness, laziness, excessive caution, boredom", "description": "A knight on a heavy horse surveys a field, holding a pentacle. He moves slowly but never stops. The Knight of Pentacles embodies steady, reliable effort toward practical goals." },
+    "pents13": { "name": "Queen of Pentacles", "upright": "Nurturing, practical, abundance, grounded, sensual, generous", "reversed": "Smothering, domestic neglect, insecurity about finances", "description": "A queen sits in a flowering arbor, cradling a pentacle. She is deeply connected to the natural world and generous with her material resources. She embodies practical wisdom and earthy abundance." },
+    "pents14": { "name": "King of Pentacles", "upright": "Wealth, security, discipline, abundance, business leadership", "reversed": "Stubbornness, materialism, financial failure", "description": "A king sits on a throne decorated with bulls and grapes, surrounded by lush vegetation. The King of Pentacles has mastered the material world through discipline, patience, and wise stewardship." },
+    "swords01": { "name": "Ace of Swords", "upright": "Clarity, breakthrough, truth, mental force, new idea", "reversed": "Confusion, chaos, brutality, mental fog", "description": "A hand emerges from clouds holding a gleaming sword crowned with a wreath. The Ace of Swords offers a cutting clarity — the power of the mind to perceive truth and cut through illusion." },
+    "swords02": { "name": "Two of Swords", "upright": "Indecision, stalemate, blocked emotions, avoidance", "reversed": "Indecision resolved, information revealed, confusion cleared", "description": "A blindfolded figure sits with crossed swords before a calm sea. The Two of Swords represents a temporary truce or deliberate avoidance — a moment when decisions are deferred." },
+    "swords03": { "name": "Three of Swords", "upright": "Heartbreak, sorrow, grief, loss, painful truth", "reversed": "Recovery, forgiveness, releasing grief, moving past hurt", "description": "Three swords pierce a heart floating in stormy clouds. The Three of Swords does not soften the blow — it represents real pain, loss, and the grief that must be felt before healing can begin." },
+    "swords04": { "name": "Four of Swords", "upright": "Rest, recovery, contemplation, retreat, restoration", "reversed": "Restlessness, recovery stalled, need for rest ignored", "description": "A knight lies in effigy on a stone tomb, one sword on the tomb, three on the wall above. The Four of Swords is a necessary pause — the restoration of body and mind after battle." },
+    "swords05": { "name": "Five of Swords", "upright": "Conflict, defeat, tension, hollow victory, win at all costs", "reversed": "Reconciliation, forgiveness, moving past conflict", "description": "A figure collects swords while defeated opponents walk away in the background. The Five of Swords warns that victory achieved through ruthlessness may cost more than it gains." },
+    "swords06": { "name": "Six of Swords", "upright": "Transition, moving on, calmer waters, escape, gradual recovery", "reversed": "Stuck in the past, unable to leave trouble behind", "description": "A ferryman poles a boat carrying a woman and child across dark water toward a brighter shore. Swords stand in the prow. The Six of Swords represents passage from difficulty toward something better." },
+    "swords07": { "name": "Seven of Swords", "upright": "Deception, strategy, stealth, theft, getting away with something", "reversed": "Coming clean, confession, strategy backfiring", "description": "A figure sneaks away from a military camp carrying five swords, leaving two behind. The Seven of Swords speaks to acts of cunning — whether strategic or deceptive, depending on context." },
+    "swords08": { "name": "Eight of Swords", "upright": "Restriction, imprisonment, helplessness, self-imposed limits", "reversed": "Release, new perspective, freedom from mental prison", "description": "A bound and blindfolded figure stands surrounded by eight swords. Yet the bindings are loose and the swords do not cage her — only her belief in her own powerlessness does. The Eight of Swords is a card of mental limitation." },
+    "swords09": { "name": "Nine of Swords", "upright": "Anxiety, worry, nightmares, despair, mental anguish", "reversed": "Hope returning, fears exaggerated, inner turmoil lessening", "description": "A figure sits up in bed, face buried in hands, nine swords mounted on the wall behind. The Nine of Swords represents the 3 a.m. mind — the spiral of worry and dread that takes hold in the dark." },
+    "swords10": { "name": "Ten of Swords", "upright": "Painful endings, betrayal, crisis, rock bottom, loss", "reversed": "Recovery, rising from ruin, resistance to inevitable endings", "description": "A figure lies face-down with ten swords in their back beneath a dark sky brightening at the horizon. The Ten of Swords marks total defeat — yet dawn is breaking, and what is over is truly over." },
+    "swords11": { "name": "Page of Swords", "upright": "Curious, communicative, analytical, witty, new ideas", "reversed": "Gossipy, scattered, overly critical, all talk", "description": "A young figure stands on a hilltop, sword raised, scanning the horizon. The Page of Swords is quick-minded, eager to gather and share information." },
+    "swords12": { "name": "Knight of Swords", "upright": "Decisive, ambitious, direct, fast-moving, driven by intellect", "reversed": "Impulsive, reckless, scattered, prone to conflict", "description": "A knight charges full-gallop across a windswept field. The Knight of Swords acts quickly and decisively, but risks missing the human cost of speed." },
+    "swords13": { "name": "Queen of Swords", "upright": "Clear-minded, independent, direct, truthful, perceptive", "reversed": "Cold, overly critical, bitter, cutting with words", "description": "A queen sits on a cloud-wreathed throne, one hand extended in welcome, the other raising a sword. She is sharp in mind and fair in judgment, unafraid of difficult truths." },
+    "swords14": { "name": "King of Swords", "upright": "Intellectual authority, clear thinking, truth, structure, ethical leadership", "reversed": "Abuse of power, manipulation, cold-heartedness, tyranny", "description": "A king sits on a stone throne, sword raised, gazing directly forward. He rules by intellect and principle. The King of Swords demands clarity, integrity, and the courage to speak truth." },
+    "wands01": { "name": "Ace of Wands", "upright": "Inspiration, new energy, creative spark, potential, passion", "reversed": "Blocked creativity, delays, lack of motivation, false starts", "description": "A hand emerges from a cloud holding a flowering wand. The Ace of Wands is pure creative fire — the initiating spark before any plan takes shape." },
+    "wands02": { "name": "Two of Wands", "upright": "Future planning, decisions, discovery, long-term vision", "reversed": "Fear of unknown, staying safe, playing it small", "description": "A figure stands at a parapet, globe in hand, wands on either side. The Two of Wands shows someone who has achieved initial success and now turns their gaze toward what is possible next." },
+    "wands03": { "name": "Three of Wands", "upright": "Expansion, foresight, enterprise, overseas ventures, awaiting results", "reversed": "Delays, frustration, obstacles to plans", "description": "A figure looks out over ships heading toward the horizon, three wands planted behind them. The Three of Wands shows plans in motion and the waiting that follows a bold launch." },
+    "wands04": { "name": "Four of Wands", "upright": "Celebration, homecoming, community, harmony, milestone", "reversed": "Conflict at home, lack of community, unstable foundation", "description": "Four wands are garlanded with flowers, two figures dancing beneath them. The Four of Wands marks a joyful arrival — a moment of celebration, community, and homecoming." },
+    "wands05": { "name": "Five of Wands", "upright": "Conflict, competition, chaos, disagreement, many voices", "reversed": "Resolving conflict, avoiding confrontation, inner conflict", "description": "Five figures clash wands in apparent conflict. The Five of Wands represents the friction that arises when many energies compete — sometimes productive, sometimes simply chaotic." },
+    "wands06": { "name": "Six of Wands", "upright": "Victory, recognition, success, confidence, public achievement", "reversed": "Egotism, fall from grace, lack of recognition, delayed success", "description": "A victorious rider is greeted by cheering crowds, wands raised in triumph. The Six of Wands celebrates earned recognition and the confidence that comes from genuine achievement." },
+    "wands07": { "name": "Seven of Wands", "upright": "Perseverance, defensiveness, standing your ground, competition", "reversed": "Giving up, overwhelmed, capitulating to pressure", "description": "A figure holds a high ground position, defending against six wands below. The Seven of Wands embodies the determination to maintain what you've built in the face of challenge." },
+    "wands08": { "name": "Eight of Wands", "upright": "Movement, speed, action, swift progress, travel", "reversed": "Delays, frustration, scattered energy, rushing without direction", "description": "Eight wands fly through clear air toward the earth. No figures appear — this is pure momentum. The Eight of Wands signals rapid movement and the swift resolution of situations." },
+    "wands09": { "name": "Nine of Wands", "upright": "Resilience, courage, persistence, last stand, nearly there", "reversed": "Exhaustion, giving up near the finish, paranoia", "description": "A wounded but wary figure stands before eight upright wands, leaning on a ninth. The Nine of Wands reminds us that persistence in the final stretch is what separates success from failure." },
+    "wands10": { "name": "Ten of Wands", "upright": "Burden, responsibility, stress, overextension, hard work", "reversed": "Releasing burdens, delegating, finding a lighter path", "description": "A figure struggles to carry ten wands toward a distant town. The Ten of Wands shows the weight of accumulated responsibilities — a call to reassess what is truly yours to carry." },
+    "wands11": { "name": "Page of Wands", "upright": "Enthusiastic, adventurous, free spirit, creative, messenger of fire", "reversed": "Hasty, immature, scattered energy, unfocused passion", "description": "A young figure holds a staff, studying it with curiosity. The Page of Wands is the fire sign child — eager, inspired, and ready to explore." },
+    "wands12": { "name": "Knight of Wands", "upright": "Adventurous, passionate, impulsive, charming, energetic", "reversed": "Reckless, hasty, unfocused energy, hot-headed", "description": "A knight on a rearing horse charges forward, wand held aloft. The Knight of Wands is restless, charismatic, and driven by desire — he acts before he thinks." },
+    "wands13": { "name": "Queen of Wands", "upright": "Confident, passionate, vibrant, independent, natural leadership", "reversed": "Aggressive, demanding, selfishness, jealousy", "description": "A queen sits on a sunflower throne, a black cat at her feet, wand in hand and sunflower in the other. The Queen of Wands radiates natural confidence and magnetic authority." },
+    "wands14": { "name": "King of Wands", "upright": "Vision, entrepreneurship, leadership, inspiration, bold action", "reversed": "Impulsiveness, overbearing, ruthlessness, hasty decisions", "description": "A king sits on a throne decorated with lions and salamanders, his wand blooming with life. The King of Wands is the visionary leader — passionate, creative, and driven to realize his vision at scale." }
+  }
+}
