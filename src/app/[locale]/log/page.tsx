@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { useReadings } from '@/store';
+import { useReadings, useLogActions } from '@/store';
 import { ReadingCard } from '@/components/log/ReadingCard';
 import { Button } from '@/components/ui/Button';
 
@@ -10,6 +10,7 @@ export default function LogPage() {
   const t = useTranslations('log');
   const locale = useLocale();
   const readings = useReadings();
+  const { deleteReading } = useLogActions();
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
@@ -27,7 +28,7 @@ export default function LogPage() {
       ) : (
         <div className="flex flex-col gap-3">
           {readings.map((reading) => (
-            <ReadingCard key={reading.id} reading={reading} />
+            <ReadingCard key={reading.id} reading={reading} onDelete={() => deleteReading(reading.id)} />
           ))}
         </div>
       )}
