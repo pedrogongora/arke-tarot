@@ -32,15 +32,23 @@ export interface DragState {
   y: number;
 }
 
+export interface Viewport {
+  zoom: number;
+  panX: number;
+  panY: number;
+}
+
 interface UseCanvasRendererOptions {
   canvasRef: RefObject<HTMLCanvasElement | null>;
   spread: SpreadDefinition | null;
   drawnCards: DrawnCard[];
   selectedCardId?: string | null;
   dragRef?: RefObject<DragState | null>;
+  viewportRef?: RefObject<Viewport>;
+  positionLabels?: Record<string, string>;
 }
 
-export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId, dragRef }: UseCanvasRendererOptions) {
+export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId, dragRef, viewportRef, positionLabels }: UseCanvasRendererOptions) {
   const animFrameRef = useRef<number>(0);
   // cardId → scheduled start timestamp (may be in the future for staggered cards)
   const animStartTimesRef = useRef<Map<string, number>>(new Map());
@@ -88,30 +96,52 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
 
       ctx.clearRect(0, 0, W, H);
 
-      // Draw position placeholders (non-constellation spreads only)
-      spread.positions.forEach((pos) => {
-        const r = spreadPositionToRect(pos, W, H, cardH);
-        ctx.save();
-        ctx.translate(r.x, r.y);
-        ctx.rotate((r.rotation * Math.PI) / 180);
-        ctx.strokeStyle = 'rgba(155, 143, 232, 0.3)';
-        ctx.lineWidth = 1.5;
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.roundRect(-cardW / 2, -cardH / 2, cardW, cardH, 6);
-        ctx.stroke();
-        ctx.setLineDash([]);
-        ctx.restore();
-      });
+      // Apply viewport transform (zoom + pan) in CSS-pixel world space
+      const viewport = viewportRef?.current ?? { zoom: 1, panX: 0, panY: 0 };
+      ctx.save();
+      ctx.translate(viewport.panX, viewport.panY);
+      ctx.scale(viewport.zoom, viewport.zoom);
 
-      let allSettled = true;
+      // Draw position placeholders (non-constellation spreads only)
+      if (!spread.isConstellation) {
+        const filledPositionIds = new Set(drawnCards.map((dc) => dc.position.id));
+        spread.positions.forEach((pos) => {
+          const r = spreadPositionToRect(pos, W, H, cardH);
+          ctx.save();
+          ctx.translate(r.x, r.y);
+          ctx.rotate((r.rotation * Math.PI) / 180);
+          ctx.strokeStyle = 'rgba(155, 143, 232, 0.3)';
+          ctx.lineWidth = 1.5;
+          ctx.setLineDash([4, 4]);
+          ctx.beginPath();
+          ctx.roundRect(-cardW / 2, -cardH / 2, cardW, cardH, 6);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.restore();
+
+          // Only draw placeholder label for empty positions (filled ones get a label under the card)
+          if (!filledPositionIds.has(pos.id)) {
+            const label = positionLabels?.[pos.id];
+            if (label) {
+              const isLandscape = Math.abs((r.rotation ?? 0) % 180) > 45;
+              const halfExtent = isLandscape ? cardW / 2 : cardH / 2;
+              ctx.save();
+              ctx.font = '10px system-ui, sans-serif';
+              ctx.fillStyle = 'rgba(155, 143, 232, 0.65)';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'top';
+              ctx.fillText(label, r.x, r.y + halfExtent + 6, (isLandscape ? cardH : cardW) * 1.3);
+              ctx.restore();
+            }
+          }
+        });
+      }
 
       // Draw placed cards
       for (const drawnCard of drawnCards) {
         const startTime = animStartTimesRef.current.get(drawnCard.card.id) ?? t;
         const elapsed = t - startTime;
         const progress = clamp(elapsed / ANIM_DURATION_MS, 0, 1);
-        if (progress < 1) allSettled = false;
 
         // Determine center position and rotation
         let cx: number, cy: number, rotation: number;
@@ -168,10 +198,31 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
           ctx.globalAlpha = 1;
           ctx.restore();
         }
+
+        // Draw position label below card (outside card transform, always horizontal)
+        if (progress > 0.3) {
+          const cardLabel = spread.isConstellation
+            ? drawnCard.userLabel
+            : positionLabels?.[drawnCard.position.id];
+          if (cardLabel) {
+            const isLandscape = !spread.isConstellation && Math.abs(rotation % 180) > 45;
+            const halfExtent = isLandscape ? cardW / 2 : cardH / 2;
+            ctx.save();
+            ctx.font = '9px system-ui, sans-serif';
+            ctx.fillStyle = `rgba(155, 143, 232, ${0.45 * progress})`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.fillText(cardLabel, cx, cy + halfExtent + 6, (isLandscape ? cardH : cardW) * 1.3);
+            ctx.restore();
+          }
+        }
       }
 
-      // Keep looping in constellation mode (for smooth drag) or while animating
-      if ((!allSettled || spread.isConstellation) && !cancelled) {
+      // Restore viewport transform
+      ctx.restore();
+
+      // Always keep looping — allows zoom/pan to take effect immediately
+      if (!cancelled) {
         animFrameRef.current = requestAnimationFrame(renderFrame);
       }
     }
@@ -183,5 +234,5 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
       cancelled = true;
       cancelAnimationFrame(animFrameRef.current);
     };
-  }, [canvasRef, spread, drawnCards, selectedCardId]);
+  }, [canvasRef, spread, drawnCards, selectedCardId, positionLabels]);
 }

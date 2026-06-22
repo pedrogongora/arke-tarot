@@ -85,6 +85,10 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
 
   const drawnCards = activeReading?.drawnCards ?? [];
 
+  const positionLabels = Object.fromEntries(
+    spread.positions.map((pos) => [pos.id, tAll(pos.labelKey as Parameters<typeof tAll>[0])])
+  );
+
   const allDrawn = spread.isConstellation
     ? drawnCards.length >= (spread.maxCards ?? 22)
     : drawnCount >= (spread?.positions.length ?? 0);
@@ -150,6 +154,7 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
             drawnCards={drawnCards}
             onCardSelect={setSelectedCardId}
             onCardDrop={handleCardDrop}
+            positionLabels={positionLabels}
             className="rounded-xl border border-border bg-surface/30"
           />
         </div>
