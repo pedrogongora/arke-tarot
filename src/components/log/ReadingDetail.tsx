@@ -26,6 +26,9 @@ export function ReadingDetail({ reading }: ReadingDetailProps) {
   });
 
   const spread = getSpread(reading.spreadId);
+  const positionLabels = spread
+    ? Object.fromEntries(spread.positions.map((pos) => [pos.id, t(pos.labelKey as Parameters<typeof t>[0])]))
+    : {};
 
   const handleCardSelect = (cardId: string | null) => {
     if (!cardId) return;
@@ -65,6 +68,7 @@ export function ReadingDetail({ reading }: ReadingDetailProps) {
               spread={spread}
               drawnCards={reading.drawnCards}
               onCardSelect={handleCardSelect}
+              positionLabels={positionLabels}
               className="rounded-xl border border-border bg-surface/30"
             />
           </div>

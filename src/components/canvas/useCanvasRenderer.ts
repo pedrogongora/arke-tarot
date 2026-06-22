@@ -48,6 +48,109 @@ interface UseCanvasRendererOptions {
   positionLabels?: Record<string, string>;
 }
 
+/** Renders the full spread to an offscreen canvas at the given pixel dimensions.
+ *  No viewport transform — all positions are visible regardless of current pan/zoom.
+ *  No animation — all cards render at full opacity. */
+export async function renderSpreadSnapshot(
+  spread: SpreadDefinition,
+  drawnCards: DrawnCard[],
+  positionLabels: Record<string, string> | undefined,
+  width: number,
+  height: number,
+): Promise<HTMLCanvasElement> {
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d')!;
+
+  const W = width;
+  const H = height;
+  const cardH = calcCardHeight(W, H);
+  const cardW = cardH * CARD_ASPECT;
+
+  if (!spread.isConstellation) {
+    const filledPositionIds = new Set(drawnCards.map((dc) => dc.position.id));
+    spread.positions.forEach((pos) => {
+      const r = spreadPositionToRect(pos, W, H, cardH);
+      const isEmpty = !filledPositionIds.has(pos.id);
+
+      ctx.save();
+      ctx.translate(r.x, r.y);
+      ctx.rotate((r.rotation * Math.PI) / 180);
+      ctx.strokeStyle = isEmpty ? 'rgba(155, 143, 232, 0.4)' : 'rgba(155, 143, 232, 0.15)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.roundRect(-cardW / 2, -cardH / 2, cardW, cardH, 6);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      if (isEmpty) {
+        const label = positionLabels?.[pos.id];
+        if (label) {
+          ctx.font = `bold ${Math.round(cardH * 0.09)}px system-ui, sans-serif`;
+          ctx.fillStyle = 'rgba(155, 143, 232, 0.75)';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(label, 0, 0, cardW * 0.85);
+        }
+      }
+      ctx.restore();
+    });
+  }
+
+  for (const drawnCard of drawnCards) {
+    let cx: number, cy: number, rotation: number;
+    if (spread.isConstellation && drawnCard.canvasX != null && drawnCard.canvasY != null) {
+      cx = drawnCard.canvasX * W;
+      cy = drawnCard.canvasY * H;
+      rotation = 0;
+    } else {
+      const r = spreadPositionToRect(drawnCard.position, W, H, cardH);
+      cx = r.x;
+      cy = r.y;
+      rotation = r.rotation;
+    }
+
+    const imgSrc = CARD_IMAGE_MAP[drawnCard.card.id];
+    if (!imgSrc) continue;
+
+    try {
+      const img = await loadImage(imgSrc);
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate((rotation * Math.PI) / 180);
+      if (drawnCard.isReversed) ctx.rotate(Math.PI);
+      ctx.drawImage(img, -cardW / 2, -cardH / 2, cardW, cardH);
+      ctx.restore();
+    } catch {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.fillStyle = '#1a1730';
+      ctx.fillRect(-cardW / 2, -cardH / 2, cardW, cardH);
+      ctx.restore();
+    }
+
+    const cardLabel = spread.isConstellation
+      ? drawnCard.userLabel
+      : positionLabels?.[drawnCard.position.id];
+    if (cardLabel) {
+      const isLandscape = !spread.isConstellation && Math.abs(rotation % 180) > 45;
+      const halfExtent = isLandscape ? cardW / 2 : cardH / 2;
+      const fontSize = Math.round(cardH * 0.075);
+      ctx.save();
+      ctx.font = `bold ${fontSize}px system-ui, sans-serif`;
+      ctx.fillStyle = 'rgba(155, 143, 232, 0.85)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText(cardLabel, cx, cy + halfExtent + 5, (isLandscape ? cardH : cardW) * 1.2);
+      ctx.restore();
+    }
+  }
+
+  return canvas;
+}
+
 export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId, dragRef, viewportRef, positionLabels }: UseCanvasRendererOptions) {
   const animFrameRef = useRef<number>(0);
   // cardId → scheduled start timestamp (may be in the future for staggered cards)
@@ -107,33 +210,32 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
         const filledPositionIds = new Set(drawnCards.map((dc) => dc.position.id));
         spread.positions.forEach((pos) => {
           const r = spreadPositionToRect(pos, W, H, cardH);
+          const isEmpty = !filledPositionIds.has(pos.id);
+
           ctx.save();
           ctx.translate(r.x, r.y);
           ctx.rotate((r.rotation * Math.PI) / 180);
-          ctx.strokeStyle = 'rgba(155, 143, 232, 0.3)';
+          ctx.strokeStyle = isEmpty ? 'rgba(155, 143, 232, 0.4)' : 'rgba(155, 143, 232, 0.15)';
           ctx.lineWidth = 1.5;
           ctx.setLineDash([4, 4]);
           ctx.beginPath();
           ctx.roundRect(-cardW / 2, -cardH / 2, cardW, cardH, 6);
           ctx.stroke();
           ctx.setLineDash([]);
-          ctx.restore();
 
-          // Only draw placeholder label for empty positions (filled ones get a label under the card)
-          if (!filledPositionIds.has(pos.id)) {
+          // Draw position label inside the placeholder for empty positions
+          if (isEmpty) {
             const label = positionLabels?.[pos.id];
             if (label) {
-              const isLandscape = Math.abs((r.rotation ?? 0) % 180) > 45;
-              const halfExtent = isLandscape ? cardW / 2 : cardH / 2;
-              ctx.save();
-              ctx.font = '10px system-ui, sans-serif';
-              ctx.fillStyle = 'rgba(155, 143, 232, 0.65)';
+              const maxW = cardW * 0.85;
+              ctx.font = `bold ${Math.round(cardH * 0.09)}px system-ui, sans-serif`;
+              ctx.fillStyle = 'rgba(155, 143, 232, 0.75)';
               ctx.textAlign = 'center';
-              ctx.textBaseline = 'top';
-              ctx.fillText(label, r.x, r.y + halfExtent + 6, (isLandscape ? cardH : cardW) * 1.3);
-              ctx.restore();
+              ctx.textBaseline = 'middle';
+              ctx.fillText(label, 0, 0, maxW);
             }
           }
+          ctx.restore();
         });
       }
 
@@ -207,12 +309,13 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
           if (cardLabel) {
             const isLandscape = !spread.isConstellation && Math.abs(rotation % 180) > 45;
             const halfExtent = isLandscape ? cardW / 2 : cardH / 2;
+            const fontSize = Math.round(cardH * 0.075);
             ctx.save();
-            ctx.font = '9px system-ui, sans-serif';
-            ctx.fillStyle = `rgba(155, 143, 232, ${0.45 * progress})`;
+            ctx.font = `bold ${fontSize}px system-ui, sans-serif`;
+            ctx.fillStyle = `rgba(155, 143, 232, ${0.85 * progress})`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
-            ctx.fillText(cardLabel, cx, cy + halfExtent + 6, (isLandscape ? cardH : cardW) * 1.3);
+            ctx.fillText(cardLabel, cx, cy + halfExtent + 5, (isLandscape ? cardH : cardW) * 1.2);
             ctx.restore();
           }
         }

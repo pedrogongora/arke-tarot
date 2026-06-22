@@ -42,7 +42,7 @@ function getTouchMidpoint(t1: Touch, t2: Touch, canvas: HTMLCanvasElement) {
   };
 }
 
-function clampZoom(z: number) { return z < 0.5 ? 0.5 : z > 3 ? 3 : z; }
+function clampZoom(z: number) { return z < 0.5 ? 0.5 : z > 5 ? 5 : z; }
 
 export function useCanvasInteraction({
   canvasRef,
