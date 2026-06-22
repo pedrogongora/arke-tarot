@@ -218,12 +218,22 @@
       "interpreting": "Consultando...",
       "new": "Nueva Lectura",
       "saving": "Guardando...",
-      "saved": "Guardada"
+      "saved": "Guardada",
+      "copyPrompt": "Copiar prompt interpretación"
     },
     "ai": {
       "loading": "Consultando el oráculo...",
       "error": "La conexión falló. Por favor intenta de nuevo.",
       "configure": "Configura un proveedor de IA en Configuración para obtener interpretaciones detalladas."
+    },
+    "copyPrompt": {
+      "title": "Copiar Prompt de Lectura",
+      "description": "Pega esto en cualquier asistente de IA para obtener una interpretación.",
+      "includeReflections": "Incluir reflexiones personales",
+      "reflectionsPlaceholder": "Escribe tus pensamientos, sentimientos y reflexiones...",
+      "copyButton": "Copiar al Portapapeles",
+      "copied": "¡Copiado!",
+      "promptLabel": "Prompt Generado"
     },
     "constellation": {
       "instructions": "Haz clic en el lienzo para colocar una carta. Arrastra las cartas para reposicionarlas.",

@@ -3,12 +3,11 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useSettings, useSettingsActions } from '@/store';
-import type { ThemeMode, ColorPalette, AIProviderName, SupportedLocale } from '@/types';
+import type { ThemeMode, ColorPalette, SupportedLocale } from '@/types';
 import { cn } from '@/lib/utils/cn';
 
 const THEMES: ThemeMode[] = ['light', 'dark', 'system'];
 const PALETTES: ColorPalette[] = ['midnight', 'forest', 'crimson', 'celestial'];
-const AI_PROVIDERS: AIProviderName[] = ['none', 'claude', 'openai', 'deepseek'];
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -54,7 +53,7 @@ export default function SettingsPage() {
   const locale = useLocale();
   const router = useRouter();
   const settings = useSettings();
-  const { setTheme, setLocale, updateSettings, setAIProvider } = useSettingsActions();
+  const { setTheme, setLocale, updateSettings } = useSettingsActions();
 
   const switchLocale = (next: SupportedLocale) => {
     setLocale(next);
@@ -147,54 +146,6 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      {/* AI */}
-      <div>
-        <SectionTitle>{t('ai.label')}</SectionTitle>
-        <div className="flex flex-col gap-4">
-          <div>
-            <label className="text-xs text-muted mb-1 block">{t('ai.provider')}</label>
-            <OptionGroup
-              options={AI_PROVIDERS}
-              value={settings.aiProvider}
-              onChange={(p) => setAIProvider(p)}
-              label={(v) => t(`ai.${v}` as Parameters<typeof t>[0])}
-            />
-          </div>
-
-          {settings.aiProvider !== 'none' && (
-            <>
-              <div>
-                <label className="text-xs text-muted mb-1 block">{t('ai.apiKey')}</label>
-                <input
-                  type="password"
-                  value={settings.aiApiKey ?? ''}
-                  onChange={(e) => updateSettings({ aiApiKey: e.target.value })}
-                  placeholder={t('ai.apiKeyPlaceholder')}
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:border-primary"
-                />
-                <p className="text-xs text-muted mt-1">{t('ai.apiKeyHint')}</p>
-              </div>
-
-              <div>
-                <label className="text-xs text-muted mb-1 block">{t('ai.model')}</label>
-                <input
-                  type="text"
-                  value={settings.aiModel ?? ''}
-                  onChange={(e) => updateSettings({ aiModel: e.target.value })}
-                  placeholder={
-                    settings.aiProvider === 'claude'
-                      ? 'claude-sonnet-4-6'
-                      : settings.aiProvider === 'openai'
-                      ? 'gpt-4o'
-                      : 'deepseek-chat'
-                  }
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted focus:outline-none focus:border-primary"
-                />
-              </div>
-            </>
-          )}
-        </div>
-      </div>
     </div>
   );
 }

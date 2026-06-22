@@ -218,12 +218,22 @@
       "interpreting": "Consulting...",
       "new": "New Reading",
       "saving": "Saving...",
-      "saved": "Saved"
+      "saved": "Saved",
+      "copyPrompt": "Copy Interpretation Prompt"
     },
     "ai": {
       "loading": "Consulting the oracle...",
       "error": "The connection failed. Please try again.",
       "configure": "Configure an AI provider in Settings to get detailed interpretations."
+    },
+    "copyPrompt": {
+      "title": "Copy Reading Prompt",
+      "description": "Paste this into any AI assistant to get an interpretation.",
+      "includeReflections": "Include personal reflections",
+      "reflectionsPlaceholder": "Write your thoughts, feelings, and reflections...",
+      "copyButton": "Copy to Clipboard",
+      "copied": "Copied!",
+      "promptLabel": "Generated Prompt"
     },
     "constellation": {
       "instructions": "Click on the canvas to place a card. Drag cards to reposition them.",
