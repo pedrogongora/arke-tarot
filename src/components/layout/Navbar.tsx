@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils/cn';
 import { ThemeToggle } from './ThemeToggle';
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
+import { ArkeLogo } from './ArkeLogo';
 
 interface NavLink {
   href: string;
@@ -36,9 +37,8 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
         {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center gap-2 font-semibold text-foreground">
-          <span className="text-accent text-xl">✦</span>
-          <span className="hidden sm:inline">Tarot</span>
+        <Link href={`/${locale}`} className="flex items-center">
+          <ArkeLogo variant="horizontal" width={160} height={49} />
         </Link>
 
         {/* Desktop nav */}
