@@ -214,7 +214,7 @@ function ToggleSwitch({ checked, onChange }: { checked: boolean; onChange: (v: b
     >
       <span
         className={cn(
-          'absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform duration-200',
+          'absolute top-1 left-0 w-4 h-4 bg-white rounded-full shadow transition-transform duration-200',
           checked ? 'translate-x-5' : 'translate-x-1'
         )}
       />
