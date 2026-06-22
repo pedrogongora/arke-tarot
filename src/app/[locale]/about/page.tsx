@@ -51,7 +51,7 @@ export default async function AboutPage() {
         <h2 className="text-lg font-semibold text-foreground">{t('sourceTitle')}</h2>
         <p className="text-muted leading-relaxed">{t('sourceText')}</p>
         <a
-          href="https://github.com/pedrogongora/tarot-reader"
+          href="https://github.com/pedrogongora/arke-tarot"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:border-primary hover:text-primary transition-colors w-fit"
