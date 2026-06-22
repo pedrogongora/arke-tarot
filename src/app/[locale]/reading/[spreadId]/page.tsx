@@ -73,7 +73,7 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
     <div className="flex flex-col h-[calc(100vh-3.5rem)] lg:flex-row">
 
       {/* Canvas area — fixed height on mobile, flex-1 on desktop */}
-      <div className="flex-shrink-0 h-[42vh] lg:h-auto lg:flex-1 flex flex-col min-h-0">
+      <div className="flex-shrink-0 h-[38vh] lg:h-auto lg:flex-1 flex flex-col min-h-0">
         {/* Spread title */}
         <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-b border-border">
           <h1 className="text-sm font-semibold text-foreground">
@@ -123,7 +123,7 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
 
         {/* Sticky bottom: notes + save/new */}
         <div className="flex-shrink-0 border-t border-border">
-          <ReadingNotes className="px-4 py-3" />
+          <ReadingNotes className="px-4 pt-2.5 pb-1.5" />
           <ReadingActions />
         </div>
       </div>

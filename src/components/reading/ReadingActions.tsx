@@ -131,8 +131,8 @@ export function ReadingActions() {
   };
 
   return (
-    <div className="flex flex-col gap-2 px-4 py-3 border-t border-border">
-      <Button onClick={handleSave} disabled={!canSave || saving} variant="primary" size="sm">
+    <div className="flex items-center gap-2 px-4 py-2.5 border-t border-border">
+      <Button onClick={handleSave} disabled={!canSave || saving} variant="primary" size="sm" className="flex-1">
         {saving ? t('saving') : saved ? t('saved') : t('save')}
       </Button>
 
@@ -142,12 +142,13 @@ export function ReadingActions() {
           size="sm"
           onClick={handleInterpret}
           disabled={isInterpreting}
+          className="flex-1"
         >
           {isInterpreting ? t('interpreting') : t('interpret')}
         </Button>
       )}
 
-      <Button onClick={handleNew} variant="ghost" size="sm">
+      <Button onClick={handleNew} variant="ghost" size="sm" className="flex-shrink-0 px-2.5">
         {t('new')}
       </Button>
     </div>
