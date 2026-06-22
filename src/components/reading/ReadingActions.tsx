@@ -78,6 +78,10 @@ export function ReadingActions() {
       ? tAll(activeSpread.nameKey as Parameters<typeof tAll>[0])
       : activeReading.spreadId;
 
+    const resolvedSpreadDescription = activeSpread
+      ? tAll(activeSpread.descriptionKey as Parameters<typeof tAll>[0])
+      : undefined;
+
     const aiRequest: AIRequest = {
       spread: activeSpread ?? ({ id: activeReading.spreadId } as AIRequest['spread']),
       drawnCards: activeReading.drawnCards,
@@ -85,6 +89,7 @@ export function ReadingActions() {
       locale: locale as 'en' | 'es',
       resolvedCards,
       resolvedSpreadName,
+      resolvedSpreadDescription,
     };
 
     try {

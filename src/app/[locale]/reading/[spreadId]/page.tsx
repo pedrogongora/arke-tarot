@@ -70,18 +70,19 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
   const drawnCards = activeReading?.drawnCards ?? [];
 
   return (
-    <div className="flex flex-col lg:flex-row h-[calc(100vh-3.5rem)]">
-      {/* Canvas area */}
-      <div className="flex-1 flex flex-col min-h-0">
+    <div className="flex flex-col h-[calc(100vh-3.5rem)] lg:flex-row">
+
+      {/* Canvas area — fixed height on mobile, flex-1 on desktop */}
+      <div className="flex-shrink-0 h-[42vh] lg:h-auto lg:flex-1 flex flex-col min-h-0">
         {/* Spread title */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-border">
+        <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-b border-border">
           <h1 className="text-sm font-semibold text-foreground">
-              {tAll(spread.nameKey as Parameters<typeof tAll>[0])}
+            {tAll(spread.nameKey as Parameters<typeof tAll>[0])}
           </h1>
           {!allDrawn && !spread.isConstellation && (
             <div className="flex items-center gap-2">
               {drawnCount > 0 && (
-                <span className="text-xs text-muted-foreground tabular-nums">
+                <span className="text-xs text-muted tabular-nums">
                   {drawnCount} / {spread.positions.length}
                 </span>
               )}
@@ -96,7 +97,7 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
         </div>
 
         {/* Canvas */}
-        <div className="flex-1 p-4">
+        <div className="flex-1 min-h-0 p-3 lg:p-4">
           <SpreadCanvas
             spread={spread}
             drawnCards={drawnCards}
@@ -106,18 +107,25 @@ export default function ReadingSpreadPage({ params }: ReadingPageProps) {
         </div>
       </div>
 
-      {/* Side panel */}
-      <div className="w-full lg:w-80 xl:w-96 flex flex-col border-t lg:border-t-0 lg:border-l border-border overflow-y-auto">
-        <div className="flex-1 overflow-y-auto">
+      {/* Side panel — fills remaining height on mobile, fixed width on desktop */}
+      <div className="flex-1 min-h-0 lg:flex-none lg:w-80 xl:w-96 flex flex-col border-t lg:border-t-0 lg:border-l border-border">
+
+        {/* Scrollable: card list + streaming AI interpretation */}
+        <div className="flex-1 min-h-0 overflow-y-auto">
           <ReadingPanel
+            spread={spread}
             drawnCards={drawnCards}
             selectedCardId={selectedCardId}
             onCardSelect={setSelectedCardId}
           />
+          <InterpretationBlock />
         </div>
-        <ReadingNotes className="px-4 py-3 border-t border-border" />
-        <InterpretationBlock />
-        <ReadingActions />
+
+        {/* Sticky bottom: notes + save/new */}
+        <div className="flex-shrink-0 border-t border-border">
+          <ReadingNotes className="px-4 py-3" />
+          <ReadingActions />
+        </div>
       </div>
     </div>
   );

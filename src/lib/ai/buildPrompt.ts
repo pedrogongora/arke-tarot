@@ -28,6 +28,9 @@ export function buildPrompt(req: AIRequest): string {
   const lines: string[] = [];
 
   lines.push(isES ? `TIRADA: ${spreadName}` : `SPREAD: ${spreadName}`);
+  if (req.resolvedSpreadDescription) {
+    lines.push(req.resolvedSpreadDescription);
+  }
   lines.push('');
 
   if (resolvedCards && resolvedCards.length > 0) {

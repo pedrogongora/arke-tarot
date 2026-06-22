@@ -33,6 +33,11 @@ export function ReadingDetail({ reading }: ReadingDetailProps) {
           {t(reading.spreadNameKey as Parameters<typeof t>[0])}
         </h1>
         <p className="text-sm text-muted mt-1">{date}</p>
+        {spread && (
+          <p className="text-sm text-muted italic mt-2 leading-relaxed">
+            {t(spread.descriptionKey as Parameters<typeof t>[0])}
+          </p>
+        )}
       </div>
 
       {/* Spread canvas */}

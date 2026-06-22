@@ -21,7 +21,7 @@
       "description": "Una sola carta para orientación diaria, preguntas de sí/no, o un enfoque simple.",
       "positions": {
         "card": "La Carta",
-        "cardDesc": "Tu guía, enfoque o respuesta para hoy"
+        "cardDesc": "Tu guía, enfoque o respuesta para hoy. Observa lo que primero llama tu atención — esa impresión inicial suele ser el mensaje más verdadero. Deja que la carta te acompañe durante el día como punto de reflexión tranquila."
       }
     },
     "twoCard": {
@@ -29,9 +29,9 @@
       "description": "Dos opciones, o causa y efecto. Útil al sopesar una decisión o explorar una dinámica.",
       "positions": {
         "optionA": "Opción A / Causa",
-        "optionADesc": "El primer camino, opción, o causa contribuyente",
+        "optionADesc": "El primer camino, opción, o causa contribuyente. Esta carta revela la energía, naturaleza y consecuencias probables de esta dirección o fuerza. Considera qué te atrae aquí y qué podría pedirte.",
         "optionB": "Opción B / Efecto",
-        "optionBDesc": "El segundo camino, opción, o efecto resultante"
+        "optionBDesc": "El segundo camino, opción, o efecto resultante. Esta carta muestra lo que surge de o contrasta con el primero. La tensión o armonía entre ambas cartas juntas suele contener la verdadera revelación."
       }
     },
     "threeCardPPF": {
@@ -39,11 +39,11 @@
       "description": "Revela la línea temporal de una situación: qué la formó, dónde está ahora y hacia dónde se dirige.",
       "positions": {
         "past": "Pasado",
-        "pastDesc": "Lo que ha llevado a la situación actual",
+        "pastDesc": "Lo que ha llevado a la situación actual. Esta carta refleja los eventos, decisiones o energías que dieron forma a donde estás ahora — aún lo suficientemente cercanos para sentirlos. Reconoce lo que trajo antes de soltarlo.",
         "present": "Presente",
-        "presentDesc": "El estado o energía actual",
+        "presentDesc": "El estado o energía actual. Esta carta captura lo que está más vivo en tu vida ahora mismo: la fuerza dominante, el desafío u oportunidad que estás navegando activamente. Encuéntralo con honestidad.",
         "future": "Futuro",
-        "futureDesc": "La dirección hacia la que se mueven las cosas"
+        "futureDesc": "La dirección hacia la que se mueven las cosas. Esta carta muestra un resultado probable o energía entrante basada en el impulso actual. No es un destino fijo — úsala como guía para las elecciones que aún tienes."
       }
     },
     "threeCardMBS": {
@@ -51,11 +51,11 @@
       "description": "Una visión holística de tu bienestar en las dimensiones mental, física y espiritual.",
       "positions": {
         "mind": "Mente",
-        "mindDesc": "Tus pensamientos, creencias y estado mental",
+        "mindDesc": "Tus pensamientos, creencias y estado mental. Esta carta refleja lo que te estás diciendo a ti mismo, las historias que corren en el fondo y la calidad de tu atención. Observa en qué sigues pensando.",
         "body": "Cuerpo",
-        "bodyDesc": "Salud física, energía y realidad material",
+        "bodyDesc": "Salud física, energía y realidad material. Esta carta habla de tu cuerpo, hogar, finanzas y relación con el mundo físico. Presta atención a dónde lo sientes literalmente en tu cuerpo.",
         "spirit": "Espíritu",
-        "spiritDesc": "Tu estado espiritual, intuición y yo superior"
+        "spiritDesc": "Tu estado espiritual, intuición y yo superior. Esta carta señala lo que tu alma está pidiendo — la corriente más profunda bajo la vida cotidiana. A menudo habla a través de sentimientos, símbolos y un saber silencioso más que por lógica."
       }
     },
     "threeCardSAO": {
@@ -63,11 +63,11 @@
       "description": "Diagnostica una situación, sugiere una acción y muestra el resultado probable.",
       "positions": {
         "situation": "Situación",
-        "situationDesc": "Las circunstancias actuales o el desafío",
+        "situationDesc": "Las circunstancias actuales o el desafío. Esta carta describe el paisaje en el que te encuentras: las fuerzas en juego, el contexto y lo que está objetivamente presente. Vélo con claridad antes de decidir cómo moverte.",
         "action": "Acción",
-        "actionDesc": "La acción o enfoque recomendado",
+        "actionDesc": "La acción o enfoque recomendado. Esta carta sugiere cómo relacionarte: qué energía traer, qué movimiento hacer o qué postura interior te servirá mejor. Apunta hacia la respuesta más alineada.",
         "outcome": "Resultado",
-        "outcomeDesc": "El resultado probable si sigues este camino"
+        "outcomeDesc": "El resultado probable si sigues este camino. Esta carta muestra lo que emerge cuando tomas la acción sugerida. Es condicional — cambia a medida que cambian tus elecciones y tu estado interior."
       }
     },
     "triad": {
@@ -75,11 +75,11 @@
       "description": "Una tirada dialéctica: tesis, antítesis, síntesis. Ideal para resolver tensiones.",
       "positions": {
         "thesis": "Tesis",
-        "thesisDesc": "La posición inicial, afirmación o fuerza",
+        "thesisDesc": "La posición inicial, afirmación o fuerza. Esta carta representa lo que se sostiene, afirma o ejecuta — el punto de partida de una tensión y la energía desde la que has estado operando.",
         "antithesis": "Antítesis",
-        "antithesisDesc": "La fuerza opuesta, contraposición o desafío",
+        "antithesisDesc": "La fuerza opuesta, contraposición o desafío. Esta carta revela lo que empuja hacia atrás o lo que se resiste. Exige reconocimiento en lugar de rechazo — su voz contiene algo esencial.",
         "synthesis": "Síntesis",
-        "synthesisDesc": "La resolución, integración o verdad superior"
+        "synthesisDesc": "La resolución, integración o verdad superior. Esta carta muestra lo que se vuelve posible cuando ambas fuerzas son verdaderamente escuchadas. A menudo apunta más allá del conflicto original hacia algo genuinamente nuevo."
       }
     },
     "celticCross": {
@@ -87,25 +87,25 @@
       "description": "La clásica tirada de 10 cartas que ofrece una visión integral de una situación: sus raíces, influencias y posibles resultados.",
       "positions": {
         "present": "Presente",
-        "presentDesc": "El corazón del asunto; la situación actual",
+        "presentDesc": "El corazón del asunto; la situación actual. Esta es la carta central de toda la lectura — nombra la esencia de lo que se examina y la energía más viva en tu vida ahora mismo. Todo lo demás en la tirada se relaciona de vuelta a esta carta.",
         "challenge": "Desafío",
-        "challengeDesc": "Lo que cruza o desafía la energía presente",
+        "challengeDesc": "Lo que cruza o desafía la energía presente. Colocada sobre la carta central, representa el obstáculo inmediato, la fuerza complicadora o la dinámica en tensión directa con la situación central. Puede actuar como impedimento o apoyo inesperado.",
         "past": "Pasado",
-        "pastDesc": "Influencias del pasado reciente que llevan al presente",
+        "pastDesc": "Influencias del pasado reciente que llevan al presente. Esta carta refleja lo que acaba de pasar — eventos, energías o decisiones que moldearon el momento actual y aún están lo suficientemente cerca como para proyectar una sombra o dar impulso.",
         "future": "Futuro",
-        "futureDesc": "El futuro cercano; hacia dónde se mueven las cosas",
+        "futureDesc": "El futuro cercano; hacia dónde se mueven las cosas. Esta carta muestra lo que está tomando forma en el corto plazo — un próximo paso probable, una energía entrante o la dirección hacia la que la situación fluye naturalmente.",
         "above": "Arriba",
-        "aboveDesc": "Meta consciente o el mejor resultado posible",
+        "aboveDesc": "Meta consciente o el mejor resultado posible. Esta carta refleja lo que conscientemente buscas, esperas o lo que la situación podría llegar a ser en su mayor potencial. Representa tu aspiración o resultado ideal.",
         "below": "Abajo",
-        "belowDesc": "Influencias inconscientes o fundamento",
+        "belowDesc": "Influencias inconscientes o fundamento. Esta carta señala lo que yace bajo la superficie: causas raíz, deseos enterrados, miedos profundos o el suelo oculto sobre el que descansa toda la situación. A menudo es la carta más reveladora de la tirada.",
         "attitude": "Yo",
-        "attitudeDesc": "Tu actitud, miedos o autopercepción",
+        "attitudeDesc": "Tu actitud, miedos o autopercepción. Así es como te ves a ti mismo en esta situación — tu postura interior, la historia que llevas sobre quién eres y cómo te estás mostrando. Revela el lente a través del cual estás mirando.",
         "external": "Externo",
-        "externalDesc": "Influencias ambientales y percepciones de los demás",
+        "externalDesc": "Influencias ambientales y percepciones de los demás. Esta carta revela lo que viene de fuera — cómo te ven los demás o la situación, y qué fuerzas externas están moldeando los eventos más allá de tu control directo.",
         "hopes": "Esperanzas y Miedos",
-        "hopesDesc": "Tus esperanzas o miedos sobre el resultado",
+        "hopesDesc": "Tus esperanzas o miedos sobre el resultado. Esta es una posición paradójica: puede representar lo que más deseas o lo que más temes — a menudo ambos a la vez, o uno enmascarando al otro justo bajo la superficie.",
         "outcome": "Resultado",
-        "outcomeDesc": "El resultado final si el camino actual continúa"
+        "outcomeDesc": "El resultado final si el camino actual continúa. Esta carta culminante integra todas las demás en una resolución probable. Muestra hacia dónde se dirigen las cosas si las energías presentes se dejan desenvolverse naturalmente."
       }
     },
     "zodiac": {
@@ -113,29 +113,29 @@
       "description": "Doce cartas, una para cada casa del zodíaco, con perspectivas sobre todas las áreas de la vida.",
       "positions": {
         "house1": "Casa 1 — El Yo",
-        "house1Desc": "Identidad, apariencia, nuevos comienzos",
+        "house1Desc": "Identidad, apariencia, nuevos comienzos. Esta carta habla de cómo te estás mostrando en el mundo ahora mismo: tu sentido de identidad, tu presencia física y lo que está apenas comenzando en tu historia personal.",
         "house2": "Casa 2 — Recursos",
-        "house2Desc": "Dinero, posesiones, valores",
+        "house2Desc": "Dinero, posesiones, valores. Esta carta refleja tu relación con lo que posees, ganas y consideras que vale la pena proteger — incluyendo lo que valoras más profundamente, no solo materialmente.",
         "house3": "Casa 3 — Comunicación",
-        "house3Desc": "Hermanos, viajes cortos, aprendizaje",
+        "house3Desc": "Hermanos, viajes cortos, aprendizaje. Esta carta refleja tus relaciones cercanas, la comunicación cotidiana y cómo recopilas y compartes información. También puede hablar de viajes cercanos o estudios en curso.",
         "house4": "Casa 4 — Hogar",
-        "house4Desc": "Familia, raíces, vida privada",
+        "house4Desc": "Familia, raíces, vida privada. Esta carta habla del hogar, la ascendencia, los cimientos emocionales y lo que buscas para sentirte seguro. Refleja tanto tu pasado como el lugar al que vuelves para restaurarte.",
         "house5": "Casa 5 — Creatividad",
-        "house5Desc": "Romance, hijos, placer",
+        "house5Desc": "Romance, hijos, placer. Esta carta refleja la alegría, la creatividad, el juego y la expresión romántica. Pregunta: ¿dónde está tu deleite ahora mismo, y te estás dando permiso de vivirlo?",
         "house6": "Casa 6 — Salud",
-        "house6Desc": "Trabajo, salud, rutina diaria",
+        "house6Desc": "Trabajo, salud, rutina diaria. Esta carta habla de cómo cuidas tu cuerpo y tus responsabilidades — los ritmos y hábitos cotidianos que sustentan tu energía o la agotan silenciosamente.",
         "house7": "Casa 7 — Asociaciones",
-        "house7Desc": "Relaciones, matrimonio, enemigos abiertos",
+        "house7Desc": "Relaciones, matrimonio, enemigos abiertos. Esta carta refleja tus asociaciones uno a uno — románticas, de negocios o de otro tipo — y lo que estás atrayendo hacia ti o proyectando sobre los demás.",
         "house8": "Casa 8 — Transformación",
-        "house8Desc": "Muerte, renacimiento, recursos compartidos, lo oculto",
+        "house8Desc": "Muerte, renacimiento, recursos compartidos, lo oculto. Esta carta habla de transformación, lo que debe liberarse, la intimidad profunda y las fuerzas ocultas que se mueven bajo la superficie visible de tu vida.",
         "house9": "Casa 9 — Filosofía",
-        "house9Desc": "Estudios superiores, viajes, creencias",
+        "house9Desc": "Estudios superiores, viajes, creencias. Esta carta refleja tu perspectiva filosófica, búsqueda espiritual, viajes largos y la búsqueda de expandir tu comprensión de lo que significa la vida y hacia dónde te lleva.",
         "house10": "Casa 10 — Carrera",
-        "house10Desc": "Estatus público, vocación, ambición",
+        "house10Desc": "Estatus público, vocación, ambición. Esta carta habla de tu carrera, reputación y la huella que estás dejando en el mundo. Refleja dónde te encuentras públicamente y lo que estás construyendo.",
         "house11": "Casa 11 — Comunidad",
-        "house11Desc": "Amigos, grupos, metas, causas sociales",
+        "house11Desc": "Amigos, grupos, metas, causas sociales. Esta carta refleja tu comunidad, aspiraciones a largo plazo y los esfuerzos colectivos que te inspiran. Pregunta quién eres cuando perteneces a algo más grande que tú mismo.",
         "house12": "Casa 12 — Lo Oculto",
-        "house12Desc": "Secretos, karma, espiritualidad, autosabotaje"
+        "house12Desc": "Secretos, karma, espiritualidad, autosabotaje. Esta carta habla de lo que está oculto, inconsciente o arrastrado de ciclos pasados. Señala dónde el retiro, la soledad y el trabajo interior profundo son más necesarios ahora mismo."
       }
     },
     "yearlyCalendar": {
@@ -143,31 +143,31 @@
       "description": "Trece cartas: una para cada mes del año más una carta central de tema para el año en su conjunto.",
       "positions": {
         "month1": "Enero",
-        "month1Desc": "Energía y tema para enero",
+        "month1Desc": "Energía y tema para enero. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month2": "Febrero",
-        "month2Desc": "Energía y tema para febrero",
+        "month2Desc": "Energía y tema para febrero. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month3": "Marzo",
-        "month3Desc": "Energía y tema para marzo",
+        "month3Desc": "Energía y tema para marzo. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month4": "Abril",
-        "month4Desc": "Energía y tema para abril",
+        "month4Desc": "Energía y tema para abril. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month5": "Mayo",
-        "month5Desc": "Energía y tema para mayo",
+        "month5Desc": "Energía y tema para mayo. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month6": "Junio",
-        "month6Desc": "Energía y tema para junio",
+        "month6Desc": "Energía y tema para junio. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month7": "Julio",
-        "month7Desc": "Energía y tema para julio",
+        "month7Desc": "Energía y tema para julio. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month8": "Agosto",
-        "month8Desc": "Energía y tema para agosto",
+        "month8Desc": "Energía y tema para agosto. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month9": "Septiembre",
-        "month9Desc": "Energía y tema para septiembre",
+        "month9Desc": "Energía y tema para septiembre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month10": "Octubre",
-        "month10Desc": "Energía y tema para octubre",
+        "month10Desc": "Energía y tema para octubre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month11": "Noviembre",
-        "month11Desc": "Energía y tema para noviembre",
+        "month11Desc": "Energía y tema para noviembre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "month12": "Diciembre",
-        "month12Desc": "Energía y tema para diciembre",
+        "month12Desc": "Energía y tema para diciembre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
         "theme": "Tema del Año",
-        "themeDesc": "La energía y lección predominante del año completo"
+        "themeDesc": "La energía y lección predominante del año completo. Esta carta central actúa como el alma de la lectura — el hilo que recorre los doce meses y la invitación más profunda que este año sostiene para ti."
       }
     },
     "birthdaySolar": {
@@ -175,23 +175,23 @@
       "description": "Un pronóstico personal anual para el año que comienza, idealmente leído en o cerca de tu cumpleaños.",
       "positions": {
         "yearTheme": "Tema del Año",
-        "yearThemeDesc": "La energía y lección general de tu nuevo año",
+        "yearThemeDesc": "La energía y lección general de tu nuevo año. Esta carta establece el tono para todo lo que viene — la invitación central, la calidad de energía con la que trabajarás y el propósito más profundo que este ciclo sostiene.",
         "innerSelf": "Ser Interior",
-        "innerSelfDesc": "Tu mundo interno, sentimientos e inconsciente",
+        "innerSelfDesc": "Tu mundo interno, sentimientos e inconsciente. Esta carta revela lo que está vivo bajo la superficie: la corriente emocional, el trabajo interior que llama atención, el yo que solo tú conoces.",
         "focus": "Enfoque",
-        "focusDesc": "Hacia dónde dirigir tu atención y energía",
+        "focusDesc": "Hacia dónde dirigir tu atención y energía. Esta carta señala el área o cualidad más merecedora de tu inversión este año — donde presentarte plenamente dará el retorno más significativo.",
         "outerWorld": "Mundo Exterior",
-        "outerWorldDesc": "Cómo apareces ante los demás y el entorno externo",
+        "outerWorldDesc": "Cómo apareces ante los demás y el entorno externo. Esta carta refleja la cara que estás presentando al mundo y lo que se mueve en tu vida exterior: tus circunstancias, relaciones y presencia pública.",
         "challenge": "Desafío",
-        "challengeDesc": "El principal desafío u obstáculo que enfrentarás",
+        "challengeDesc": "El principal desafío u obstáculo que enfrentarás. Esta carta nombra una dificultad que no está aquí para derrotarte sino para desarrollarte. Comprenderla con anticipación te permite encontrarla con mayor conciencia y elección.",
         "opportunity": "Oportunidad",
-        "opportunityDesc": "La principal oportunidad o regalo disponible para ti",
+        "opportunityDesc": "La principal oportunidad o regalo disponible para ti. Esta carta señala una apertura — un área donde, si avanzas con intención, algo significativo y duradero puede emerger en el año que viene.",
         "support": "Apoyo",
-        "supportDesc": "Qué o quién te apoyará durante el año",
+        "supportDesc": "Qué o quién te apoyará durante el año. Esta carta revela el recurso, relación, cualidad o práctica que será tu ancla y aliado más confiable cuando las cosas se pongan difíciles.",
         "lesson": "Lección",
-        "lessonDesc": "La lección espiritual o personal clave de este año",
+        "lessonDesc": "La lección espiritual o personal clave de este año. Esta carta nombra el tema que tu alma está trabajando para comprender e integrar — sabiduría que llevarás mucho más allá de este año.",
         "gift": "Don",
-        "giftDesc": "El don que recibirás o desarrollarás"
+        "giftDesc": "El don que recibirás o desarrollarás. Esta carta señala algo que emergerá a través de las experiencias de este año: una capacidad, una claridad o una cualidad que llegarás a poseer más plenamente."
       }
     },
     "constellation": {

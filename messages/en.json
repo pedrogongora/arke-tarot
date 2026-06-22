@@ -21,7 +21,7 @@
       "description": "A single card for daily guidance, a yes/no question, or a simple focus.",
       "positions": {
         "card": "The Card",
-        "cardDesc": "Your guidance, focus, or answer for today"
+        "cardDesc": "Your guidance, focus, or answer for today. Sit with what first catches your attention — that initial impression is often the truest message. Let the card accompany you through the day as a point of quiet reflection."
       }
     },
     "twoCard": {
@@ -29,9 +29,9 @@
       "description": "Two options, or cause and effect. Use when weighing a choice or exploring a dynamic.",
       "positions": {
         "optionA": "Option A / Cause",
-        "optionADesc": "The first path, option, or contributing cause",
+        "optionADesc": "The first path, option, or contributing cause. This card reveals the energy, nature, and likely consequences of this direction or force. Consider what draws you here and what it might ask of you.",
         "optionB": "Option B / Effect",
-        "optionBDesc": "The second path, option, or resulting effect"
+        "optionBDesc": "The second path, option, or resulting effect. This card shows what arises from or contrasts with the first. The tension or harmony between the two cards together often holds the real insight."
       }
     },
     "threeCardPPF": {
@@ -39,11 +39,11 @@
       "description": "Reveals the timeline of a situation: what shaped it, where it stands, and where it is heading.",
       "positions": {
         "past": "Past",
-        "pastDesc": "What has led to the current situation",
+        "pastDesc": "What has led to the current situation. This card reflects the events, decisions, or energies that shaped where you are now — still close enough to feel. Notice what it brought before releasing it.",
         "present": "Present",
-        "presentDesc": "The current state or energy",
+        "presentDesc": "The current state or energy. This card captures what is most alive in your life right now: the dominant force, challenge, or opportunity you are actively navigating. Meet it honestly.",
         "future": "Future",
-        "futureDesc": "The direction things are heading"
+        "futureDesc": "The direction things are heading. This card shows a likely outcome or incoming energy based on current momentum. It is not fixed fate — use it as guidance for choices you still hold."
       }
     },
     "threeCardMBS": {
@@ -51,11 +51,11 @@
       "description": "A holistic snapshot of your wellbeing across mental, physical, and spiritual dimensions.",
       "positions": {
         "mind": "Mind",
-        "mindDesc": "Your thoughts, beliefs, and mental state",
+        "mindDesc": "Your thoughts, beliefs, and mental state. This card reflects what you are telling yourself, the stories running in the background, and the quality of your attention. Notice what you keep thinking about.",
         "body": "Body",
-        "bodyDesc": "Physical health, energy, and material reality",
+        "bodyDesc": "Physical health, energy, and material reality. This card speaks to your body, home, finances, and relationship to the physical world. Pay attention to where you feel it literally in your body.",
         "spirit": "Spirit",
-        "spiritDesc": "Your spiritual state, intuition, and higher self"
+        "spiritDesc": "Your spiritual state, intuition, and higher self. This card points to what your soul is asking for — the deeper current beneath daily life. It often speaks through feelings, symbols, and quiet knowing rather than logic."
       }
     },
     "threeCardSAO": {
@@ -63,11 +63,11 @@
       "description": "Diagnoses a situation, suggests an action, and shows a likely outcome.",
       "positions": {
         "situation": "Situation",
-        "situationDesc": "The current circumstances or challenge",
+        "situationDesc": "The current circumstances or challenge. This card describes the landscape you are in: the forces at play, the context, and what is objectively present. See it clearly before deciding how to move.",
         "action": "Action",
-        "actionDesc": "The recommended action or approach",
+        "actionDesc": "The recommended action or approach. This card suggests how to engage: what energy to bring, what move to make, or what inner stance will serve you best. It points toward the most aligned response.",
         "outcome": "Outcome",
-        "outcomeDesc": "The likely result if you follow this path"
+        "outcomeDesc": "The likely result if you follow this path. This card shows what emerges when you take the suggested action. It is conditional — it shifts as your choices and inner state shift."
       }
     },
     "triad": {
@@ -75,11 +75,11 @@
       "description": "A dialectical spread: thesis, antithesis, synthesis. Ideal for resolving tensions.",
       "positions": {
         "thesis": "Thesis",
-        "thesisDesc": "The initial position, assertion, or force",
+        "thesisDesc": "The initial position, assertion, or force. This card represents what is being held, asserted, or enacted — the starting point of a tension and the energy you have been operating from.",
         "antithesis": "Antithesis",
-        "antithesisDesc": "The opposing force, counter-position, or challenge",
+        "antithesisDesc": "The opposing force, counter-position, or challenge. This card reveals what pushes back or is being resisted. It demands acknowledgment rather than dismissal — its voice contains something essential.",
         "synthesis": "Synthesis",
-        "synthesisDesc": "The resolution, integration, or higher truth"
+        "synthesisDesc": "The resolution, integration, or higher truth. This card shows what becomes possible when both forces are truly heard. It often points beyond the original conflict to something genuinely new."
       }
     },
     "celticCross": {
@@ -87,25 +87,25 @@
       "description": "The classic 10-card spread offering a comprehensive view of a situation: its roots, influences, and potential outcomes.",
       "positions": {
         "present": "Present",
-        "presentDesc": "The heart of the matter; the current situation",
+        "presentDesc": "The heart of the matter; the current situation. This is the central card of the entire reading — it names the essence of what is being examined and the energy most alive in your life right now. Everything else in the spread relates back to this card.",
         "challenge": "Challenge",
-        "challengeDesc": "What crosses or challenges the present energy",
+        "challengeDesc": "What crosses or challenges the present energy. Laid across the central card, this represents the immediate obstacle, complicating force, or dynamic in direct tension with the core situation. It can act as hindrance or unexpected support.",
         "past": "Past",
-        "pastDesc": "Recent past influences leading to now",
+        "pastDesc": "Recent past influences leading to now. This card reflects what has just moved through — events, energies, or decisions that shaped the current moment and are still close enough to cast a shadow or lend momentum.",
         "future": "Future",
-        "futureDesc": "The near future; where things are moving",
+        "futureDesc": "The near future; where things are moving. This card shows what is coming into being in the short term — a likely next step, an incoming energy, or the direction the situation is naturally flowing toward.",
         "above": "Above",
-        "aboveDesc": "Conscious goal or best possible outcome",
+        "aboveDesc": "Conscious goal or best possible outcome. This card reflects what you are consciously striving toward, hoping for, or what the situation could become at its highest potential. It represents your aspiration or ideal outcome.",
         "below": "Below",
-        "belowDesc": "Unconscious influences or foundation",
+        "belowDesc": "Unconscious influences or foundation. This card points to what lies beneath the surface: root causes, buried desires, deep fears, or the hidden ground the entire situation rests upon. It is often the most revealing card in the spread.",
         "attitude": "Self",
-        "attitudeDesc": "Your attitude, fears, or self-perception",
+        "attitudeDesc": "Your attitude, fears, or self-perception. This is how you see yourself in this situation — your inner stance, the story you are carrying about who you are, and how you are showing up. It reveals the lens you are looking through.",
         "external": "External",
-        "externalDesc": "Environmental influences and others' perceptions",
+        "externalDesc": "Environmental influences and others' perceptions. This card reveals what is coming from outside — how others see you or the situation, and what external forces are shaping events beyond your direct control.",
         "hopes": "Hopes & Fears",
-        "hopesDesc": "Your hopes or fears about the outcome",
+        "hopesDesc": "Your hopes or fears about the outcome. This is a paradoxical position: it can represent what you most desire or what you most dread — often both at once, or one masking the other just beneath the surface.",
         "outcome": "Outcome",
-        "outcomeDesc": "The final outcome if the current path continues"
+        "outcomeDesc": "The final outcome if the current path continues. This culminating card integrates all the others into a likely resolution. It shows where things are heading if the energies present are allowed to unfold naturally."
       }
     },
     "zodiac": {
@@ -113,29 +113,29 @@
       "description": "Twelve cards, one for each house of the zodiac, offering insight across all life areas.",
       "positions": {
         "house1": "1st House — Self",
-        "house1Desc": "Identity, appearance, new beginnings",
+        "house1Desc": "Identity, appearance, new beginnings. This card speaks to how you are showing up in the world right now: your sense of self, your physical presence, and what is just beginning in your personal story.",
         "house2": "2nd House — Resources",
-        "house2Desc": "Money, possessions, values",
+        "house2Desc": "Money, possessions, values. This card reflects your relationship to what you own, earn, and consider worth protecting — including what you value most deeply, not just materially.",
         "house3": "3rd House — Communication",
-        "house3Desc": "Siblings, short travel, learning",
+        "house3Desc": "Siblings, short travel, learning. This card reflects your close relationships, daily communication, and how you gather and share information. It may also speak to nearby journeys or studies currently underway.",
         "house4": "4th House — Home",
-        "house4Desc": "Family, roots, private life",
+        "house4Desc": "Family, roots, private life. This card speaks to the home, ancestry, emotional foundations, and what you return to for security. It reflects both your past and the place you go to restore yourself.",
         "house5": "5th House — Creativity",
-        "house5Desc": "Romance, children, pleasure",
+        "house5Desc": "Romance, children, pleasure. This card reflects joy, creativity, play, and romantic expression. It asks: where is your delight right now, and are you giving yourself permission to live it?",
         "house6": "6th House — Health",
-        "house6Desc": "Work, health, daily routine",
+        "house6Desc": "Work, health, daily routine. This card speaks to how you tend your body and your responsibilities — the daily rhythms and habits that either sustain your energy or quietly deplete it.",
         "house7": "7th House — Partnerships",
-        "house7Desc": "Relationships, marriage, open enemies",
+        "house7Desc": "Relationships, marriage, open enemies. This card reflects your one-on-one partnerships — romantic, business, or otherwise — and what you are drawing to yourself or projecting onto others.",
         "house8": "8th House — Transformation",
-        "house8Desc": "Death, rebirth, shared resources, the occult",
+        "house8Desc": "Death, rebirth, shared resources, the occult. This card speaks to transformation, what must be released, deep intimacy, and the hidden forces that move beneath the visible surface of your life.",
         "house9": "9th House — Philosophy",
-        "house9Desc": "Higher learning, travel, beliefs",
+        "house9Desc": "Higher learning, travel, beliefs. This card reflects your philosophical outlook, spiritual search, long journeys, and the quest to expand your understanding of what life means and where it is taking you.",
         "house10": "10th House — Career",
-        "house10Desc": "Public status, vocation, ambition",
+        "house10Desc": "Public status, vocation, ambition. This card speaks to your career, reputation, and the mark you are making on the world. It reflects where you stand publicly and what you are building toward.",
         "house11": "11th House — Community",
-        "house11Desc": "Friends, groups, goals, social causes",
+        "house11Desc": "Friends, groups, goals, social causes. This card reflects your community, long-term aspirations, and the collective endeavors that inspire you. It asks who you are when you belong to something larger than yourself.",
         "house12": "12th House — Hidden",
-        "house12Desc": "Secrets, karma, spirituality, self-undoing"
+        "house12Desc": "Secrets, karma, spirituality, self-undoing. This card speaks to what is hidden, unconscious, or carried from past cycles. It points to where retreat, solitude, and deep inner work are most needed right now."
       }
     },
     "yearlyCalendar": {
@@ -143,31 +143,31 @@
       "description": "Thirteen cards: one for each month of the year plus a central theme card for the year as a whole.",
       "positions": {
         "month1": "January",
-        "month1Desc": "Energy and theme for January",
+        "month1Desc": "Energy and theme for January. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month2": "February",
-        "month2Desc": "Energy and theme for February",
+        "month2Desc": "Energy and theme for February. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month3": "March",
-        "month3Desc": "Energy and theme for March",
+        "month3Desc": "Energy and theme for March. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month4": "April",
-        "month4Desc": "Energy and theme for April",
+        "month4Desc": "Energy and theme for April. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month5": "May",
-        "month5Desc": "Energy and theme for May",
+        "month5Desc": "Energy and theme for May. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month6": "June",
-        "month6Desc": "Energy and theme for June",
+        "month6Desc": "Energy and theme for June. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month7": "July",
-        "month7Desc": "Energy and theme for July",
+        "month7Desc": "Energy and theme for July. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month8": "August",
-        "month8Desc": "Energy and theme for August",
+        "month8Desc": "Energy and theme for August. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month9": "September",
-        "month9Desc": "Energy and theme for September",
+        "month9Desc": "Energy and theme for September. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month10": "October",
-        "month10Desc": "Energy and theme for October",
+        "month10Desc": "Energy and theme for October. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month11": "November",
-        "month11Desc": "Energy and theme for November",
+        "month11Desc": "Energy and theme for November. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "month12": "December",
-        "month12Desc": "Energy and theme for December",
+        "month12Desc": "Energy and theme for December. This card holds the dominant focus, lesson, or invitation for this month. Return to it at the month's start as an orientation and at its end as a reflection on what unfolded.",
         "theme": "Year Theme",
-        "themeDesc": "The overarching energy and lesson of the entire year"
+        "themeDesc": "The overarching energy and lesson of the entire year. This central card acts as the soul of the reading — the thread running through all twelve months and the deeper invitation this year holds for you."
       }
     },
     "birthdaySolar": {
@@ -175,23 +175,23 @@
       "description": "An annual personal forecast for the year ahead, drawn on or near your birthday.",
       "positions": {
         "yearTheme": "Year Theme",
-        "yearThemeDesc": "The overall energy and lesson of your new year",
+        "yearThemeDesc": "The overall energy and lesson of your new year. This card sets the tone for everything ahead — the central invitation, the quality of energy you will be working with, and the deeper purpose this cycle holds.",
         "innerSelf": "Inner Self",
-        "innerSelfDesc": "Your internal world, feelings, and subconscious",
+        "innerSelfDesc": "Your internal world, feelings, and subconscious. This card reveals what is alive beneath the surface: the emotional undercurrent, the inner work calling for attention, the self that only you know.",
         "focus": "Focus",
-        "focusDesc": "What to direct your attention and energy toward",
+        "focusDesc": "What to direct your attention and energy toward. This card points to the area or quality most deserving of your investment this year — where showing up fully will yield the most meaningful return.",
         "outerWorld": "Outer World",
-        "outerWorldDesc": "How you appear to others and the external environment",
+        "outerWorldDesc": "How you appear to others and the external environment. This card reflects the face you are presenting to the world and what is moving in your outer life: your circumstances, relationships, and public presence.",
         "challenge": "Challenge",
-        "challengeDesc": "The main challenge or obstacle you will face",
+        "challengeDesc": "The main challenge or obstacle you will face. This card names a difficulty that is not here to defeat you but to develop you. Understanding it in advance lets you meet it with greater awareness and choice.",
         "opportunity": "Opportunity",
-        "opportunityDesc": "The main opportunity or gift available to you",
+        "opportunityDesc": "The main opportunity or gift available to you. This card points to an opening — an area where, if you step forward with intention, something meaningful and lasting can emerge in the year ahead.",
         "support": "Support",
-        "supportDesc": "What or who will support you through the year",
+        "supportDesc": "What or who will support you through the year. This card reveals the resource, relationship, quality, or practice that will be your most reliable anchor and ally when things get difficult.",
         "lesson": "Lesson",
-        "lessonDesc": "The key spiritual or personal lesson of this year",
+        "lessonDesc": "The key spiritual or personal lesson of this year. This card names the theme your soul is working to understand and integrate — wisdom you will carry forward long after this year has passed.",
         "gift": "Gift",
-        "giftDesc": "The gift you are being given or will develop"
+        "giftDesc": "The gift you are being given or will develop. This card points to something that will emerge through this year's experiences: a capacity, a clarity, or a quality you will come to own more fully."
       }
     },
     "constellation": {

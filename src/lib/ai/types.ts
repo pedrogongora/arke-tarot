@@ -15,6 +15,7 @@ export interface AIRequest {
   locale: SupportedLocale;
   resolvedCards?: ResolvedCard[];
   resolvedSpreadName?: string;
+  resolvedSpreadDescription?: string;
 }
 
 export interface AIResponse {
