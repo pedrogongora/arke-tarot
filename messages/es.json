@@ -1,0 +1,483 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "reading": "Nueva Lectura",
+    "log": "Registro de Lecturas",
+    "settings": "Configuración",
+    "cards": "Biblioteca de Cartas",
+    "about": "Acerca de",
+    "help": "Ayuda",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
+  },
+  "home": {
+    "title": "Arké Tarot",
+    "subtitle": "Saca las cartas. Escucha lo que surge.",
+    "startReading": "Iniciar Lectura",
+    "viewLog": "Ver Registro",
+    "browseCards": "Explorar Cartas"
+  },
+  "spreads": {
+    "oneCard": {
+      "name": "Una Carta",
+      "description": "Una sola carta para orientación diaria, preguntas de sí/no, o un enfoque simple.",
+      "positions": {
+        "card": "La Carta",
+        "cardDesc": "Tu guía, enfoque o respuesta para hoy. Observa lo que primero llama tu atención — esa impresión inicial suele ser el mensaje más verdadero. Deja que la carta te acompañe durante el día como punto de reflexión tranquila."
+      }
+    },
+    "twoCard": {
+      "name": "Dos Cartas",
+      "description": "Dos opciones, o causa y efecto. Útil al sopesar una decisión o explorar una dinámica.",
+      "positions": {
+        "optionA": "Opción A / Causa",
+        "optionADesc": "El primer camino, opción, o causa contribuyente. Esta carta revela la energía, naturaleza y consecuencias probables de esta dirección o fuerza. Considera qué te atrae aquí y qué podría pedirte.",
+        "optionB": "Opción B / Efecto",
+        "optionBDesc": "El segundo camino, opción, o efecto resultante. Esta carta muestra lo que surge de o contrasta con el primero. La tensión o armonía entre ambas cartas juntas suele contener la verdadera revelación."
+      }
+    },
+    "threeCardPPF": {
+      "name": "Tres Cartas — Pasado / Presente / Futuro",
+      "description": "Revela la línea temporal de una situación: qué la formó, dónde está ahora y hacia dónde se dirige.",
+      "positions": {
+        "past": "Pasado",
+        "pastDesc": "Lo que ha llevado a la situación actual. Esta carta refleja los eventos, decisiones o energías que dieron forma a donde estás ahora — aún lo suficientemente cercanos para sentirlos. Reconoce lo que trajo antes de soltarlo.",
+        "present": "Presente",
+        "presentDesc": "El estado o energía actual. Esta carta captura lo que está más vivo en tu vida ahora mismo: la fuerza dominante, el desafío u oportunidad que estás navegando activamente. Encuéntralo con honestidad.",
+        "future": "Futuro",
+        "futureDesc": "La dirección hacia la que se mueven las cosas. Esta carta muestra un resultado probable o energía entrante basada en el impulso actual. No es un destino fijo — úsala como guía para las elecciones que aún tienes."
+      }
+    },
+    "threeCardMBS": {
+      "name": "Tres Cartas — Mente / Cuerpo / Espíritu",
+      "description": "Una visión holística de tu bienestar en las dimensiones mental, física y espiritual.",
+      "positions": {
+        "mind": "Mente",
+        "mindDesc": "Tus pensamientos, creencias y estado mental. Esta carta refleja lo que te estás diciendo a ti mismo, las historias que corren en el fondo y la calidad de tu atención. Observa en qué sigues pensando.",
+        "body": "Cuerpo",
+        "bodyDesc": "Salud física, energía y realidad material. Esta carta habla de tu cuerpo, hogar, finanzas y relación con el mundo físico. Presta atención a dónde lo sientes literalmente en tu cuerpo.",
+        "spirit": "Espíritu",
+        "spiritDesc": "Tu estado espiritual, intuición y yo superior. Esta carta señala lo que tu alma está pidiendo — la corriente más profunda bajo la vida cotidiana. A menudo habla a través de sentimientos, símbolos y un saber silencioso más que por lógica."
+      }
+    },
+    "threeCardSAO": {
+      "name": "Tres Cartas — Situación / Acción / Resultado",
+      "description": "Diagnostica una situación, sugiere una acción y muestra el resultado probable.",
+      "positions": {
+        "situation": "Situación",
+        "situationDesc": "Las circunstancias actuales o el desafío. Esta carta describe el paisaje en el que te encuentras: las fuerzas en juego, el contexto y lo que está objetivamente presente. Vélo con claridad antes de decidir cómo moverte.",
+        "action": "Acción",
+        "actionDesc": "La acción o enfoque recomendado. Esta carta sugiere cómo relacionarte: qué energía traer, qué movimiento hacer o qué postura interior te servirá mejor. Apunta hacia la respuesta más alineada.",
+        "outcome": "Resultado",
+        "outcomeDesc": "El resultado probable si sigues este camino. Esta carta muestra lo que emerge cuando tomas la acción sugerida. Es condicional — cambia a medida que cambian tus elecciones y tu estado interior."
+      }
+    },
+    "triad": {
+      "name": "La Tríada",
+      "description": "Una tirada dialéctica: tesis, antítesis, síntesis. Ideal para resolver tensiones.",
+      "positions": {
+        "thesis": "Tesis",
+        "thesisDesc": "La posición inicial, afirmación o fuerza. Esta carta representa lo que se sostiene, afirma o ejecuta — el punto de partida de una tensión y la energía desde la que has estado operando.",
+        "antithesis": "Antítesis",
+        "antithesisDesc": "La fuerza opuesta, contraposición o desafío. Esta carta revela lo que empuja hacia atrás o lo que se resiste. Exige reconocimiento en lugar de rechazo — su voz contiene algo esencial.",
+        "synthesis": "Síntesis",
+        "synthesisDesc": "La resolución, integración o verdad superior. Esta carta muestra lo que se vuelve posible cuando ambas fuerzas son verdaderamente escuchadas. A menudo apunta más allá del conflicto original hacia algo genuinamente nuevo."
+      }
+    },
+    "celticCross": {
+      "name": "Cruz Celta",
+      "description": "La clásica tirada de 10 cartas que ofrece una visión integral de una situación: sus raíces, influencias y posibles resultados.",
+      "positions": {
+        "present": "Presente",
+        "presentDesc": "El corazón del asunto; la situación actual. Esta es la carta central de toda la lectura — nombra la esencia de lo que se examina y la energía más viva en tu vida ahora mismo. Todo lo demás en la tirada se relaciona de vuelta a esta carta.",
+        "challenge": "Desafío",
+        "challengeDesc": "Lo que cruza o desafía la energía presente. Colocada sobre la carta central, representa el obstáculo inmediato, la fuerza complicadora o la dinámica en tensión directa con la situación central. Puede actuar como impedimento o apoyo inesperado.",
+        "past": "Pasado",
+        "pastDesc": "Influencias del pasado reciente que llevan al presente. Esta carta refleja lo que acaba de pasar — eventos, energías o decisiones que moldearon el momento actual y aún están lo suficientemente cerca como para proyectar una sombra o dar impulso.",
+        "future": "Futuro",
+        "futureDesc": "El futuro cercano; hacia dónde se mueven las cosas. Esta carta muestra lo que está tomando forma en el corto plazo — un próximo paso probable, una energía entrante o la dirección hacia la que la situación fluye naturalmente.",
+        "above": "Arriba",
+        "aboveDesc": "Meta consciente o el mejor resultado posible. Esta carta refleja lo que conscientemente buscas, esperas o lo que la situación podría llegar a ser en su mayor potencial. Representa tu aspiración o resultado ideal.",
+        "below": "Abajo",
+        "belowDesc": "Influencias inconscientes o fundamento. Esta carta señala lo que yace bajo la superficie: causas raíz, deseos enterrados, miedos profundos o el suelo oculto sobre el que descansa toda la situación. A menudo es la carta más reveladora de la tirada.",
+        "attitude": "Yo",
+        "attitudeDesc": "Tu actitud, miedos o autopercepción. Así es como te ves a ti mismo en esta situación — tu postura interior, la historia que llevas sobre quién eres y cómo te estás mostrando. Revela el lente a través del cual estás mirando.",
+        "external": "Externo",
+        "externalDesc": "Influencias ambientales y percepciones de los demás. Esta carta revela lo que viene de fuera — cómo te ven los demás o la situación, y qué fuerzas externas están moldeando los eventos más allá de tu control directo.",
+        "hopes": "Esperanzas y Miedos",
+        "hopesDesc": "Tus esperanzas o miedos sobre el resultado. Esta es una posición paradójica: puede representar lo que más deseas o lo que más temes — a menudo ambos a la vez, o uno enmascarando al otro justo bajo la superficie.",
+        "outcome": "Resultado",
+        "outcomeDesc": "El resultado final si el camino actual continúa. Esta carta culminante integra todas las demás en una resolución probable. Muestra hacia dónde se dirigen las cosas si las energías presentes se dejan desenvolverse naturalmente."
+      }
+    },
+    "zodiac": {
+      "name": "Tirada Astrológica / Zodiacal",
+      "description": "Doce cartas, una para cada casa del zodíaco, con perspectivas sobre todas las áreas de la vida.",
+      "positions": {
+        "house1": "Casa 1 — El Yo",
+        "house1Desc": "Identidad, apariencia, nuevos comienzos. Esta carta habla de cómo te estás mostrando en el mundo ahora mismo: tu sentido de identidad, tu presencia física y lo que está apenas comenzando en tu historia personal.",
+        "house2": "Casa 2 — Recursos",
+        "house2Desc": "Dinero, posesiones, valores. Esta carta refleja tu relación con lo que posees, ganas y consideras que vale la pena proteger — incluyendo lo que valoras más profundamente, no solo materialmente.",
+        "house3": "Casa 3 — Comunicación",
+        "house3Desc": "Hermanos, viajes cortos, aprendizaje. Esta carta refleja tus relaciones cercanas, la comunicación cotidiana y cómo recopilas y compartes información. También puede hablar de viajes cercanos o estudios en curso.",
+        "house4": "Casa 4 — Hogar",
+        "house4Desc": "Familia, raíces, vida privada. Esta carta habla del hogar, la ascendencia, los cimientos emocionales y lo que buscas para sentirte seguro. Refleja tanto tu pasado como el lugar al que vuelves para restaurarte.",
+        "house5": "Casa 5 — Creatividad",
+        "house5Desc": "Romance, hijos, placer. Esta carta refleja la alegría, la creatividad, el juego y la expresión romántica. Pregunta: ¿dónde está tu deleite ahora mismo, y te estás dando permiso de vivirlo?",
+        "house6": "Casa 6 — Salud",
+        "house6Desc": "Trabajo, salud, rutina diaria. Esta carta habla de cómo cuidas tu cuerpo y tus responsabilidades — los ritmos y hábitos cotidianos que sustentan tu energía o la agotan silenciosamente.",
+        "house7": "Casa 7 — Asociaciones",
+        "house7Desc": "Relaciones, matrimonio, enemigos abiertos. Esta carta refleja tus asociaciones uno a uno — románticas, de negocios o de otro tipo — y lo que estás atrayendo hacia ti o proyectando sobre los demás.",
+        "house8": "Casa 8 — Transformación",
+        "house8Desc": "Muerte, renacimiento, recursos compartidos, lo oculto. Esta carta habla de transformación, lo que debe liberarse, la intimidad profunda y las fuerzas ocultas que se mueven bajo la superficie visible de tu vida.",
+        "house9": "Casa 9 — Filosofía",
+        "house9Desc": "Estudios superiores, viajes, creencias. Esta carta refleja tu perspectiva filosófica, búsqueda espiritual, viajes largos y la búsqueda de expandir tu comprensión de lo que significa la vida y hacia dónde te lleva.",
+        "house10": "Casa 10 — Carrera",
+        "house10Desc": "Estatus público, vocación, ambición. Esta carta habla de tu carrera, reputación y la huella que estás dejando en el mundo. Refleja dónde te encuentras públicamente y lo que estás construyendo.",
+        "house11": "Casa 11 — Comunidad",
+        "house11Desc": "Amigos, grupos, metas, causas sociales. Esta carta refleja tu comunidad, aspiraciones a largo plazo y los esfuerzos colectivos que te inspiran. Pregunta quién eres cuando perteneces a algo más grande que tú mismo.",
+        "house12": "Casa 12 — Lo Oculto",
+        "house12Desc": "Secretos, karma, espiritualidad, autosabotaje. Esta carta habla de lo que está oculto, inconsciente o arrastrado de ciclos pasados. Señala dónde el retiro, la soledad y el trabajo interior profundo son más necesarios ahora mismo."
+      }
+    },
+    "yearlyCalendar": {
+      "name": "Tirada Calendario Anual",
+      "description": "Trece cartas: una para cada mes del año más una carta central de tema para el año en su conjunto.",
+      "positions": {
+        "month1": "Enero",
+        "month1Desc": "Energía y tema para enero. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month2": "Febrero",
+        "month2Desc": "Energía y tema para febrero. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month3": "Marzo",
+        "month3Desc": "Energía y tema para marzo. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month4": "Abril",
+        "month4Desc": "Energía y tema para abril. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month5": "Mayo",
+        "month5Desc": "Energía y tema para mayo. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month6": "Junio",
+        "month6Desc": "Energía y tema para junio. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month7": "Julio",
+        "month7Desc": "Energía y tema para julio. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month8": "Agosto",
+        "month8Desc": "Energía y tema para agosto. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month9": "Septiembre",
+        "month9Desc": "Energía y tema para septiembre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month10": "Octubre",
+        "month10Desc": "Energía y tema para octubre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month11": "Noviembre",
+        "month11Desc": "Energía y tema para noviembre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "month12": "Diciembre",
+        "month12Desc": "Energía y tema para diciembre. Esta carta sostiene el enfoque dominante, la lección o la invitación para este mes. Vuelve a ella al comienzo del mes como orientación y al final como reflexión sobre lo que se desplegó.",
+        "theme": "Tema del Año",
+        "themeDesc": "La energía y lección predominante del año completo. Esta carta central actúa como el alma de la lectura — el hilo que recorre los doce meses y la invitación más profunda que este año sostiene para ti."
+      }
+    },
+    "birthdaySolar": {
+      "name": "Tirada de Cumpleaños / Retorno Solar",
+      "description": "Un pronóstico personal anual para el año que comienza, idealmente leído en o cerca de tu cumpleaños.",
+      "positions": {
+        "yearTheme": "Tema del Año",
+        "yearThemeDesc": "La energía y lección general de tu nuevo año. Esta carta establece el tono para todo lo que viene — la invitación central, la calidad de energía con la que trabajarás y el propósito más profundo que este ciclo sostiene.",
+        "innerSelf": "Ser Interior",
+        "innerSelfDesc": "Tu mundo interno, sentimientos e inconsciente. Esta carta revela lo que está vivo bajo la superficie: la corriente emocional, el trabajo interior que llama atención, el yo que solo tú conoces.",
+        "focus": "Enfoque",
+        "focusDesc": "Hacia dónde dirigir tu atención y energía. Esta carta señala el área o cualidad más merecedora de tu inversión este año — donde presentarte plenamente dará el retorno más significativo.",
+        "outerWorld": "Mundo Exterior",
+        "outerWorldDesc": "Cómo apareces ante los demás y el entorno externo. Esta carta refleja la cara que estás presentando al mundo y lo que se mueve en tu vida exterior: tus circunstancias, relaciones y presencia pública.",
+        "challenge": "Desafío",
+        "challengeDesc": "El principal desafío u obstáculo que enfrentarás. Esta carta nombra una dificultad que no está aquí para derrotarte sino para desarrollarte. Comprenderla con anticipación te permite encontrarla con mayor conciencia y elección.",
+        "opportunity": "Oportunidad",
+        "opportunityDesc": "La principal oportunidad o regalo disponible para ti. Esta carta señala una apertura — un área donde, si avanzas con intención, algo significativo y duradero puede emerger en el año que viene.",
+        "support": "Apoyo",
+        "supportDesc": "Qué o quién te apoyará durante el año. Esta carta revela el recurso, relación, cualidad o práctica que será tu ancla y aliado más confiable cuando las cosas se pongan difíciles.",
+        "lesson": "Lección",
+        "lessonDesc": "La lección espiritual o personal clave de este año. Esta carta nombra el tema que tu alma está trabajando para comprender e integrar — sabiduría que llevarás mucho más allá de este año.",
+        "gift": "Don",
+        "giftDesc": "El don que recibirás o desarrollarás. Esta carta señala algo que emergerá a través de las experiencias de este año: una capacidad, una claridad o una cualidad que llegarás a poseer más plenamente."
+      }
+    },
+    "constellation": {
+      "name": "Tirada Constelación",
+      "description": "Una tirada libre donde colocas las cartas de forma intuitiva en una superficie abierta. Asigna roles y posiciones según te parezca correcto, luego interpreta según dónde cae cada carta.",
+      "positions": {}
+    }
+  },
+  "reading": {
+    "selectSpread": "Elige una Tirada",
+    "shuffle": "Barajar el Mazo",
+    "draw": "Sacar una Carta",
+    "drawAll": "Sacar Todas las Cartas",
+    "reversed": "Invertida",
+    "upright": "Al Derecho",
+    "position": "Posición",
+    "notes": {
+      "label": "Tus Reflexiones",
+      "placeholder": "Escribe tus pensamientos, sentimientos y reflexiones sobre esta lectura..."
+    },
+    "actions": {
+      "save": "Guardar Lectura",
+      "interpret": "Interpretación IA",
+      "interpreting": "Consultando...",
+      "new": "Nueva Lectura",
+      "saving": "Guardando...",
+      "saved": "Guardada",
+      "copyPrompt": "Copiar prompt interpretación"
+    },
+    "ai": {
+      "loading": "Consultando el oráculo...",
+      "error": "La conexión falló. Por favor intenta de nuevo.",
+      "configure": "Configura un proveedor de IA en Configuración para obtener interpretaciones detalladas."
+    },
+    "copyPrompt": {
+      "title": "Copiar Prompt de Lectura",
+      "description": "Pega esto en cualquier asistente de IA para obtener una interpretación.",
+      "includeReflections": "Incluir reflexiones personales",
+      "reflectionsPlaceholder": "Escribe tus pensamientos, sentimientos y reflexiones...",
+      "copyButton": "Copiar al Portapapeles",
+      "copied": "¡Copiado!",
+      "promptLabel": "Prompt Generado"
+    },
+    "constellation": {
+      "instructions": "Haz clic en \"Agregar Carta\" para sacar y etiquetar cada carta, luego arrástrala para posicionarla.",
+      "addCard": "Agregar Carta",
+      "editLabel": "Editar Etiqueta",
+      "removeCard": "Eliminar Carta",
+      "labelDialog": {
+        "title": "Nombra Esta Carta",
+        "prompt": "¿Qué rol juega esta carta en tu lectura?",
+        "placeholder": "Ej.: Lo que necesito soltar",
+        "confirm": "Sacar Carta",
+        "cancel": "Cancelar"
+      }
+    }
+  },
+  "log": {
+    "title": "Registro de Lecturas",
+    "empty": "No hay lecturas guardadas aún.",
+    "emptyHint": "Completa una lectura y guárdala para verla aquí.",
+    "cards": "cartas",
+    "card": "carta",
+    "startReading": "Iniciar una Lectura",
+    "date": "Fecha",
+    "spread": "Tirada",
+    "aiInterpretation": "Interpretación de IA",
+    "deleteReading": "Eliminar Lectura",
+    "confirmDelete": "¿Estás seguro de que deseas eliminar esta lectura? Esta acción no se puede deshacer.",
+    "delete": "Eliminar",
+    "cancel": "Cancelar"
+  },
+  "card": {
+    "upright": "Al Derecho",
+    "reversed": "Invertida",
+    "description": "Descripción",
+    "keywords": "Palabras Clave",
+    "element": "Elemento",
+    "elements": {
+      "fire": "Fuego",
+      "water": "Agua",
+      "air": "Aire",
+      "earth": "Tierra",
+      "spirit": "Espíritu"
+    },
+    "suits": {
+      "major": "Arcanos Mayores",
+      "cups": "Copas",
+      "pentacles": "Pentáculos",
+      "swords": "Espadas",
+      "wands": "Bastos"
+    },
+    "library": "Biblioteca de Cartas",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "backToLibrary": "Biblioteca de Cartas",
+    "of": "de"
+  },
+  "settings": {
+    "title": "Configuración",
+    "saved": "Configuración guardada",
+    "language": {
+      "label": "Idioma",
+      "en": "English",
+      "es": "Español"
+    },
+    "theme": {
+      "label": "Tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    },
+    "palette": {
+      "label": "Paleta de Colores",
+      "midnight": "Medianoche",
+      "forest": "Bosque",
+      "crimson": "Carmesí",
+      "celestial": "Celestial",
+      "custom": "Personalizada"
+    },
+    "customPalette": {
+      "label": "Colores Personalizados",
+      "primary": "Principal",
+      "surface": "Superficie",
+      "accent": "Acento"
+    },
+    "reversal": {
+      "label": "Permitir Cartas Invertidas",
+      "chanceLabel": "Probabilidad de Inversión",
+      "chanceHint": "Probabilidad de que una carta salga invertida (0 = nunca, 1 = siempre)"
+    },
+    "ai": {
+      "label": "Interpretación IA",
+      "provider": "Proveedor",
+      "apiKey": "Clave API",
+      "apiKeyPlaceholder": "Ingresa tu clave API",
+      "apiKeyHint": "Tu clave se almacena localmente y nunca se envía a nuestros servidores.",
+      "model": "Modelo",
+      "none": "Ninguno (desactivado)",
+      "claude": "Claude (Anthropic)",
+      "openai": "ChatGPT (OpenAI)",
+      "deepseek": "DeepSeek"
+    }
+  },
+  "common": {
+    "close": "Cerrar",
+    "back": "Volver",
+    "loading": "Cargando...",
+    "error": "Algo salió mal.",
+    "retry": "Intentar de nuevo"
+  },
+  "cards": {
+    "ar00": { "name": "El Loco", "upright": "Nuevos comienzos, inocencia, espontaneidad, espíritu libre, aventura", "reversed": "Imprudencia, toma de riesgos, ingenuidad, insensatez, negligencia", "description": "El Loco se encuentra al borde de un precipicio, bolsa en mano, a punto de dar un paso hacia lo desconocido. Representa el potencial puro: el alma al inicio de su viaje, sin las cargas de la expectativa o el miedo." },
+    "ar01": { "name": "El Mago", "upright": "Fuerza de voluntad, habilidad, manifestación, ingenio, concentración", "reversed": "Manipulación, mala planificación, talento sin explotar, engaño", "description": "El Mago se para ante una mesa con los cuatro palos: varita, copa, espada y pentáculo. Sobre su cabeza flota el lemniscato. Tiene todas las herramientas a su disposición y la voluntad de usarlas." },
+    "ar02": { "name": "La Suma Sacerdotisa", "upright": "Intuición, misterio, el subconsciente, conocimiento interior, lo divino femenino", "reversed": "Secretos, retraimiento, intuición reprimida, agendas ocultas", "description": "La Suma Sacerdotisa se sienta entre dos pilares en el umbral de un templo. Una luna creciente descansa a sus pies; un velo de granadas oculta los misterios detrás de ella." },
+    "ar03": { "name": "La Emperatriz", "upright": "Abundancia, nutrición, fertilidad, naturaleza, creatividad, poder femenino", "reversed": "Dependencia, sobreprotección, vacío, bloqueo creativo, abandono", "description": "La Emperatriz se sienta en un trono exuberante rodeado de trigo, bosque y agua fluyente. Representa el poder generativo de la naturaleza y la fuerza vital creativa que sustenta todo lo viviente." },
+    "ar04": { "name": "El Emperador", "upright": "Autoridad, estructura, estabilidad, liderazgo, disciplina, paternidad", "reversed": "Dominación, rigidez, inflexibilidad, pérdida de control, control excesivo", "description": "El Emperador se sienta en un trono sólido de piedra adornado con cabezas de carnero. Gobierna a través de la razón, la voluntad y el establecimiento del orden." },
+    "ar05": { "name": "El Hierofante", "upright": "Tradición, conformidad, instituciones, guía espiritual, creencias compartidas", "reversed": "Rebelión, subversión, cuestionamiento del statu quo, creencia personal", "description": "El Hierofante se sienta entre dos pilares y sostiene un cetro triple, haciendo un gesto de bendición. Representa las instituciones establecidas y la transmisión de la sabiduría cultural." },
+    "ar06": { "name": "Los Amantes", "upright": "Amor, unión, alineación, relaciones, elecciones, valores", "reversed": "Desarmonía, desequilibrio, desalineación de valores, elecciones difíciles", "description": "Un hombre y una mujer se paran bajo un ángel. Los Amantes representan no solo el amor romántico sino la unión más profunda de los opuestos y la necesidad de una elección consciente." },
+    "ar07": { "name": "El Carro", "upright": "Determinación, fuerza de voluntad, victoria, control, dirección, triunfo", "reversed": "Agresión, falta de control, desorientación, energía dispersa", "description": "Un guerrero conduce un carro tirado por dos esfinges — una negra, una blanca — que simbolizan fuerzas opuestas controladas por la voluntad. El Carro representa la ambición disciplinada dirigida hacia una meta clara." },
+    "ar08": { "name": "La Fuerza", "upright": "Fortaleza interior, valentía, paciencia, compasión, autocontrol", "reversed": "Debilidad, inseguridad, duda, emoción sin filtro, falta de confianza", "description": "Una mujer abre suavemente las fauces de un león. Sobre su cabeza flota el símbolo del infinito. Doma a la bestia no por la fuerza sino por una fortaleza tranquila y amorosa." },
+    "ar09": { "name": "El Ermitaño", "upright": "Búsqueda del alma, soledad, guía interior, introspección, sabiduría", "reversed": "Aislamiento, soledad, retraimiento, reclusión, camino perdido", "description": "Un anciano se para solo en la cima de una montaña, sosteniendo una linterna que contiene una estrella de seis puntas. El Ermitaño representa la sabiduría encontrada en la soledad." },
+    "ar10": { "name": "La Rueda de la Fortuna", "upright": "Suerte, karma, ciclos de vida, destino, punto de inflexión, fortuna", "reversed": "Mala suerte, resistencia al cambio, ruptura de ciclos, sensación de estar atascado", "description": "Una gran rueda gira en el cielo, inscrita con símbolos alquímicos. La rueda simboliza el ciclo eterno del cambio — lo que sube debe bajar, y lo que baja volverá a subir." },
+    "ar11": { "name": "La Justicia", "upright": "Equidad, verdad, causa y efecto, ley, claridad, responsabilidad", "reversed": "Deshonestidad, injusticia, evasión de responsabilidad, parcialidad", "description": "Una figura coronada se sienta entre dos pilares, sosteniendo escalas en una mano y una espada en la otra. La Justicia representa el equilibrio cósmico y la ley de la causa y el efecto." },
+    "ar12": { "name": "El Colgado", "upright": "Rendición, soltar, suspensión, nueva perspectiva, sacrificio", "reversed": "Estancamiento, martirio, indecisión, resistencia al sacrificio necesario", "description": "Un hombre cuelga boca abajo de un árbol vivo, con expresión serena. El Colgado ha elegido pausar — rendirse al control y ver el mundo desde un ángulo diferente." },
+    "ar13": { "name": "La Muerte", "upright": "Transformación, finales, cambio, transición, soltar el pasado", "reversed": "Resistencia al cambio, incapacidad para seguir adelante, estancamiento, miedo a lo desconocido", "description": "La Muerte monta un caballo blanco, portando un estandarte negro con una rosa blanca. No trae aniquilación sino transformación — el despeje de lo que ya cumplió su propósito." },
+    "ar14": { "name": "La Templanza", "upright": "Equilibrio, moderación, paciencia, propósito, encontrar el camino del medio", "reversed": "Desequilibrio, exceso, falta de visión a largo plazo, perder el camino del medio", "description": "Un ángel con un pie en tierra y otro en el agua vierte líquido entre dos copas, mezclándolos. La Templanza habla del arte del equilibrio — unir fuerzas opuestas para crear algo armonioso." },
+    "ar15": { "name": "El Diablo", "upright": "Sombra, adicción, materialismo, esclavitud, patrones poco saludables", "reversed": "Liberación, rompimiento de cadenas, desapego, recuperación del poder", "description": "Una figura con cuernos se sienta en un pedestal al que dos humanos están encadenados — pero las cadenas están lo suficientemente flojas como para quitárselas. El Diablo representa los patrones inconscientes y las ilusiones que nos atan." },
+    "ar16": { "name": "La Torre", "upright": "Caos, cambio repentino, revelación, alteración inesperada, despertar brusco", "reversed": "Evitar el desastre, miedo al cambio, retrasar lo inevitable", "description": "Un rayo golpea una torre alta; dos figuras caen de su corona en llamas. La torre fue construida sobre una base falsa y debe derrumbarse. La Torre representa la interrupción inevitable que destruye ilusiones." },
+    "ar17": { "name": "La Estrella", "upright": "Esperanza, renovación, fe, serenidad, inspiración, sanación", "reversed": "Desesperación, falta de fe, desconexión, pérdida de esperanza", "description": "Una mujer desnuda se arrodilla a la orilla de un estanque, vertiendo agua sobre la tierra y el agua simultáneamente. Sobre ella brillan ocho estrellas. La Estrella ofrece esperanza y renovación tras la tormenta." },
+    "ar18": { "name": "La Luna", "upright": "Ilusión, miedo, el inconsciente, confusión, imaginación, lo desconocido", "reversed": "Liberación del miedo, claridad, emociones reprimidas emergiendo, ansiedad disminuyendo", "description": "Un cangrejo emerge de un estanque bajo una luna llena con cara brillante y sombría. Un lobo y un perro aúllan; un camino sinuoso desaparece en la distancia. La Luna representa el reino del inconsciente." },
+    "ar19": { "name": "El Sol", "upright": "Alegría, éxito, vitalidad, confianza, claridad, positividad, abundancia", "reversed": "Felicidad bloqueada, exceso de confianza, heridas del niño interior, luz opacada", "description": "Un niño cabalga un caballo blanco bajo un sol radiante, con los brazos extendidos. Girasoles florecen detrás de un muro de jardín. El Sol representa la conciencia pura, la alegría y la fuerza vital en su máxima exuberancia." },
+    "ar20": { "name": "El Juicio", "upright": "Reflexión, ajuste de cuentas, despertar, absolución, atender el llamado", "reversed": "Ignorar el llamado, duda de uno mismo, negarse a aprender del pasado", "description": "Un ángel toca una trompeta sobre figuras que emergen de ataúdes con los brazos levantados. El Juicio representa un ajuste de cuentas final — un momento de autoevaluación honesta y despertar." },
+    "ar21": { "name": "El Mundo", "upright": "Finalización, integración, logro, totalidad, el fin del viaje", "reversed": "Incompletitud, estancamiento, éxito retrasado, falta de cierre", "description": "Una bailarina envuelta en un chal púrpura se mueve dentro de una corona de laurel. En las esquinas flotan los cuatro signos fijos del zodíaco. El Mundo representa la finalización exitosa de un gran ciclo." },
+    "cups01": { "name": "As de Copas", "upright": "Nuevo amor, intuición, creatividad, nuevo comienzo emocional", "reversed": "Emociones bloqueadas, sentimientos sin cumplir, retraimiento emocional", "description": "Una gran copa rebosa cinco corrientes de agua, una paloma desciende portando una hostia sagrada. El As de Copas es el potencial más puro del reino emocional." },
+    "cups02": { "name": "Dos de Copas", "upright": "Asociación, unidad, atracción mutua, conexión del alma", "reversed": "Comunicación rota, desequilibrio, tensión en las relaciones", "description": "Dos figuras intercambian copas bajo el caduceo de Hermes y una cabeza de león alada. El Dos de Copas habla del reconocimiento mutuo y la formación de un vínculo significativo." },
+    "cups03": { "name": "Tres de Copas", "upright": "Celebración, amistad, comunidad, alegría, reunión", "reversed": "Exceso, chismes, aislamiento de la comunidad", "description": "Tres mujeres elevan sus copas en celebración alegre, rodeadas de flores y frutos. El Tres de Copas honra los lazos de amistad y el poder de la alegría compartida." },
+    "cups04": { "name": "Cuatro de Copas", "upright": "Contemplación, apatía, descontento, reevaluación", "reversed": "Nuevas aperturas, despertar de la apatía, aceptar una oferta", "description": "Un joven se sienta bajo un árbol, con los brazos cruzados, mientras tres copas están frente a él y una mano misteriosa ofrece una cuarta. El Cuatro de Copas invita a reflexionar sobre lo que podríamos estar pasando por alto." },
+    "cups05": { "name": "Cinco de Copas", "upright": "Pérdida, duelo, decepción, enfocarse en lo perdido", "reversed": "Seguir adelante, aceptación, encontrar lo que queda", "description": "Una figura encapuchada se inclina ante tres copas derramadas, mientras dos permanecen de pie atrás. El Cinco de Copas nos confronta con la pérdida pero recuerda que no todo está perdido." },
+    "cups06": { "name": "Seis de Copas", "upright": "Nostalgia, infancia, inocencia, generosidad, recuerdos felices", "reversed": "Atrapado en el pasado, abandonar el hogar, ingenuidad", "description": "Un niño ofrece una copa llena de flores a una figura más pequeña. El Seis de Copas lleva la dulzura del recuerdo y la gracia de la inocencia." },
+    "cups07": { "name": "Siete de Copas", "upright": "Elecciones, ilusión, fantasía, pensamiento ilusorio, tentación", "reversed": "Claridad tras la confusión, elegir la realidad, alineación", "description": "Siete copas flotan en nubes, cada una sosteniendo una visión diferente. El Siete de Copas advierte sobre el atractivo de la fantasía y el desafío de demasiadas opciones." },
+    "cups08": { "name": "Ocho de Copas", "upright": "Retirada, alejarse, buscar algo más profundo, desilusión", "reversed": "Miedo a avanzar, a la deriva, quedarse en una situación insatisfactoria", "description": "Una figura camina alejándose de ocho copas en pie hacia una cadena montañosa bajo un eclipse. El Ocho de Copas marca el momento en que debemos dejar atrás lo que ya no nos satisface." },
+    "cups09": { "name": "Nueve de Copas", "upright": "Contento, satisfacción, deseo cumplido, plenitud emocional", "reversed": "Codicia, suficiencia, insatisfacción bajo la superficie", "description": "Un hombre se sienta contento ante nueve copas sobre un banco. Conocido como la 'carta del deseo', el Nueve de Copas representa la satisfacción emocional y obtener lo que deseabas." },
+    "cups10": { "name": "Diez de Copas", "upright": "Armonía, felicidad, familia, plenitud, amor divino", "reversed": "Familia rota, desarmonía, sueños fallidos", "description": "Una pareja se abraza mientras sus hijos juegan ante un arcoíris de diez copas. El Diez de Copas es la culminación del viaje emocional — una vida de amor y armonía." },
+    "cups11": { "name": "Sota de Copas", "upright": "Creatividad, intuición, nuevos mensajes emocionales, imaginación", "reversed": "Inmadurez, volatilidad emocional, bloqueos creativos", "description": "Una figura joven sostiene una copa de la que asoma un pez. La Sota de Copas trae mensajes de oportunidad emocional e inspiración creativa." },
+    "cups12": { "name": "Caballero de Copas", "upright": "Romance, encanto, seguir el corazón, idealismo, ofertas", "reversed": "Irreal, humor variable, promesas que no se pueden cumplir", "description": "Un caballero cabalga tranquilamente en un caballo blanco, sosteniendo una copa frente a él como un regalo. El Caballero de Copas sigue su corazón y trae ofertas románticas o creativas." },
+    "cups13": { "name": "Reina de Copas", "upright": "Compasión, nutrición, empatía, seguridad emocional, intuición", "reversed": "Inseguridad emocional, codependencia, represión", "description": "Una reina se sienta en un trono a orillas del agua, sosteniendo una copa ornamentada. Es profundamente intuitiva, compasiva y sintonizada con las necesidades emocionales de quienes la rodean." },
+    "cups14": { "name": "Rey de Copas", "upright": "Equilibrio emocional, sabiduría, calma, diplomacia, liderazgo compasivo", "reversed": "Manipulación, humor variable, volatilidad emocional bajo una calma superficial", "description": "Un rey se sienta en un trono flotando en mares turbulentos, tranquilo y sereno. El Rey de Copas ha dominado su reino emocional y lidera con sabiduría y corazón." },
+    "pents01": { "name": "As de Pentáculos", "upright": "Nueva oportunidad financiera, manifestación, abundancia, nueva empresa", "reversed": "Oportunidad perdida, mala planificación financiera, falta de base", "description": "Una gran mano emerge de una nube sosteniendo un pentáculo sobre un arco de jardín exuberante. El As de Pentáculos ofrece una semilla de potencial material." },
+    "pents02": { "name": "Dos de Pentáculos", "upright": "Equilibrio, adaptabilidad, gestión del tiempo, malabarismo con prioridades", "reversed": "Desequilibrio, desorganización, abrumado, foco perdido", "description": "Una figura hace malabarismos con dos pentáculos dentro de un lazo infinito mientras barcos zozobran en olas detrás. El Dos de Pentáculos habla del arte de gestionar las demandas competitivas de la vida." },
+    "pents03": { "name": "Tres de Pentáculos", "upright": "Trabajo en equipo, colaboración, habilidad, aprendizaje, artesanía", "reversed": "Desarmonía, falta de trabajo en equipo, mala planificación", "description": "Un artesano trabaja en tallas de catedral mientras dos planificadores consultan un plano. El Tres de Pentáculos celebra la maestría desarrollada a través de la colaboración y la dedicación." },
+    "pents04": { "name": "Cuatro de Pentáculos", "upright": "Seguridad, conservación, control, frugalidad, posesividad", "reversed": "Codicia, materialismo, miedo a la pérdida, acaparamiento", "description": "Una figura sujeta cuatro pentáculos a su cuerpo en una ciudad detrás de él. El Cuatro de Pentáculos habla del impulso de seguridad, pero advierte del precio de aferrarse demasiado." },
+    "pents05": { "name": "Cinco de Pentáculos", "upright": "Dificultad financiera, pobreza, aislamiento, preocupación, tiempos difíciles", "reversed": "Recuperación, fin de la pobreza espiritual, aceptación de ayuda", "description": "Dos figuras harapientas caminan por la nieve frente a una vidriera brillante. El Cinco de Pentáculos representa la dificultad material y el aislamiento espiritual." },
+    "pents06": { "name": "Seis de Pentáculos", "upright": "Generosidad, caridad, compartir riqueza, dar y recibir", "reversed": "Deuda, desequilibrio de poder, regalos con condiciones", "description": "Un mercader sostiene balanzas en una mano y deja caer monedas a mendigos arrodillados. El Seis de Pentáculos equilibra la energía de dar y recibir." },
+    "pents07": { "name": "Siete de Pentáculos", "upright": "Paciencia, visión a largo plazo, inversión, esfuerzo sostenible", "reversed": "Impaciencia, mala planificación, recompensa limitada por el esfuerzo", "description": "Un granjero se apoya en su azada, contemplando una vid cargada de pentáculos. El Siete de Pentáculos invita a una pausa para evaluar la cosecha de tus esfuerzos." },
+    "pents08": { "name": "Ocho de Pentáculos", "upright": "Diligencia, desarrollo de habilidades, maestría, compromiso, artesanía", "reversed": "Perfeccionismo, repetición sin propósito, falta de ambición", "description": "Un artesano talla pentáculos cuidadosamente, uno por uno. El Ocho de Pentáculos es la carta del aprendiz dedicado — habilidad construida a través de práctica paciente y repetitiva." },
+    "pents09": { "name": "Nueve de Pentáculos", "upright": "Lujo, abundancia, autosuficiencia, elegancia, independencia", "reversed": "Revés financiero, dependencia, vivir por encima de las posibilidades", "description": "Una mujer pasea por un exuberante viñedo, un halcón amaestrado en su mano enguantada. El Nueve de Pentáculos celebra la independencia material ganada con esfuerzo." },
+    "pents10": { "name": "Diez de Pentáculos", "upright": "Legado, riqueza familiar, establecimiento, seguridad a largo plazo, permanencia", "reversed": "Fracaso financiero, inestabilidad, pérdida de legado", "description": "Un anciano se sienta con perros a sus pies mientras familiares se reúnen alrededor de un gran arco. El Diez de Pentáculos representa la culminación del logro material: riqueza, familia y legado duradero." },
+    "pents11": { "name": "Sota de Pentáculos", "upright": "Ambición, nuevas habilidades, diligencia, estudiante, principiante en manifestación", "reversed": "Pereza, falta de dirección, procrastinación", "description": "Una figura joven sostiene un pentáculo frente a ellos, estudiándolo con cuidado. La Sota de Pentáculos es el estudiante serio, comenzando el viaje de construcción de habilidades y manifestación material." },
+    "pents12": { "name": "Caballero de Pentáculos", "upright": "Metódico, confiable, trabajador, conservador, persistente", "reversed": "Terquedad, pereza, exceso de cautela, aburrimiento", "description": "Un caballero en un caballo robusto contempla un campo, sosteniendo un pentáculo. Se mueve lentamente pero nunca se detiene. El Caballero de Pentáculos encarna el esfuerzo constante hacia metas prácticas." },
+    "pents13": { "name": "Reina de Pentáculos", "upright": "Nutricia, práctica, abundante, arraigada, sensual, generosa", "reversed": "Sobreprotección, abandono doméstico, inseguridad financiera", "description": "Una reina se sienta en un emparrado florido, acunando un pentáculo. Está profundamente conectada con el mundo natural y es generosa con sus recursos materiales." },
+    "pents14": { "name": "Rey de Pentáculos", "upright": "Riqueza, seguridad, disciplina, abundancia, liderazgo empresarial", "reversed": "Terquedad, materialismo, fracaso financiero", "description": "Un rey se sienta en un trono decorado con toros y uvas, rodeado de vegetación exuberante. El Rey de Pentáculos ha dominado el mundo material a través de la disciplina, la paciencia y la gestión sabia." },
+    "swords01": { "name": "As de Espadas", "upright": "Claridad, avance, verdad, fuerza mental, nueva idea", "reversed": "Confusión, caos, brutalidad, niebla mental", "description": "Una mano emerge de nubes sosteniendo una espada reluciente coronada con una guirnalda. El As de Espadas ofrece una claridad cortante — el poder de la mente para percibir la verdad y cortar la ilusión." },
+    "swords02": { "name": "Dos de Espadas", "upright": "Indecisión, punto muerto, emociones bloqueadas, evasión", "reversed": "Indecisión resuelta, información revelada, confusión aclarada", "description": "Una figura con los ojos vendados se sienta con espadas cruzadas frente a un mar tranquilo. El Dos de Espadas representa una tregua temporal o evasión deliberada." },
+    "swords03": { "name": "Tres de Espadas", "upright": "Desamor, pena, duelo, pérdida, verdad dolorosa", "reversed": "Recuperación, perdón, soltar el dolor, superar la herida", "description": "Tres espadas atraviesan un corazón flotando en nubes tormentosas. El Tres de Espadas representa el dolor real, la pérdida y el duelo que debe sentirse antes de que comience la sanación." },
+    "swords04": { "name": "Cuatro de Espadas", "upright": "Descanso, recuperación, contemplación, retirada, restauración", "reversed": "Inquietud, recuperación estancada, necesidad de descanso ignorada", "description": "Un caballero yace en efigie sobre una tumba de piedra, una espada en la tumba, tres en la pared de arriba. El Cuatro de Espadas es una pausa necesaria — la restauración del cuerpo y la mente tras la batalla." },
+    "swords05": { "name": "Cinco de Espadas", "upright": "Conflicto, derrota, tensión, victoria vacía, ganar a toda costa", "reversed": "Reconciliación, perdón, superar el conflicto", "description": "Una figura recoge espadas mientras oponentes derrotados se alejan al fondo. El Cinco de Espadas advierte que la victoria lograda mediante la crueldad puede costar más de lo que gana." },
+    "swords06": { "name": "Seis de Espadas", "upright": "Transición, seguir adelante, aguas más tranquilas, escape, recuperación gradual", "reversed": "Atrapado en el pasado, incapaz de dejar atrás los problemas", "description": "Un barquero lleva a una mujer y un niño a través de aguas oscuras hacia una orilla más brillante. El Seis de Espadas representa el paso de la dificultad hacia algo mejor." },
+    "swords07": { "name": "Siete de Espadas", "upright": "Engaño, estrategia, sigilo, robo, salirse con la suya", "reversed": "Confesión, estrategia que fracasa, revelación de la verdad", "description": "Una figura se escapa de un campamento militar cargando cinco espadas, dejando dos atrás. El Siete de Espadas habla de actos de astucia — estratégicos o engañosos según el contexto." },
+    "swords08": { "name": "Ocho de Espadas", "upright": "Restricción, encarcelamiento, impotencia, límites autoimpuestos", "reversed": "Liberación, nueva perspectiva, libertad de la prisión mental", "description": "Una figura atada y con los ojos vendados está rodeada de ocho espadas. Pero las ataduras están sueltas y las espadas no la encierran — solo su creencia en su propia impotencia lo hace." },
+    "swords09": { "name": "Nueve de Espadas", "upright": "Ansiedad, preocupación, pesadillas, desesperación, angustia mental", "reversed": "Esperanza regresando, miedos exagerados, turmoil interior disminuyendo", "description": "Una figura se sienta en la cama, con la cara enterrada en las manos, nueve espadas montadas en la pared detrás. El Nueve de Espadas representa la mente de las 3 a.m. — la espiral de preocupación y miedo." },
+    "swords10": { "name": "Diez de Espadas", "upright": "Finales dolorosos, traición, crisis, tocar fondo, pérdida", "reversed": "Recuperación, elevarse de las ruinas, resistencia a los finales inevitables", "description": "Una figura yace boca abajo con diez espadas en la espalda bajo un cielo oscuro que amanece en el horizonte. El Diez de Espadas marca la derrota total — pero el amanecer está llegando." },
+    "swords11": { "name": "Sota de Espadas", "upright": "Curiosa, comunicativa, analítica, ingeniosa, nuevas ideas", "reversed": "Chismosa, dispersa, excesivamente crítica, todo palabras", "description": "Una figura joven se para en una colina, espada en alto, escudriñando el horizonte. La Sota de Espadas es de mente ágil, ansiosa por recopilar y compartir información." },
+    "swords12": { "name": "Caballero de Espadas", "upright": "Decisivo, ambicioso, directo, rápido, guiado por el intelecto", "reversed": "Impulsivo, imprudente, energía dispersa, propenso al conflicto", "description": "Un caballero carga a galope tendido a través de un campo azotado por el viento. El Caballero de Espadas actúa con rapidez y decisión, pero arriesga perderse el costo humano de la velocidad." },
+    "swords13": { "name": "Reina de Espadas", "upright": "Mente clara, independiente, directa, veraz, perceptiva", "reversed": "Fría, demasiado crítica, amargada, cortante con las palabras", "description": "Una reina se sienta en un trono rodeado de nubes, una mano extendida en bienvenida, la otra levantando una espada. Es aguda de mente y justa en su juicio, sin miedo a las verdades difíciles." },
+    "swords14": { "name": "Rey de Espadas", "upright": "Autoridad intelectual, pensamiento claro, verdad, estructura, liderazgo ético", "reversed": "Abuso de poder, manipulación, frialdad, tiranía", "description": "Un rey se sienta en un trono de piedra, espada en alto, mirando directamente al frente. Gobierna por el intelecto y el principio. El Rey de Espadas exige claridad, integridad y el valor de decir la verdad." },
+    "wands01": { "name": "As de Bastos", "upright": "Inspiración, nueva energía, chispa creativa, potencial, pasión", "reversed": "Creatividad bloqueada, retrasos, falta de motivación, falsos comienzos", "description": "Una mano emerge de una nube sosteniendo una varita floreciente. El As de Bastos es fuego creativo puro — la chispa iniciadora antes de que tome forma cualquier plan." },
+    "wands02": { "name": "Dos de Bastos", "upright": "Planificación futura, decisiones, descubrimiento, visión a largo plazo", "reversed": "Miedo a lo desconocido, mantenerse seguro, pensar en pequeño", "description": "Una figura se para en un parapeto, globo en mano, bastos a cada lado. El Dos de Bastos muestra a alguien que ha logrado el éxito inicial y ahora dirige la mirada hacia lo posible a continuación." },
+    "wands03": { "name": "Tres de Bastos", "upright": "Expansión, previsión, empresa, aventuras en el extranjero, esperar resultados", "reversed": "Retrasos, frustración, obstáculos a los planes", "description": "Una figura mira barcos que se dirigen hacia el horizonte, tres bastos plantados detrás. El Tres de Bastos muestra planes en movimiento y la espera que sigue a un lanzamiento audaz." },
+    "wands04": { "name": "Cuatro de Bastos", "upright": "Celebración, regreso al hogar, comunidad, armonía, hito", "reversed": "Conflicto en el hogar, falta de comunidad, base inestable", "description": "Cuatro bastos están engalanados con flores, dos figuras bailan debajo de ellos. El Cuatro de Bastos marca una llegada alegre — un momento de celebración, comunidad y regreso al hogar." },
+    "wands05": { "name": "Cinco de Bastos", "upright": "Conflicto, competencia, caos, desacuerdo, muchas voces", "reversed": "Resolver el conflicto, evitar la confrontación, conflicto interno", "description": "Cinco figuras chocan bastos en aparente conflicto. El Cinco de Bastos representa la fricción que surge cuando muchas energías compiten — a veces productiva, a veces simplemente caótica." },
+    "wands06": { "name": "Seis de Bastos", "upright": "Victoria, reconocimiento, éxito, confianza, logro público", "reversed": "Egoísmo, caída en desgracia, falta de reconocimiento, éxito retrasado", "description": "Un jinete victorioso es recibido por multitudes que vitorean, bastos alzados en triunfo. El Seis de Bastos celebra el reconocimiento ganado y la confianza que viene del logro genuino." },
+    "wands07": { "name": "Siete de Bastos", "upright": "Perseverancia, defensiva, mantenerse firme, competencia", "reversed": "Rendirse, abrumado, capitular ante la presión", "description": "Una figura mantiene una posición elevada, defendiéndose de seis bastos debajo. El Siete de Bastos encarna la determinación de mantener lo que has construido frente al desafío." },
+    "wands08": { "name": "Ocho de Bastos", "upright": "Movimiento, velocidad, acción, progreso rápido, viaje", "reversed": "Retrasos, frustración, energía dispersa, precipitarse sin dirección", "description": "Ocho bastos vuelan por el aire claro hacia la tierra. No aparecen figuras — es puro impulso. El Ocho de Bastos señala movimiento rápido y la resolución veloz de situaciones." },
+    "wands09": { "name": "Nueve de Bastos", "upright": "Resiliencia, valentía, persistencia, última batalla, casi llegando", "reversed": "Agotamiento, rendirse cerca del final, paranoia", "description": "Una figura herida pero alerta se para ante ocho bastos en pie, apoyándose en el noveno. El Nueve de Bastos recuerda que la persistencia en el tramo final es lo que separa el éxito del fracaso." },
+    "wands10": { "name": "Diez de Bastos", "upright": "Carga, responsabilidad, estrés, exceso de compromisos, trabajo duro", "reversed": "Liberarse de cargas, delegar, encontrar un camino más ligero", "description": "Una figura lucha por cargar diez bastos hacia una ciudad distante. El Diez de Bastos muestra el peso de las responsabilidades acumuladas — un llamado a reevaluar qué es verdaderamente tuyo llevar." },
+    "wands11": { "name": "Sota de Bastos", "upright": "Entusiasta, aventurero, espíritu libre, creativo, mensajero de fuego", "reversed": "Apresurado, inmaduro, energía dispersa, pasión sin enfoque", "description": "Una figura joven sostiene un bastón, estudiándolo con curiosidad. La Sota de Bastos es el niño del signo de fuego — ansioso, inspirado y listo para explorar." },
+    "wands12": { "name": "Caballero de Bastos", "upright": "Aventurero, apasionado, impulsivo, encantador, enérgico", "reversed": "Imprudente, apresurado, energía sin enfoque, temperamental", "description": "Un caballero en un caballo encabritado carga hacia adelante, basto en alto. El Caballero de Bastos es inquieto, carismático y guiado por el deseo — actúa antes de pensar." },
+    "wands13": { "name": "Reina de Bastos", "upright": "Confiada, apasionada, vibrante, independiente, liderazgo natural", "reversed": "Agresiva, exigente, egoísmo, celos", "description": "Una reina se sienta en un trono de girasoles, un gato negro a sus pies, basto en mano y girasol en el otro. La Reina de Bastos irradia confianza natural y autoridad magnética." },
+    "wands14": { "name": "Rey de Bastos", "upright": "Visión, emprendimiento, liderazgo, inspiración, acción audaz", "reversed": "Impulsividad, dominante, crueldad, decisiones apresuradas", "description": "Un rey se sienta en un trono decorado con leones y salamandras, su basto floreciendo con vida. El Rey de Bastos es el líder visionario — apasionado, creativo e impulsado a realizar su visión a gran escala." }
+  },
+  "about": {
+    "title": "Acerca de Arké Tarot",
+    "appSection": "¿Qué es Arké Tarot?",
+    "appDescription": "Arké Tarot es una herramienta gratuita y centrada en la privacidad para lecturas de tarot. Saca cartas de un mazo de 78 cartas en múltiples tipos de tiradas, toma notas y exporta tu lectura como imagen o como prompt para cualquier asistente de IA — sin registros ni cuentas.",
+    "featuresTitle": "Características",
+    "feature1": "Mazo de 78 cartas con significados en posición normal e invertida",
+    "feature2": "Múltiples tiradas: Cruz Celta, Tres Cartas, Cinco Cartas, Herradura y Constelación",
+    "feature3": "Exporta tu tirada como imagen (PNG)",
+    "feature4": "Genera un prompt para cualquier asistente de IA (Claude, ChatGPT, DeepSeek y más)",
+    "feature5": "Registro de lecturas guardado localmente en tu navegador",
+    "feature6": "Múltiples temas de color",
+    "developerTitle": "Sobre el Desarrollador",
+    "developer1": "Soy Pedro, científico, programador y jugador de la matrix.",
+    "developer2": "Creo en la libertad del conocimiento, y esta es una gran herramienta para ello.",
+    "developer3": "Puedes usarla con tu agente de IA preferido, en versión de pago o gratuita.",
+    "developer4": "No necesitas subscripciones ni registros, la información es tuya y se queda guardada en tu navegador a menos que decidas compartirla con un agente de IA.",
+    "developer5": "Creé esta aplicación por gusto propio y la comparto con cariño sin exigir nada a cambio.",
+    "developer6": "Pero si quieres invitarme un café en agradecimiento, con mucho gusto lo acepto:",
+    "coffeeLink": "Invítame un Café",
+    "sourceTitle": "Código Fuente",
+    "sourceText": "El código fuente es abierto y está licenciado bajo GPL-3.0. Puedes ver el código, reportar problemas o contribuir en GitHub.",
+    "sourceLink": "Ver en GitHub",
+    "licenseTitle": "Licencias y Atribuciones",
+    "licenseCodeTitle": "Código Fuente",
+    "licenseCodeText": "Licenciado bajo la Licencia Pública General GNU v3.0 (GPL-3.0).",
+    "licenseCodeLink": "Ver GPL-3.0",
+    "licenseImagesTitle": "Imágenes de las Cartas",
+    "licenseImagesText": "Las imágenes de las cartas de tarot utilizadas en esta aplicación provienen de Wikimedia Commons.",
+    "licenseImagesLink": "Wikimedia Commons",
+    "licenseContentTitle": "Otro Contenido",
+    "licenseContentText": "El resto del contenido original de esta aplicación está licenciado bajo Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0).",
+    "licenseContentLink": "Ver CC BY-SA 4.0"
+  },
+  "help": {
+    "title": "Ayuda",
+    "howToUseTitle": "Cómo Usar",
+    "howToUseIntro": "Sigue estos pasos para iniciar una lectura:",
+    "step1": "Ve a Nueva Lectura y elige una tirada.",
+    "step2": "Baraja el mazo y saca las cartas una a una o todas a la vez.",
+    "step3": "Para la tirada Constelación, añade cartas libremente y arrástralas para posicionarlas.",
+    "step4": "Escribe tus reflexiones en el área de notas debajo de la tirada.",
+    "step5": "Guarda la lectura en tu Registro para consultarla después.",
+    "exportTitle": "Exportar tu Lectura",
+    "promptTitle": "Copiar Prompt de Interpretación",
+    "promptText": "El botón \"Copiar Prompt de Interpretación\" genera un texto con tu tirada y las cartas sacadas. Pégalo en cualquier asistente de IA — Claude, ChatGPT, DeepSeek, Gemini u otros — para obtener una interpretación detallada.",
+    "imageTitle": "Copiar como Imagen (PNG)",
+    "imageText": "El botón \"Copiar como PNG\" copia el lienzo de la tirada como imagen. Puedes pegarla en un chat, guardarla o compartirla.",
+    "privacyTitle": "Tus Datos y Privacidad",
+    "privacyText": "Todos tus datos — lecturas, notas y configuración — se guardan localmente en tu navegador. Nada se envía a ningún servidor. Tu información permanece en tu dispositivo a menos que copies activamente un prompt y lo pegues en un asistente de IA.",
+    "installTitle": "Instalar en tu Dispositivo",
+    "installText": "Arké Tarot se puede instalar en tu teléfono, tableta o escritorio y usarse sin conexión. Una vez instalada, la aplicación funciona sin internet — tus lecturas, cartas y configuración siempre están disponibles. Cuando tienes conexión, la app carga automáticamente la versión más reciente.",
+    "installDesktop": "En navegadores de escritorio (Chrome, Edge): busca el ícono de instalación en la barra de direcciones o abre el menú del navegador y elige \"Instalar Arké Tarot\".",
+    "installMobile": "En Android: toca el menú del navegador y elige \"Agregar a pantalla de inicio\". En iPhone / iPad: toca el botón Compartir en Safari y luego \"Agregar a pantalla de inicio\".",
+    "installNote": "Las interpretaciones de IA ocurren fuera de la aplicación — copia el prompt y pégalo en el asistente de IA que prefieras, lo cual requiere conexión a internet. Todo lo demás — sacar cartas, explorar la biblioteca, consultar tu registro — funciona completamente sin conexión."
+  }
+}

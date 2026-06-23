@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Dark background with rounded corners -->
+  <rect width="512" height="512" rx="90" fill="#0d0b1a"/>
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.35"/>
+  <!-- Inner ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.2"/>
+  <!--
+    4-point concave star from ArkeLogo, scaled to 280px centered at (256,256).
+    Original path center: (200,120) in a 20x20 bounding box.
+    Scale 14x → translate(-2544,-1424) to center at (256,256).
+    Extent: top(256,116) right(396,256) bottom(256,396) left(116,256)
+  -->
+  <path
+    fill="#c9a84c"
+    transform="translate(-2544,-1424) scale(14)"
+    d="M 200,110 C 201.4,116.5 203.5,118.5 210,120 C 203.5,121.5 201.4,123.5 200,130 C 198.6,123.5 196.5,121.5 190,120 C 196.5,118.5 198.6,116.5 200,110 Z"
+  />
+</svg>
