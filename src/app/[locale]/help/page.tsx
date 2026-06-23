@@ -1,8 +1,14 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 const STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const;
 
-export default async function HelpPage() {
+interface HelpPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function HelpPage({ params }: HelpPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('help');
 
   return (

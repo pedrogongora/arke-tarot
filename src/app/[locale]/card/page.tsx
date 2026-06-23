@@ -1,4 +1,4 @@
-import { getTranslations, getLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CARDS } from '@/data/cards';
@@ -6,10 +6,15 @@ import type { Suit } from '@/types';
 
 const SUIT_ORDER: Suit[] = ['major', 'cups', 'pentacles', 'swords', 'wands'];
 
-export default async function CardLibraryPage() {
+interface CardLibraryPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function CardLibraryPage({ params }: CardLibraryPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('card');
   const tCards = await getTranslations('cards');
-  const locale = await getLocale();
 
   const grouped = SUIT_ORDER.map((suit) => ({
     suit,

@@ -1,16 +1,25 @@
 'use client';
 
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useReadings, useLogActions } from '@/store';
 import { ReadingCard } from '@/components/log/ReadingCard';
 import { Button } from '@/components/ui/Button';
+import { LogDetailView } from './LogDetailView';
 
-export default function LogPage() {
+function LogContent() {
   const t = useTranslations('log');
   const locale = useLocale();
   const readings = useReadings();
   const { deleteReading } = useLogActions();
+  const searchParams = useSearchParams();
+  const readingId = searchParams.get('id');
+
+  if (readingId) {
+    return <LogDetailView readingId={readingId} />;
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
@@ -33,5 +42,13 @@ export default function LogPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function LogPage() {
+  return (
+    <Suspense fallback={null}>
+      <LogContent />
+    </Suspense>
   );
 }

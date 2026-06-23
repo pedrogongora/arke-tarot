@@ -29,8 +29,8 @@ export function ReadingCard({ reading, onDelete }: ReadingCardProps) {
     <div
       role="link"
       tabIndex={0}
-      onClick={() => { if (!confirming) router.push(`/${locale}/log/${reading.id}`); }}
-      onKeyDown={(e) => { if (e.key === 'Enter' && !confirming) router.push(`/${locale}/log/${reading.id}`); }}
+      onClick={() => { if (!confirming) router.push(`/${locale}/log?id=${reading.id}`); }}
+      onKeyDown={(e) => { if (e.key === 'Enter' && !confirming) router.push(`/${locale}/log?id=${reading.id}`); }}
       className={cn(
         'flex flex-col gap-2 p-4 rounded-xl border border-border bg-surface cursor-pointer',
         'hover:border-primary hover:shadow-md hover:shadow-primary/10 transition-all duration-200'

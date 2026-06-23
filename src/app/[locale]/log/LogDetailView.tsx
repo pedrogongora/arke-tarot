@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useState } from 'react';
+import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -8,12 +8,11 @@ import { useLogStore, useLogActions } from '@/store';
 import { ReadingDetail } from '@/components/log/ReadingDetail';
 import { Button } from '@/components/ui/Button';
 
-interface LogDetailPageProps {
-  params: Promise<{ readingId: string }>;
+interface LogDetailViewProps {
+  readingId: string;
 }
 
-export default function LogDetailPage({ params }: LogDetailPageProps) {
-  const { readingId } = use(params);
+export function LogDetailView({ readingId }: LogDetailViewProps) {
   const t = useTranslations('common');
   const tLog = useTranslations('log');
   const locale = useLocale();

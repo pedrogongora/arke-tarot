@@ -1,10 +1,16 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { ArkeLogo } from '@/components/layout/ArkeLogo';
 
 const FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6'] as const;
 const DEVELOPER_LINES = ['developer1', 'developer2', 'developer3', 'developer4', 'developer5', 'developer6'] as const;
 
-export default async function AboutPage() {
+interface AboutPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function AboutPage({ params }: AboutPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('about');
 
   return (

@@ -1,8 +1,14 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SPREAD_DEFINITIONS } from '@/data/spreads';
 import { SpreadSelector } from '@/components/spread/SpreadSelector';
 
-export default async function ReadingPage() {
+interface ReadingPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function ReadingPage({ params }: ReadingPageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('reading');
 
   return (

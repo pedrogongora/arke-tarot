@@ -1,21 +1,22 @@
-import { getTranslations, getLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getCard, CARDS } from '@/data/cards';
+import { routing } from '@/i18n/routing';
 import { CardImage } from '@/components/card/CardImage';
 
 interface CardPageProps {
-  params: Promise<{ cardId: string }>;
+  params: Promise<{ locale: string; cardId: string }>;
 }
 
 export default async function CardPage({ params }: CardPageProps) {
-  const { cardId } = await params;
+  const { locale, cardId } = await params;
+  setRequestLocale(locale);
   const card = getCard(cardId);
   if (!card) notFound();
 
   const t = await getTranslations();
   const tCard = await getTranslations('card');
-  const locale = await getLocale();
 
   const idx = CARDS.findIndex((c) => c.id === cardId);
   const prev = idx > 0 ? CARDS[idx - 1] : null;
@@ -122,6 +123,8 @@ export default async function CardPage({ params }: CardPageProps) {
   );
 }
 
-export async function generateStaticParams() {
-  return CARDS.map((card) => ({ cardId: card.id }));
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    CARDS.map((card) => ({ locale, cardId: card.id }))
+  );
 }

@@ -87,8 +87,10 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  basePath: '/arke-tarot',
   images: {
-    formats: ['image/webp'],
+    unoptimized: true,
   },
 };
 
