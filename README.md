@@ -46,7 +46,7 @@ npm run type-check  # TypeScript check
 
 The app is deployed as a static site to GitHub Pages via GitHub Actions.
 
-**Automatic:** Every push to `master` triggers the [deploy workflow](.github/workflows/deploy.yml), which builds the app and publishes it.
+**Automatic:** Every push to `main` triggers the [deploy workflow](.github/workflows/deploy.yml), which builds the app and publishes it.
 
 **Manual:** Go to **Actions → Deploy to GitHub Pages → Run workflow** in the GitHub repo.
 
