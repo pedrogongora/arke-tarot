@@ -44,6 +44,8 @@ npm run type-check  # TypeScript check
 
 ## Deployment
 
+The app is live at **https://pedrogongora.github.io/arke-tarot/**
+
 The app is deployed as a static site to GitHub Pages via GitHub Actions.
 
 **Automatic:** Every push to `main` triggers the [deploy workflow](.github/workflows/deploy.yml), which builds the app and publishes it.
