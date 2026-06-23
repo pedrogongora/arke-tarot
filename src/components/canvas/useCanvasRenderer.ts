@@ -112,8 +112,9 @@ export async function renderSpreadSnapshot(
       rotation = r.rotation;
     }
 
-    const imgSrc = CARD_IMAGE_MAP[drawnCard.card.id];
-    if (!imgSrc) continue;
+    const imgPath = CARD_IMAGE_MAP[drawnCard.card.id];
+    if (!imgPath) continue;
+    const imgSrc = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') + imgPath;
 
     try {
       const img = await loadImage(imgSrc);
@@ -264,8 +265,9 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
           rotation = r.rotation;
         }
 
-        const imgSrc = CARD_IMAGE_MAP[drawnCard.card.id];
-        if (!imgSrc) continue;
+        const imgPath = CARD_IMAGE_MAP[drawnCard.card.id];
+        if (!imgPath) continue;
+        const imgSrc = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') + imgPath;
 
         try {
           const img = await loadImage(imgSrc);

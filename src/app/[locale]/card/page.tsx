@@ -41,7 +41,7 @@ export default async function CardLibraryPage({ params }: CardLibraryPageProps) 
                 >
                   <div className="relative overflow-hidden rounded shadow-md w-full aspect-[0.565] transition-transform duration-200 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-primary/20">
                     <Image
-                      src={card.imagePath}
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${card.imagePath}`}
                       alt={card.id}
                       fill
                       sizes="(max-width: 640px) 22vw, (max-width: 768px) 15vw, 10vw"

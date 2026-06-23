@@ -89,6 +89,9 @@ const withPWA = withPWAInit({
 const nextConfig: NextConfig = {
   output: 'export',
   basePath: '/arke-tarot',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/arke-tarot',
+  },
   images: {
     unoptimized: true,
   },
