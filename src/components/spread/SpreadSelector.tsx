@@ -1,10 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { SpreadDefinition } from '@/types';
 import { SpreadPreview } from './SpreadPreview';
 import { cn } from '@/lib/utils/cn';
+import { useReadingStore } from '@/store';
 
 interface SpreadSelectorProps {
   spreads: SpreadDefinition[];
@@ -13,6 +15,11 @@ interface SpreadSelectorProps {
 export function SpreadSelector({ spreads }: SpreadSelectorProps) {
   const t = useTranslations();
   const locale = useLocale();
+  const clearReading = useReadingStore((s) => s.clearReading);
+
+  useEffect(() => {
+    clearReading();
+  }, []);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

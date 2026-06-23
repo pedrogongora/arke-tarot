@@ -19,6 +19,7 @@ const sizeMap = {
 
 export function CardImage({ card, isReversed = false, size = 'md', className, priority = false }: CardImageProps) {
   const { width, height } = sizeMap[size];
+  const src = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${card.imagePath}`;
 
   return (
     <div
@@ -26,7 +27,7 @@ export function CardImage({ card, isReversed = false, size = 'md', className, pr
       style={{ width, height }}
     >
       <Image
-        src={card.imagePath}
+        src={src}
         alt={card.id}
         width={width}
         height={height}
