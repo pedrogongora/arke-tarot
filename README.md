@@ -42,6 +42,16 @@ npm run start    # serve production build
 npm run type-check  # TypeScript check
 ```
 
+## Deployment
+
+The app is deployed as a static site to GitHub Pages via GitHub Actions.
+
+**Automatic:** Every push to `master` triggers the [deploy workflow](.github/workflows/deploy.yml), which builds the app and publishes it.
+
+**Manual:** Go to **Actions → Deploy to GitHub Pages → Run workflow** in the GitHub repo.
+
+**First-time setup:** In the repo settings, go to **Settings → Pages → Source** and select **GitHub Actions**.
+
 ## About the Developer
 
 I'm Pedro, scientist, programmer, and matrix player.
