@@ -110,6 +110,26 @@
         "outcomeDesc": "El resultado final si el camino actual continúa. Esta carta culminante integra todas las demás en una resolución probable. Muestra hacia dónde se dirigen las cosas si las energías presentes se dejan desenvolverse naturalmente."
       }
     },
+    "horseshoe": {
+      "name": "Tirada Herradura",
+      "description": "Un arco de siete cartas que ofrece una visión concisa pero completa: lo que fue, lo que es, lo que está oculto, lo que te bloquea, cómo lo ven los demás, qué hacer y hacia dónde lleva.",
+      "positions": {
+        "past": "Pasado",
+        "pastDesc": "Lo que ha moldeado la situación actual. Esta carta refleja el pasado reciente — los eventos, decisiones o energías que pusieron en movimiento la situación actual. Aún está lo suficientemente cerca como para ejercer influencia; comprenderlo te ayuda a ver cómo llegaste aquí.",
+        "present": "Presente",
+        "presentDesc": "El estado actual del asunto. Esta carta captura la energía dominante viva en la situación ahora mismo — la fuerza más activa en juego. Enfréntala honestamente antes de decidir cómo responder.",
+        "hidden": "Influencias Ocultas",
+        "hiddenDesc": "Fuerzas invisibles que moldean la situación desde abajo. Esta carta señala lo que opera bajo la superficie — patrones inconscientes, factores no revelados o energías aún no visibles para las personas involucradas. Traerlos a la conciencia es en sí mismo una forma de acción.",
+        "obstacles": "Obstáculos",
+        "obstaclesDesc": "Lo que se interpone en el camino. Esta carta nombra el desafío o bloqueo central — el punto de fricción entre donde estás y donde quieres estar. Verlo con claridad es el primer paso para atravesarlo o rodearlo.",
+        "attitudes": "Actitudes de los Demás",
+        "attitudesDesc": "Cómo otros perciben o están afectando la situación. Esta carta revela la perspectiva externa — cómo quienes te rodean ven el asunto, qué energía aportan y cómo sus actitudes están influyendo en lo que se despliega.",
+        "action": "Consejo",
+        "actionDesc": "El curso de acción recomendado. Esta carta sugiere cómo avanzar: qué energía traer, qué postura interior adoptar o qué paso concreto te alineará mejor con el resultado más favorable.",
+        "outcome": "Resultado",
+        "outcomeDesc": "El resultado probable si el camino actual continúa. Esta carta culminante muestra hacia dónde se dirigen las cosas según las energías en juego. No es fijo — pero sí es la conclusión más probable dados todos los elementos revelados por las otras seis cartas."
+      }
+    },
     "zodiac": {
       "name": "Tirada Astrológica / Zodiacal",
       "description": "Doce cartas, una para cada casa del zodíaco, con perspectivas sobre todas las áreas de la vida.",

@@ -112,6 +112,25 @@ export const SPREAD_DEFINITIONS: SpreadDefinition[] = [
     ],
   },
 
+  // ── Horseshoe (7 cards) ───────────────────────────────────────
+  {
+    id: 'horseshoe',
+    nameKey: 'spreads.horseshoe.name',
+    descriptionKey: 'spreads.horseshoe.description',
+    cardCount: 7,
+    isConstellation: false,
+    previewLayout: 'free',
+    positions: [
+      { id: 'past',      labelKey: 'spreads.horseshoe.positions.past',      descriptionKey: 'spreads.horseshoe.positions.pastDesc',      x: 0.12, y: 0.20 },
+      { id: 'present',   labelKey: 'spreads.horseshoe.positions.present',   descriptionKey: 'spreads.horseshoe.positions.presentDesc',   x: 0.23, y: 0.53 },
+      { id: 'hidden',    labelKey: 'spreads.horseshoe.positions.hidden',    descriptionKey: 'spreads.horseshoe.positions.hiddenDesc',    x: 0.37, y: 0.80 },
+      { id: 'obstacles', labelKey: 'spreads.horseshoe.positions.obstacles', descriptionKey: 'spreads.horseshoe.positions.obstaclesDesc', x: 0.50, y: 0.88 },
+      { id: 'attitudes', labelKey: 'spreads.horseshoe.positions.attitudes', descriptionKey: 'spreads.horseshoe.positions.attitudesDesc', x: 0.63, y: 0.80 },
+      { id: 'action',    labelKey: 'spreads.horseshoe.positions.action',    descriptionKey: 'spreads.horseshoe.positions.actionDesc',    x: 0.77, y: 0.53 },
+      { id: 'outcome',   labelKey: 'spreads.horseshoe.positions.outcome',   descriptionKey: 'spreads.horseshoe.positions.outcomeDesc',   x: 0.88, y: 0.20 },
+    ],
+  },
+
   // ── Astrological / Zodiac (12 cards) ──────────────────────────
   {
     id: 'zodiac',
