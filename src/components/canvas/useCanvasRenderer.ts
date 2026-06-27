@@ -6,8 +6,9 @@ import type { SpreadDefinition, DrawnCard } from '@/types';
 import { spreadPositionToRect, calcCardHeight, CARD_ASPECT } from './cardGeometry';
 import { CARD_IMAGE_MAP } from '@/data/cardImages';
 
-const ANIM_DURATION_MS = 350;
-const ANIM_STAGGER_MS = 120;
+const DEAL_DURATION_MS = 700;
+const DEAL_STAGGER_MS = 150;
+const ORBIT_STRENGTH = 0.35;
 
 // Module-level image cache shared across canvas instances
 const imageCache = new Map<string, HTMLImageElement>();
@@ -24,6 +25,15 @@ function loadImage(src: string): Promise<HTMLImageElement> {
 
 function clamp(v: number, lo: number, hi: number) {
   return v < lo ? lo : v > hi ? hi : v;
+}
+
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+function quadBezierAt(t: number, p0: number, p1: number, p2: number): number {
+  const u = 1 - t;
+  return u * u * p0 + 2 * u * t * p1 + t * t * p2;
 }
 
 export interface DragState {
@@ -168,7 +178,7 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
     const now = performance.now();
     drawnCards.forEach((dc, i) => {
       if (!animStartTimesRef.current.has(dc.card.id)) {
-        animStartTimesRef.current.set(dc.card.id, now + i * ANIM_STAGGER_MS);
+        animStartTimesRef.current.set(dc.card.id, now + i * DEAL_STAGGER_MS);
       }
     });
 
@@ -244,7 +254,7 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
       for (const drawnCard of drawnCards) {
         const startTime = animStartTimesRef.current.get(drawnCard.card.id) ?? t;
         const elapsed = t - startTime;
-        const progress = clamp(elapsed / ANIM_DURATION_MS, 0, 1);
+        const rawProgress = clamp(elapsed / DEAL_DURATION_MS, 0, 1);
 
         // Determine center position and rotation
         let cx: number, cy: number, rotation: number;
@@ -269,19 +279,37 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
         if (!imgPath) continue;
         const imgSrc = (process.env.NEXT_PUBLIC_BASE_PATH ?? '') + imgPath;
 
+        // Orbit arc: card travels from canvas center to target along a curved path
+        const srcX = W / 2;
+        const srcY = 0;
+        const dx = cx - srcX;
+        const dy = cy - srcY;
+        const dist = Math.max(Math.hypot(dx, dy), 1);
+        // Clockwise perpendicular: rotate direction 90° CCW → (-dy, dx)
+        const cpX = (srcX + cx) / 2 + (-dy / dist) * dist * ORBIT_STRENGTH;
+        const cpY = (srcY + cy) / 2 + (dx / dist) * dist * ORBIT_STRENGTH;
+
+        const TRAVEL_END = 0.7;
+        const travelT = easeOutCubic(clamp(rawProgress / TRAVEL_END, 0, 1));
+        const animCx = quadBezierAt(travelT, srcX, cpX, cx);
+        const animCy = quadBezierAt(travelT, srcY, cpY, cy);
+
+        // Fade in during first half of travel, fully opaque by TRAVEL_END
+        const opacity = clamp(rawProgress / (TRAVEL_END * 0.5), 0, 1);
+
+        // Subtle scale-up during settle phase
+        const settleT = clamp((rawProgress - TRAVEL_END) / (1 - TRAVEL_END), 0, 1);
+        const scale = 0.92 + 0.08 * settleT;
+
         try {
           const img = await loadImage(imgSrc);
           if (cancelled) return;
 
           ctx.save();
-          ctx.translate(cx, cy);
+          ctx.translate(animCx, animCy);
           ctx.rotate((rotation * Math.PI) / 180);
-
           if (drawnCard.isReversed) ctx.rotate(Math.PI);
-
-          // Animate: fade-in + subtle scale-up
-          ctx.globalAlpha = progress;
-          const scale = 0.85 + 0.15 * progress;
+          ctx.globalAlpha = opacity;
           ctx.scale(scale, scale);
 
           if (drawnCard.card.id === selectedCardId) {
@@ -295,8 +323,8 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
           ctx.restore();
         } catch {
           ctx.save();
-          ctx.translate(cx, cy);
-          ctx.globalAlpha = progress;
+          ctx.translate(animCx, animCy);
+          ctx.globalAlpha = opacity;
           ctx.fillStyle = '#1a1730';
           ctx.fillRect(-cardW / 2, -cardH / 2, cardW, cardH);
           ctx.globalAlpha = 1;
@@ -304,7 +332,7 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
         }
 
         // Draw position label below card (outside card transform, always horizontal)
-        if (progress > 0.3) {
+        if (rawProgress > 0.7) {
           const cardLabel = spread.isConstellation
             ? drawnCard.userLabel
             : positionLabels?.[drawnCard.position.id];
@@ -314,7 +342,7 @@ export function useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardI
             const fontSize = Math.round(cardH * 0.075);
             ctx.save();
             ctx.font = `bold ${fontSize}px system-ui, sans-serif`;
-            ctx.fillStyle = `rgba(155, 143, 232, ${0.85 * progress})`;
+            ctx.fillStyle = `rgba(155, 143, 232, ${0.85 * rawProgress})`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
             ctx.fillText(cardLabel, cx, cy + halfExtent + 5, (isLandscape ? cardH : cardW) * 1.2);

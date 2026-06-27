@@ -110,6 +110,26 @@
         "outcomeDesc": "The final outcome if the current path continues. This culminating card integrates all the others into a likely resolution. It shows where things are heading if the energies present are allowed to unfold naturally."
       }
     },
+    "horseshoe": {
+      "name": "Horseshoe Spread",
+      "description": "A seven-card arc offering a concise yet complete view: what was, what is, what is hidden, what blocks you, how others see it, what to do, and where it leads.",
+      "positions": {
+        "past": "Past",
+        "pastDesc": "What has shaped the current situation. This card reflects the recent past — the events, choices, or energies that set the current situation in motion. It is still close enough to exert influence; understanding it helps you see how you arrived here.",
+        "present": "Present",
+        "presentDesc": "The current state of the matter. This card captures the dominant energy alive in the situation right now — the force most actively at work. Meet it honestly before deciding how to respond.",
+        "hidden": "Hidden Influences",
+        "hiddenDesc": "Unseen forces shaping the situation from below. This card points to what is operating beneath the surface — unconscious patterns, undisclosed factors, or energies not yet visible to the people involved. Bringing it into awareness is itself a form of action.",
+        "obstacles": "Obstacles",
+        "obstaclesDesc": "What stands in the way. This card names the central challenge or block — the friction point between where you are and where you want to be. Seeing it clearly is the first step to moving through or around it.",
+        "attitudes": "Attitudes of Others",
+        "attitudesDesc": "How others perceive or are affecting the situation. This card reveals the external perspective — how those around you see the matter, what energy they bring, and how their attitudes are influencing what unfolds.",
+        "action": "Advice",
+        "actionDesc": "The recommended course of action. This card suggests how to move forward: what energy to bring, what inner stance to adopt, or what concrete step will most align you with the best possible outcome.",
+        "outcome": "Outcome",
+        "outcomeDesc": "The likely result if the current path continues. This culminating card shows where things are heading based on the energies at play. It is not fixed — but it is the most probable conclusion given all that the other six cards have revealed."
+      }
+    },
     "zodiac": {
       "name": "Astrological / Zodiac Spread",
       "description": "Twelve cards, one for each house of the zodiac, offering insight across all life areas.",
@@ -205,23 +225,23 @@
   "reading": {
     "selectSpread": "Choose a Spread",
     "shuffle": "Shuffle the Deck",
-    "draw": "Draw a Card",
-    "drawAll": "Draw All Cards",
+    "draw": "Draw Card",
+    "drawAll": "Draw All",
     "reversed": "Reversed",
     "upright": "Upright",
     "position": "Position",
     "notes": {
-      "label": "Your Reflections",
-      "placeholder": "Write your thoughts, feelings, and reflections on this reading..."
+      "label": "Consultation & Reflections",
+      "placeholder": "Write about your consultation, thoughts, feelings, and reflections on this reading..."
     },
     "actions": {
-      "save": "Save Reading",
+      "save": "Save",
       "interpret": "AI Interpretation",
       "interpreting": "Consulting...",
-      "new": "New Reading",
+      "new": "New",
       "saving": "Saving...",
       "saved": "Saved",
-      "copyPrompt": "Copy Interpretation Prompt"
+      "copyPrompt": "AI Prompt"
     },
     "ai": {
       "loading": "Consulting the oracle...",
@@ -231,8 +251,8 @@
     "copyPrompt": {
       "title": "Copy Reading Prompt",
       "description": "Paste this into any AI assistant to get an interpretation.",
-      "includeReflections": "Include personal reflections",
-      "reflectionsPlaceholder": "Write your thoughts, feelings, and reflections...",
+      "includeReflections": "Include consultation and personal reflections",
+      "reflectionsPlaceholder": "Write about your consultation, thoughts, feelings, and reflections...",
       "copyButton": "Copy to Clipboard",
       "copied": "Copied!",
       "promptLabel": "Generated Prompt"

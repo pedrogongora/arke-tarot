@@ -58,7 +58,7 @@ export function ReadingPanel({ spread, drawnCards, selectedCardId, onCardSelect,
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onCardSelect?.(isSelected ? null : dc.card.id); }}
             className={cn(
               'text-left w-full transition-colors cursor-pointer',
-              isSelected ? 'bg-primary/10 ring-1 ring-inset ring-primary/30' : 'hover:bg-surface/50'
+              isSelected ? 'bg-primary/15 ring-2 ring-inset ring-primary/50 border-l-2 border-primary' : 'hover:bg-surface/50'
             )}
           >
             <CardDetail drawnCard={dc} compact={!isSelected} />

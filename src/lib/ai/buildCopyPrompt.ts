@@ -63,7 +63,7 @@ export function buildCopyPrompt(req: CopyPromptRequest): string {
   // Reflections section (only when notes present)
   if (notes.trim()) {
     lines.push(DIVIDER);
-    lines.push(isES ? 'REFLEXIONES DEL CONSULTANTE:' : "QUERENT'S REFLECTIONS:");
+    lines.push(isES ? 'CONSULTA Y REFLEXIONES DEL CONSULTANTE:' : "QUERENT'S CONSULTATION AND REFLECTIONS:");
     lines.push(notes.trim());
     lines.push(DIVIDER);
     lines.push('');

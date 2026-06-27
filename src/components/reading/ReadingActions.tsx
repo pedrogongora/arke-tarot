@@ -32,7 +32,6 @@ export function ReadingActions() {
     addReading(reading);
     setSaving(false);
     setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
   };
 
   const handleNew = () => {
@@ -43,7 +42,7 @@ export function ReadingActions() {
   return (
     <>
       <div className="flex items-center gap-2 px-4 py-2.5 border-t border-border">
-        <Button onClick={handleSave} disabled={!canSave || saving} variant="primary" size="sm" className="flex-1">
+        <Button onClick={handleSave} disabled={!canSave || saving || saved} variant="primary" size="sm" className="flex-1">
           {saving ? t('saving') : saved ? t('saved') : t('save')}
         </Button>
 
@@ -58,7 +57,7 @@ export function ReadingActions() {
           </Button>
         )}
 
-        <Button onClick={handleNew} variant="ghost" size="sm" className="flex-shrink-0 px-2.5">
+        <Button onClick={handleNew} variant="ghost" size="sm" className="flex-1">
           {t('new')}
         </Button>
       </div>

@@ -82,6 +82,12 @@ export function SpreadReadingView({ spreadId }: SpreadReadingViewProps) {
 
   const drawnCards = activeReading?.drawnCards ?? [];
 
+  useEffect(() => {
+    if (drawnCards.length === 0) return;
+    const last = drawnCards[drawnCards.length - 1];
+    document.getElementById(`panel-card-${last.card.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [drawnCards.length]);
+
   const positionLabels = Object.fromEntries(
     spread.positions.map((pos) => [pos.id, tAll(pos.labelKey as Parameters<typeof tAll>[0])])
   );
@@ -93,19 +99,14 @@ export function SpreadReadingView({ spreadId }: SpreadReadingViewProps) {
   return (
     <div className="flex flex-col h-[calc(100vh-3.5rem)] lg:flex-row">
 
-      <div className="flex-shrink-0 h-[38vh] lg:h-auto lg:flex-1 flex flex-col min-h-0">
+      <div className="flex-shrink-0 h-[44vh] lg:h-auto lg:flex-1 flex flex-col min-h-0">
         <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-b border-border">
-          <h1 className="text-sm font-semibold text-foreground">
+          <h1 className="text-sm lg:text-base font-semibold text-foreground">
             {tAll(spread.nameKey as Parameters<typeof tAll>[0])}
           </h1>
 
           {!allDrawn && !spread.isConstellation && (
             <div className="flex items-center gap-2">
-              {drawnCount > 0 && (
-                <span className="text-xs text-muted tabular-nums">
-                  {drawnCount} / {spread.positions.length}
-                </span>
-              )}
               <Button onClick={handleDrawNext} size="sm" variant="secondary">
                 {t('draw')}
               </Button>
@@ -139,6 +140,15 @@ export function SpreadReadingView({ spreadId }: SpreadReadingViewProps) {
           </p>
         )}
 
+        {!spread.isConstellation && (
+          <div className="flex-shrink-0 h-1.5 bg-border/30">
+            <div
+              className="h-full bg-accent transition-all duration-500 ease-out"
+              style={{ width: `${(drawnCount / spread.positions.length) * 100}%` }}
+            />
+          </div>
+        )}
+
         <div className="flex-1 min-h-0 p-3 lg:p-4">
           <SpreadCanvas
             spread={spread}
@@ -146,7 +156,7 @@ export function SpreadReadingView({ spreadId }: SpreadReadingViewProps) {
             onCardSelect={setSelectedCardId}
             onCardDrop={handleCardDrop}
             positionLabels={positionLabels}
-            className="rounded-xl border border-border bg-surface/30"
+            className="rounded-xl border border-border bg-surface/30 canvas-bg-texture"
           />
         </div>
       </div>

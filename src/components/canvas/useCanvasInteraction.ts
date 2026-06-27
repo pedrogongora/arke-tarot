@@ -13,6 +13,7 @@ interface UseCanvasInteractionOptions {
   onCardDrop?: (cardId: string, normalizedX: number, normalizedY: number) => void;
   dragRef?: RefObject<DragState | null>;
   viewportRef?: RefObject<Viewport>;
+  fitViewportRef?: RefObject<() => void>;
 }
 
 function getEventPos(e: MouseEvent | Touch, canvas: HTMLCanvasElement): { x: number; y: number } {
@@ -52,6 +53,7 @@ export function useCanvasInteraction({
   onCardDrop,
   dragRef,
   viewportRef,
+  fitViewportRef,
 }: UseCanvasInteractionOptions) {
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -292,10 +294,12 @@ export function useCanvasInteraction({
       }
     }
 
-    // ── Double-click to reset viewport ────────────────────────────────────────
+    // ── Double-click to fit viewport ──────────────────────────────────────────
 
     function handleDblClick() {
-      if (viewportRef) {
+      if (fitViewportRef?.current) {
+        fitViewportRef.current();
+      } else if (viewportRef) {
         viewportRef.current.zoom = 1;
         viewportRef.current.panX = 0;
         viewportRef.current.panY = 0;
