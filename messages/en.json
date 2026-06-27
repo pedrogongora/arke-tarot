@@ -241,7 +241,7 @@
       "new": "New Reading",
       "saving": "Saving...",
       "saved": "Saved",
-      "copyPrompt": "Copy Interpretation Prompt"
+      "copyPrompt": "AI Prompt"
     },
     "ai": {
       "loading": "Consulting the oracle...",
