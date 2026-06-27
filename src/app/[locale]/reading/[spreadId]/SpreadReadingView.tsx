@@ -82,6 +82,12 @@ export function SpreadReadingView({ spreadId }: SpreadReadingViewProps) {
 
   const drawnCards = activeReading?.drawnCards ?? [];
 
+  useEffect(() => {
+    if (drawnCards.length === 0) return;
+    const last = drawnCards[drawnCards.length - 1];
+    document.getElementById(`panel-card-${last.card.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [drawnCards.length]);
+
   const positionLabels = Object.fromEntries(
     spread.positions.map((pos) => [pos.id, tAll(pos.labelKey as Parameters<typeof tAll>[0])])
   );
