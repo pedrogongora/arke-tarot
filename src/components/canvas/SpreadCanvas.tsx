@@ -6,6 +6,7 @@ import { useCanvasRenderer, renderSpreadSnapshot } from './useCanvasRenderer';
 import { useCanvasInteraction } from './useCanvasInteraction';
 import { cn } from '@/lib/utils/cn';
 import type { DragState, Viewport } from './useCanvasRenderer';
+import { calcCardHeight, spreadPositionToRect, CARD_ASPECT } from './cardGeometry';
 
 interface SpreadCanvasProps {
   spread: SpreadDefinition;
@@ -37,19 +38,67 @@ export function SpreadCanvas({ spread, drawnCards, onCardSelect, onCardDrop, pos
     onCardSelect?.(id);
   };
 
-  // Re-render when container resizes; also reset pan so content stays visible
+  function fitToSpread() {
+    const canvas = canvasRef.current;
+    if (!canvas || spread.isConstellation || spread.positions.length === 0) return;
+    const rect = canvas.getBoundingClientRect();
+    const W = rect.width;
+    const H = rect.height;
+    if (W === 0 || H === 0) return;
+
+    const cardH = calcCardHeight(W, H);
+    const cardW = cardH * CARD_ASPECT;
+    const labelH = Math.round(cardH * 0.18);
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (const pos of spread.positions) {
+      const r = spreadPositionToRect(pos, W, H, cardH);
+      const rad = (r.rotation * Math.PI) / 180;
+      const cosA = Math.abs(Math.cos(rad));
+      const sinA = Math.abs(Math.sin(rad));
+      const bboxHW = (cardW / 2) * cosA + (cardH / 2) * sinA;
+      const bboxHH = (cardW / 2) * sinA + (cardH / 2) * cosA;
+      minX = Math.min(minX, r.x - bboxHW);
+      maxX = Math.max(maxX, r.x + bboxHW);
+      minY = Math.min(minY, r.y - bboxHH);
+      maxY = Math.max(maxY, r.y + bboxHH + labelH);
+    }
+    if (!isFinite(minX)) return;
+
+    const contentW = maxX - minX;
+    const contentH = maxY - minY;
+    const zoom = Math.min((W * 0.82) / contentW, (H * 0.82) / contentH, 3.0);
+    const vp = viewportRef.current;
+    vp.zoom = zoom;
+    vp.panX = W / 2 - ((minX + maxX) / 2) * zoom;
+    vp.panY = H / 2 - ((minY + maxY) / 2) * zoom;
+  }
+
+  // Keep a stable ref so the interaction hook can call fitToSpread without dep churn
+  const fitToSpreadRef = useRef(fitToSpread);
+  fitToSpreadRef.current = fitToSpread;
+
+  // Auto-fit on mount and when the spread changes
+  useEffect(() => {
+    if (spread.isConstellation) return;
+    const rafId = requestAnimationFrame(() => fitToSpreadRef.current());
+    return () => cancelAnimationFrame(rafId);
+  }, [spread.id, spread.isConstellation]);
+
+  // Re-render when container resizes; also re-fit so content stays visible
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const observer = new ResizeObserver(() => {
       canvas.dispatchEvent(new Event('resize-redraw'));
+      if (!spread.isConstellation) fitToSpreadRef.current();
     });
     observer.observe(canvas.parentElement!);
     return () => observer.disconnect();
-  }, []);
+  }, [spread.isConstellation]);
 
   useCanvasRenderer({ canvasRef, spread, drawnCards, selectedCardId, dragRef, viewportRef, positionLabels });
-  useCanvasInteraction({ canvasRef, spread, drawnCards, onCardSelect: handleSelect, onCardDrop, dragRef, viewportRef });
+  useCanvasInteraction({ canvasRef, spread, drawnCards, onCardSelect: handleSelect, onCardDrop, dragRef, viewportRef, fitViewportRef: fitToSpreadRef });
 
   function adjustZoom(factor: number) {
     const vp = viewportRef.current;
@@ -67,9 +116,7 @@ export function SpreadCanvas({ spread, drawnCards, onCardSelect, onCardDrop, pos
   }
 
   function resetViewport() {
-    viewportRef.current.zoom = 1;
-    viewportRef.current.panX = 0;
-    viewportRef.current.panY = 0;
+    fitToSpreadRef.current();
   }
 
   async function copyAsPng() {
@@ -110,29 +157,30 @@ export function SpreadCanvas({ spread, drawnCards, onCardSelect, onCardDrop, pos
       />
 
       {/* Zoom + copy controls */}
-      <div className="absolute bottom-2 right-2 flex gap-1">
+      <div className="absolute bottom-3 right-3 flex items-center gap-0.5 bg-surface/75 border border-border/60 rounded-full px-1.5 py-1.5 backdrop-blur-md shadow-sm">
         {[
           { label: '+', title: 'Zoom in', onClick: () => adjustZoom(1.25) },
           { label: '−', title: 'Zoom out', onClick: () => adjustZoom(0.8) },
-          { label: '↺', title: 'Reset zoom', onClick: resetViewport },
+          { label: '↺', title: 'Fit to spread', onClick: resetViewport },
         ].map(({ label, title, onClick }) => (
           <button
             key={label}
             onClick={onClick}
             title={title}
-            className="w-7 h-7 flex items-center justify-center rounded-md text-sm font-medium bg-surface/80 border border-border text-muted hover:text-foreground hover:bg-surface transition-colors backdrop-blur-sm"
+            className="w-7 h-7 flex items-center justify-center rounded-full text-sm font-medium text-muted hover:text-foreground hover:bg-primary/15 transition-colors"
           >
             {label}
           </button>
         ))}
+        <span className="w-px h-4 bg-border/60 mx-0.5" />
         <button
           onClick={copyAsPng}
           title={copyState === 'copied' ? 'Copied!' : copyState === 'error' ? 'Failed' : 'Copy as PNG'}
           className={cn(
-            'w-7 h-7 flex items-center justify-center rounded-md text-sm bg-surface/80 border border-border backdrop-blur-sm transition-colors',
-            copyState === 'copied' && 'text-green-400 border-green-400/40',
-            copyState === 'error' && 'text-red-400 border-red-400/40',
-            copyState === 'idle' && 'text-muted hover:text-foreground hover:bg-surface',
+            'w-7 h-7 flex items-center justify-center rounded-full text-sm transition-colors',
+            copyState === 'copied' && 'text-green-400',
+            copyState === 'error' && 'text-red-400',
+            copyState === 'idle' && 'text-muted hover:text-foreground hover:bg-primary/15',
           )}
         >
           {copyState === 'copied' ? '✓' : <CopyIcon />}

@@ -23,8 +23,12 @@ export function CardImage({ card, isReversed = false, size = 'md', className, pr
 
   return (
     <div
-      className={cn('relative overflow-hidden rounded-md shadow-lg flex-shrink-0', className)}
-      style={{ width, height }}
+      className={cn(
+        'relative overflow-hidden rounded-md shadow-lg flex-shrink-0',
+        size === 'md' ? 'w-[100px] h-[177px] sm:w-[140px] sm:h-[248px]' : '',
+        className
+      )}
+      style={size !== 'md' ? { width, height } : undefined}
     >
       <Image
         src={src}

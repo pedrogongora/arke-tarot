@@ -225,20 +225,20 @@
   "reading": {
     "selectSpread": "Elige una Tirada",
     "shuffle": "Barajar el Mazo",
-    "draw": "Sacar una Carta",
-    "drawAll": "Sacar Todas las Cartas",
+    "draw": "Sacar Carta",
+    "drawAll": "Sacar Todas",
     "reversed": "Invertida",
     "upright": "Al Derecho",
     "position": "Posición",
     "notes": {
-      "label": "Tu Consulta y Reflexiones",
+      "label": "Consulta y Reflexiones",
       "placeholder": "Escribe sobre tu consulta, tus pensamientos, sentimientos y reflexiones sobre esta lectura..."
     },
     "actions": {
-      "save": "Guardar Lectura",
+      "save": "Guardar",
       "interpret": "Interpretación IA",
       "interpreting": "Consultando...",
-      "new": "Nueva Lectura",
+      "new": "Nueva",
       "saving": "Guardando...",
       "saved": "Guardada",
       "copyPrompt": "Prompt IA"

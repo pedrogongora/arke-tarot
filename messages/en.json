@@ -225,20 +225,20 @@
   "reading": {
     "selectSpread": "Choose a Spread",
     "shuffle": "Shuffle the Deck",
-    "draw": "Draw a Card",
-    "drawAll": "Draw All Cards",
+    "draw": "Draw Card",
+    "drawAll": "Draw All",
     "reversed": "Reversed",
     "upright": "Upright",
     "position": "Position",
     "notes": {
-      "label": "Your Consultation and Reflections",
+      "label": "Consultation & Reflections",
       "placeholder": "Write about your consultation, thoughts, feelings, and reflections on this reading..."
     },
     "actions": {
-      "save": "Save Reading",
+      "save": "Save",
       "interpret": "AI Interpretation",
       "interpreting": "Consulting...",
-      "new": "New Reading",
+      "new": "New",
       "saving": "Saving...",
       "saved": "Saved",
       "copyPrompt": "AI Prompt"

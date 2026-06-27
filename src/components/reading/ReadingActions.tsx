@@ -57,7 +57,7 @@ export function ReadingActions() {
           </Button>
         )}
 
-        <Button onClick={handleNew} variant="ghost" size="sm" className="flex-shrink-0 px-2.5">
+        <Button onClick={handleNew} variant="ghost" size="sm" className="flex-1">
           {t('new')}
         </Button>
       </div>
