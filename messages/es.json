@@ -211,8 +211,8 @@
     "upright": "Al Derecho",
     "position": "Posición",
     "notes": {
-      "label": "Tus Reflexiones",
-      "placeholder": "Escribe tus pensamientos, sentimientos y reflexiones sobre esta lectura..."
+      "label": "Tu Consulta y Reflexiones",
+      "placeholder": "Escribe sobre tu consulta, tus pensamientos, sentimientos y reflexiones sobre esta lectura..."
     },
     "actions": {
       "save": "Guardar Lectura",
@@ -231,8 +231,8 @@
     "copyPrompt": {
       "title": "Copiar Prompt de Lectura",
       "description": "Pega esto en cualquier asistente de IA para obtener una interpretación.",
-      "includeReflections": "Incluir reflexiones personales",
-      "reflectionsPlaceholder": "Escribe tus pensamientos, sentimientos y reflexiones...",
+      "includeReflections": "Incluir consulta y reflexiones personales",
+      "reflectionsPlaceholder": "Escribe sobre tu consulta, pensamientos, sentimientos y reflexiones...",
       "copyButton": "Copiar al Portapapeles",
       "copied": "¡Copiado!",
       "promptLabel": "Prompt Generado"
